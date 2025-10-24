@@ -1,0 +1,45 @@
+# Trader Bot - Executável Windows
+
+## Como Usar:
+
+1. **Prepare os sinais:**
+   - Edite `data/sinais.txt` com seus sinais
+   - Formato: M1;ATIVO;HH:MM;PUT/CALL;VALOR;PROTECAO1;PROTECAO2
+
+2. **Execute o bot:**
+
+   **Modo DEMO:**
+   ```
+   trader-bot.exe --mode demo --sinais data/sinais.txt
+   ```
+   
+   O bot solicitará:
+   - Email da IQ Option
+   - Senha (oculta durante digitação)
+
+   **Modo REAL:**
+   ```
+   trader-bot.exe --mode real --sinais data/sinais.txt
+   ```
+
+3. **Para parar o bot:**
+   - Execute `stop_bot.bat` OU
+   - Crie um arquivo chamado `stop.txt` na pasta
+
+**Segurança:** Credenciais são solicitadas a cada execução e NUNCA armazenadas em arquivo!
+
+## Proteções Automáticas:
+
+- ✅ Stop Loss: 2 LOSS consecutivos
+- ✅ Stop Loss: 10% da banca
+- ✅ Término automático após todos os sinais
+- ✅ Alertas sonoros
+
+## Logs:
+
+- Logs salvos em: `logs/bot.log`
+- Resultados salvos em: `data/sinais.csv`
+
+## Suporte:
+
+Para mais informações, consulte o README.md completo.

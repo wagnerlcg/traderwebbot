@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trader Bot - Sinais</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🤖 Trader Bot - Sinais</h1>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span class="user-name">{{ session.user_name or session.user_email }}</span>
+                        <a href="{{ url_for('logout') }}" class="btn-logout">Sair</a>
+                    </div>
+                    <div class="header-status">
+                        <span class="status-badge" id="status-badge">OFFLINE</span>
+                        <span class="mode-badge" id="mode-badge">-</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Cards -->
+        <div class="dashboard-cards">
+            <div class="card stat-card">
+                <div class="card-icon">💰</div>
+                <div class="card-content">
+                    <h3>Saldo Atual</h3>
+                    <p class="stat-value" id="saldo-atual">$0.00</p>
+                    <span class="stat-label" id="saldo-variacao">+$0.00</span>
+                </div>
+            </div>
+
+            <div class="card stat-card">
+                <div class="card-icon">📊</div>
+                <div class="card-content">
+                    <h3>Sinais Executados</h3>
+                    <p class="stat-value" id="sinais-executados">0 / 0</p>
+                    <span class="stat-label">Total de sinais</span>
+                </div>
+            </div>
+
+            <div class="card stat-card">
+                <div class="card-icon">✅</div>
+                <div class="card-content">
+                    <h3>Wins</h3>
+                    <p class="stat-value stat-win" id="wins">0</p>
+                    <span class="stat-label" id="win-rate">0% taxa</span>
+                </div>
+            </div>
+
+            <div class="card stat-card">
+                <div class="card-icon">❌</div>
+                <div class="card-content">
+                    <h3>Losses</h3>
+                    <p class="stat-value stat-loss" id="losses">0</p>
+                    <span class="stat-label" id="loss-rate">0% taxa</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-button active" data-tab="controle">🎮 Controle</button>
+                <button class="tab-button" data-tab="sinais">📋 Sinais</button>
+                <button class="tab-button" data-tab="config">⚙️ Configurações</button>
+                <button class="tab-button" data-tab="logs">📄 Logs</button>
+            </div>
+
+            <!-- Tab Content: Controle -->
+            <div class="tab-content active" id="tab-controle">
+                <div class="card">
+                    <h2>Controle do Bot</h2>
+                    
+                    <div class="form-group">
+                        <label>Modo de Operação</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="mode" value="demo" checked>
+                                <span>🎯 Demo (Prática)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="mode" value="real">
+                                <span>💵 Real (Dinheiro Real)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email IQ Option</label>
+                        <input type="email" id="email" placeholder="seu-email@exemplo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senha">Senha IQ Option</label>
+                        <input type="password" id="senha" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn btn-primary" id="btn-start" onclick="startBot()">
+                            ▶️ Iniciar Bot
+                        </button>
+                        <button class="btn btn-danger" id="btn-stop" onclick="stopBot()" disabled>
+                            ⏹️ Parar Bot
+                        </button>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <strong>ℹ️ Importante:</strong> Certifique-se de carregar um arquivo de sinais antes de iniciar o bot.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Sinais -->
+            <div class="tab-content" id="tab-sinais">
+                <div class="card">
+                    <h2>Gerenciar Sinais</h2>
+                    
+                    <div class="alert alert-info">
+                        <strong>📋 Formato dos Sinais:</strong> Use apenas 4 campos separados por ponto e vírgula:<br>
+                        <code>M1;ATIVO;HH:MM;PUT/CALL</code><br>
+                        <small>Exemplo: M1;EURUSD-OTC;19:00;CALL</small><br>
+                        Os valores de entrada (R$) são definidos na aba <strong>Configurações</strong>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Arquivo de Sinais (.txt)</label>
+                        <input type="file" id="file-sinais" accept=".txt" onchange="uploadSinais()">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ou cole o conteúdo aqui:</label>
+                        <textarea id="sinais-content" rows="10" placeholder="M1;EURUSD-OTC;19:00;CALL
+M1;EURJPY-OTC;19:05;PUT
+M5;GBPUSD;19:30;CALL"></textarea>
+                        <small>
+                            <strong>⚠️ Formato:</strong> M1;ATIVO;HH:MM;PUT/CALL (4 campos apenas)<br>
+                            Os valores de entrada são definidos nas Configurações
+                        </small>
+                        <button class="btn btn-secondary" onclick="submitSinaisText()" style="margin-top: 8px;">
+                            📝 Carregar Sinais
+                        </button>
+                    </div>
+
+                    <div id="sinais-preview"></div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Configurações -->
+            <div class="tab-content" id="tab-config">
+                <div class="card">
+                    <h2>Configurações</h2>
+                    
+                    <div class="config-section">
+                        <h3>Proteções</h3>
+                        
+                        <div class="form-group">
+                            <label for="stop-loss">Stop Loss (%)</label>
+                            <input type="number" id="stop-loss" min="1" max="50" value="10" step="0.5">
+                            <small>Perda máxima permitida (1-50%)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stop-win">Stop Win (%)</label>
+                            <input type="number" id="stop-win" min="5" max="100" value="20" step="5">
+                            <small>Meta de lucro para parar (5-100%)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="sons-habilitados" checked>
+                                <span>🔊 Sons e Alertas</span>
+                            </label>
+                            <small>Ativar sons para entrada, win e loss</small>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Estratégia de Gerenciamento</h3>
+                        
+                        <div class="form-group">
+                            <label for="estrategia">Estratégia</label>
+                            <select id="estrategia" onchange="updateEstrategia()">
+                                <option value="Martingale">Martingale</option>
+                                <option value="Soros">Soros</option>
+                                <option value="Masaniello">Masaniello</option>
+                            </select>
+                        </div>
+
+                        <div id="estrategia-params"></div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Valor de Entrada</h3>
+                        
+                        <div class="form-group">
+                            <label>Tipo de Entrada</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="valor-tipo" value="fixo" checked onchange="updateValorTipo()">
+                                    <span>💵 Valor Fixo</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="valor-tipo" value="percentual" onchange="updateValorTipo()">
+                                    <span>📊 Percentual da Banca</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="valor-fixo-group">
+                            <label for="valor-entrada">Valor de Entrada ($)</label>
+                            <input type="number" id="valor-entrada" min="1" value="10" step="0.5">
+                        </div>
+
+                        <div class="form-group hidden" id="valor-percentual-group">
+                            <label for="valor-percentual">Percentual da Banca (%)</label>
+                            <input type="number" id="valor-percentual" min="1" max="10" value="2" step="0.5">
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="saveConfig()">
+                        💾 Salvar Configurações
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content: Logs -->
+            <div class="tab-content" id="tab-logs">
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h2 style="margin: 0;">Logs em Tempo Real</h2>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-secondary" onclick="aumentarFonte()" title="Aumentar fonte">
+                                A+
+                            </button>
+                            <button class="btn btn-secondary" onclick="diminuirFonte()" title="Diminuir fonte">
+                                A-
+                            </button>
+                            <button class="btn btn-secondary" onclick="toggleTemaLogs()" title="Alternar tema">
+                                🌓 Tema
+                            </button>
+                            <button class="btn btn-secondary" onclick="clearLogs()">
+                                🗑️ Limpar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="logs-container" id="logs-container">
+                        <p class="log-empty">Aguardando logs...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
+

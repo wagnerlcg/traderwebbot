@@ -1,0 +1,128 @@
+🤖 TRADER BOT - EXECUTÁVEL COM AUTENTICAÇÃO MYSQL
+=====================================================
+
+📁 ARQUIVO: TraderBot-Autenticado.exe (46.43 MB)
+📅 DATA: 23/10/2025
+🔐 VERSÃO: Com Sistema de Autenticação MySQL
+
+🚀 COMO USAR:
+=============
+
+1. PRÉ-REQUISITOS:
+   - MariaDB/MySQL instalado e rodando
+   - Banco de dados 'trader_bot' criado
+   - Tabela 'usuarios' configurada
+
+2. CONFIGURAÇÃO DO BANCO:
+   - Execute o script: database/schema.sql
+   - Ou use o script: create_database.py
+
+3. EXECUTAR O BOT:
+   - Duplo clique em: TraderBot-Autenticado.exe
+   - Aguarde a inicialização (pode demorar alguns segundos)
+   - Acesse: http://localhost:3000
+
+4. LOGIN:
+   - E-mail: wagnerlcg@gmail.com
+   - Sistema redirecionará automaticamente
+
+🔧 FUNCIONALIDADES:
+==================
+
+✅ Sistema de Autenticação MySQL
+✅ Login por e-mail
+✅ Validação de pagamento (campo 'pagou')
+✅ Sessões seguras
+✅ Interface web moderna
+✅ Bot de trading IQ Option
+✅ Modos DEMO e REAL
+✅ Gerenciamento de sinais
+✅ Logs em tempo real
+
+📊 ESTRUTURA DO BANCO:
+=====================
+
+Tabela: usuarios
+- id (INT, AUTO_INCREMENT, PRIMARY KEY)
+- e-mail (VARCHAR(255), UNIQUE, NOT NULL)
+- nome (VARCHAR(255))
+- celular (VARCHAR(14))
+- pagou (BOOLEAN, DEFAULT TRUE)
+- data_cadastro (TIMESTAMP)
+- ultimo_acesso (TIMESTAMP)
+
+👥 USUÁRIOS PADRÃO:
+==================
+
+1. wagnerlcg@gmail.com (Administrador)
+   - Celular: 24981148429
+   - Status: Pagou = TRUE
+
+2. exemplo@exemplo.com (Nome Um)
+   - Celular: 24981148430
+   - Status: Pagou = TRUE
+
+🔒 SEGURANÇA:
+============
+
+- Apenas usuários com 'pagou = TRUE' podem acessar
+- Sessões seguras com Flask-Session
+- Autenticação obrigatória em todas as rotas
+- Logout automático ao fechar navegador
+
+📝 LOGS:
+========
+
+- Logs do sistema: logs/
+- Logs do banco: Console do executável
+- Logs de autenticação: Console do executável
+
+⚠️ OBSERVAÇÕES:
+==============
+
+1. O executável é standalone (não precisa de Python instalado)
+2. Inclui todas as dependências necessárias
+3. Compatível com Windows 10/11
+4. Usa modo threading (sem eventlet) para melhor compatibilidade
+5. Tamanho: 46.43 MB
+
+🆘 SOLUÇÃO DE PROBLEMAS:
+========================
+
+1. Erro de conexão com banco:
+   - Verifique se MariaDB está rodando
+   - Confirme se o banco 'trader_bot' existe
+   - Verifique as credenciais
+
+2. Erro de login:
+   - Confirme se o usuário está na tabela 'usuarios'
+   - Verifique se 'pagou = TRUE'
+   - Confirme o e-mail digitado
+
+3. Interface não carrega:
+   - Aguarde alguns segundos para inicialização
+   - Verifique se a porta 3000 está livre
+   - Tente acessar: http://127.0.0.1:3000
+
+📞 SUPORTE:
+===========
+
+Para suporte técnico ou dúvidas:
+- Verifique os logs no console
+- Consulte a documentação
+- Teste a conexão com: test_mariadb.py
+
+🎯 VERSÃO ATUALIZADA:
+====================
+
+Esta versão inclui:
+- Sistema de autenticação MySQL completo
+- Validação de pagamento
+- Interface web moderna
+- Compatibilidade com Python 3.12
+- Correção de problemas eventlet/SSL
+- Modo threading para melhor performance
+
+=====================================================
+✅ EXECUTÁVEL PRONTO PARA USO!
+=====================================================

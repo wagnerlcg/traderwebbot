@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  trader-bot:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER=trader_bot
+      - MYSQL_PASSWORD=trader123
+      - MYSQL_DB=trader_bot
+      - MYSQL_CHARSET=utf8mb4
+      - SECRET_KEY=chave_secreta_para_producao_troque_por_algo_seguro
+      - FLASK_ENV=production
+      - FLASK_DEBUG=False
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./sounds:/app/sounds
+
+  db:
+    image: mariadb:10.6
+    environment:
+      - MYSQL_ROOT_PASSWORD=root123
+      - MYSQL_DATABASE=trader_bot
+      - MYSQL_USER=trader_bot
+      - MYSQL_PASSWORD=trader123
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+volumes:
+  db_data:

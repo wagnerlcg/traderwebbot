@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: web-trader-bot-sinais
+    env: python
+    region: oregon
+    plan: free
+    rootDir: ./  # ou ./public_html se estiver em subpasta
+    buildCommand: pip install -r requirements.txt
+    startCommand: python web_interface.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: PORT
+        value: 5000
+

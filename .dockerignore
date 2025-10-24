@@ -1,0 +1,49 @@
+# Não incluir no build Docker
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.log
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+logs/*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Credenciais locais (use env vars)
+config/credentials.json
+
+# Backups
+*.zip
+*.tar.gz
+
+# Scripts de deploy
+setup_vps.sh
+deploy_vps.sh
+instalar_python.sh
+*.bat
+

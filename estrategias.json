@@ -1,0 +1,68 @@
+{
+  "AVISO": "Arquivo de configuração de estratégias de gerenciamento de banca",
+  "COMO_USAR": "O bot solicitará qual estratégia usar ao iniciar",
+  
+  "estrategias_disponiveis": {
+    "1": {
+      "nome": "Masaniello",
+      "descricao": "Progressão calculada matematicamente baseada em ciclos",
+      "parametros": {
+        "quantidade_entradas": {
+          "descricao": "Número total de operações no ciclo",
+          "tipo": "int",
+          "min": 2,
+          "max": 20,
+          "padrao": 10
+        },
+        "numero_acertos": {
+          "descricao": "Quantos acertos você espera ter no ciclo",
+          "tipo": "int",
+          "min": 1,
+          "max": "quantidade_entradas - 1",
+          "padrao": 7
+        },
+        "objetivo_lucro_percentual": {
+          "descricao": "Lucro desejado ao final do ciclo (%)",
+          "tipo": "float",
+          "min": 5,
+          "max": 50,
+          "padrao": 20
+        }
+      }
+    },
+    "2": {
+      "nome": "Soros",
+      "descricao": "Estratégia de gerenciamento (AGUARDANDO DEFINIÇÃO)",
+      "parametros": {
+        "NOTA": "Aguardando definição dos parâmetros desta estratégia"
+      },
+      "status": "EM_DESENVOLVIMENTO"
+    },
+    "3": {
+      "nome": "Martingale",
+      "descricao": "Progressão geométrica clássica (dobra após cada perda)",
+      "parametros": {
+        "nivel": {
+          "descricao": "Nível do Martingale (1=entrada+1defesa, 2=entrada+2defesas)",
+          "tipo": "int",
+          "opcoes": [1, 2],
+          "padrao": 2
+        },
+        "multiplicador": {
+          "descricao": "Multiplicador da progressão",
+          "tipo": "float",
+          "min": 1.5,
+          "max": 3.0,
+          "padrao": 2.0
+        }
+      }
+    }
+  },
+  
+  "notas": {
+    "masaniello": "Baseado em análise combinatória italiana, distribui risco em ciclos",
+    "soros": "IMPORTANTE: Defina os parâmetros desta estratégia com o desenvolvedor",
+    "martingale": "Clássico e simples, mas pode crescer rápido. Use com cautela."
+  }
+}
+

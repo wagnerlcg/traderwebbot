@@ -1,0 +1,126 @@
+🤖 TRADER BOT - COMO USAR
+===========================
+
+📁 EXECUTÁVEIS DISPONÍVEIS:
+============================
+
+1. TraderBot-Autenticado-v2.exe (46.43 MB)
+   - Interface web com autenticação MySQL
+   - Acesse: http://localhost:3000
+   - Login: wagnerlcg@gmail.com
+
+2. TraderBot-Direto.exe (81.17 MB)
+   - Bot direto (sem interface web)
+   - Execução no terminal
+   - Sem autenticação necessária
+
+🚀 COMO USAR:
+=============
+
+🌐 INTERFACE WEB (Recomendado):
+- Execute: INICIAR-INTERFACE-WEB.bat
+- Acesse: http://localhost:3000
+- Login: wagnerlcg@gmail.com
+- Configure e inicie o bot
+
+⚡ EXECUÇÃO DIRETA:
+- Execute: INICIAR-DEMO-DIRETO.bat (DEMO)
+- Execute: INICIAR-REAL-DIRETO.bat (REAL)
+- Bot roda diretamente no terminal
+
+🐍 EXECUÇÃO PYTHON (Desenvolvimento):
+- Execute: INICIAR-DEMO.bat (DEMO)
+- Execute: INICIAR-REAL.bat (REAL)
+- Requer Python instalado
+
+⚠️ PRÉ-REQUISITOS:
+==================
+
+INTERFACE WEB:
+- MariaDB/MySQL instalado
+- Banco 'trader_bot' criado
+- Tabela 'usuarios' configurada
+
+EXECUÇÃO DIRETA:
+- Nenhum pré-requisito
+- Executável standalone
+
+EXECUÇÃO PYTHON:
+- Python instalado
+- Dependências instaladas
+
+🔧 CONFIGURAÇÃO DO BANCO:
+=========================
+
+1. Instale MariaDB/MySQL
+2. Execute: setup-database.sql
+3. Ou use: create_database.py
+4. Configure: config-exemplo.env
+
+📊 FUNCIONALIDADES:
+===================
+
+TODOS OS EXECUTÁVEIS INCLUEM:
+- ✅ Bot IQ Option (DEMO/REAL)
+- ✅ Gerenciamento de sinais
+- ✅ Mensagens simplificadas: "[!] ATIVO FECHADO"
+- ✅ Stop loss configurável (1-50%)
+- ✅ Logs em tempo real
+- ✅ Compatibilidade Windows
+
+INTERFACE WEB ADICIONAL:
+- ✅ Autenticação MySQL
+- ✅ Interface moderna
+- ✅ Controle visual
+- ✅ Histórico de operações
+
+🆘 SOLUÇÃO DE PROBLEMAS:
+========================
+
+ERRO: "Executável não encontrado"
+- Verifique se o arquivo está na pasta dist/
+- Execute o arquivo .bat correto
+
+ERRO: "Banco de dados não encontrado"
+- Use: TraderBot-Direto.exe
+- Ou configure o MariaDB
+
+ERRO: "Invalid async_mode specified"
+- Use: TraderBot-Direto.exe
+- Ou: INICIAR-DEMO-DIRETO.bat
+
+📝 ARQUIVOS DE INICIALIZAÇÃO:
+=============================
+
+🌐 INTERFACE WEB:
+- INICIAR-INTERFACE-WEB.bat (Principal)
+- INICIAR-TRADER-BOT-v2.bat
+- INICIAR-DEMO-v2.bat
+- INICIAR-REAL-v2.bat
+
+⚡ EXECUÇÃO DIRETA:
+- INICIAR-DEMO-DIRETO.bat
+- INICIAR-REAL-DIRETO.bat
+
+🐍 EXECUÇÃO PYTHON:
+- INICIAR-DEMO.bat
+- INICIAR-REAL.bat
+
+🎯 RECOMENDAÇÕES:
+=================
+
+PARA USUÁRIOS FINAIS:
+- Use: INICIAR-INTERFACE-WEB.bat
+- Interface web moderna e intuitiva
+
+PARA SERVIDORES/VPS:
+- Use: INICIAR-DEMO-DIRETO.bat
+- Execução direta sem interface
+
+PARA DESENVOLVIMENTO:
+- Use: INICIAR-DEMO.bat (Python)
+- Debug mais fácil
+
+==========================================
+✅ ESCOLHA A OPÇÃO QUE MELHOR ATENDE SUAS NECESSIDADES!
+==========================================

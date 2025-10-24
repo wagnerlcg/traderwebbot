@@ -1,0 +1,16 @@
+# Configurações do Banco de Dados MariaDB
+# Copie este arquivo para .env e ajuste as configurações
+
+MYSQL_HOST=127.0.0.1
+MYSQL_PORT=3306
+MYSQL_USER=root
+MYSQL_PASSWORD=sua_senha_aqui
+MYSQL_DATABASE=trader_bot
+
+# Configurações da Aplicação
+SECRET_KEY=sua_chave_secreta_aqui
+FLASK_ENV=development
+
+# Configurações específicas do MariaDB
+# SSL desabilitado para conexões locais
+SSL_DISABLED=true

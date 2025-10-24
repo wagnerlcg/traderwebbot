@@ -1,0 +1,118 @@
+🤖 TRADER BOT v2 - ARQUIVOS DE INICIALIZAÇÃO
+===============================================
+
+📁 EXECUTÁVEL PRINCIPAL:
+========================
+TraderBot-Autenticado-v2.exe (46.43 MB)
+- Versão v2 com mensagens simplificadas
+- Sistema de autenticação MySQL
+- Interface web moderna
+
+🚀 ARQUIVOS DE INICIALIZAÇÃO:
+=============================
+
+1. INICIAR-TRADER-BOT-v2.bat
+   - Inicialização principal da versão v2
+   - Interface web com autenticação
+   - Recomendado para uso geral
+
+2. INICIAR-DEMO-v2.bat
+   - Modo DEMO (sem dinheiro real)
+   - Interface web com autenticação
+   - Ideal para testes e aprendizado
+
+3. INICIAR-REAL-v2.bat
+   - Modo REAL (dinheiro real)
+   - Confirmação de segurança obrigatória
+   - Para operações reais
+
+4. INICIAR-TRADER-BOT-AUTENTICADO.bat
+   - Versão atualizada para v2
+   - Interface web com autenticação
+   - Compatível com versão anterior
+
+📋 ARQUIVOS LEGADOS (v1):
+=========================
+
+5. INICIAR-DEMO.bat
+   - Versão anterior (ainda funcional)
+   - Usa TraderBot-Autenticado-v2.exe
+
+6. INICIAR-REAL.bat
+   - Versão anterior (ainda funcional)
+   - Usa TraderBot-Autenticado-v2.exe
+
+🔧 COMO USAR:
+=============
+
+RECOMENDADO (v2):
+- Use: INICIAR-TRADER-BOT-v2.bat
+- Acesse: http://localhost:3000
+- Login: wagnerlcg@gmail.com
+
+MODO DEMO:
+- Use: INICIAR-DEMO-v2.bat
+- Para testes sem dinheiro real
+
+MODO REAL:
+- Use: INICIAR-REAL-v2.bat
+- Confirmação de segurança obrigatória
+
+⚠️ PRÉ-REQUISITOS:
+==================
+
+1. MariaDB/MySQL instalado e rodando
+2. Banco de dados 'trader_bot' criado
+3. Tabela 'usuarios' configurada
+4. Usuário cadastrado (wagnerlcg@gmail.com)
+
+📊 FUNCIONALIDADES v2:
+======================
+
+✅ Sistema de Autenticação MySQL
+✅ Login por e-mail obrigatório
+✅ Validação de pagamento
+✅ Sessões seguras
+✅ Interface web moderna
+✅ Mensagens simplificadas: "[!] ATIVO FECHADO"
+✅ Bot IQ Option (DEMO/REAL)
+✅ Gerenciamento de sinais
+✅ Logs em tempo real
+✅ Compatibilidade Windows
+
+🎯 DIFERENÇAS v1 vs v2:
+========================
+
+v1 (TraderBot-Autenticado.exe):
+- Mensagens: "[!] ERRO TECNICO"
+- Interface básica
+- Autenticação simples
+
+v2 (TraderBot-Autenticado-v2.exe):
+- Mensagens: "[!] ATIVO FECHADO"
+- Interface moderna
+- Autenticação MySQL completa
+- Validação de pagamento
+- Sessões seguras
+
+📝 CONFIGURAÇÃO:
+================
+
+1. Execute: setup-database.sql
+2. Configure: config-exemplo.env
+3. Execute: INICIAR-TRADER-BOT-v2.bat
+4. Acesse: http://localhost:3000
+5. Login: wagnerlcg@gmail.com
+
+🆘 SUPORTE:
+===========
+
+Para problemas:
+- Verifique os logs no console
+- Consulte: INSTRUCOES-v2-ATIVO-FECHADO.txt
+- Teste conexão: test_mariadb.py
+
+===============================================
+✅ TODOS OS ARQUIVOS DE INICIALIZAÇÃO ATUALIZADOS!
+✅ VERSÃO v2 PRONTA PARA USO!
+===============================================

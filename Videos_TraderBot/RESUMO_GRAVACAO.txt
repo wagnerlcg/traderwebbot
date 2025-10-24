@@ -1,0 +1,72 @@
+🎥 RESUMO - GRAVAÇÃO DE VÍDEO DE DEMONSTRAÇÃO
+===============================================
+
+📁 ONDE O VÍDEO FICA SALVO:
+============================
+
+✅ Pasta criada: Videos_TraderBot\Raw\
+✅ Local completo: C:\Users\conta\apps-python\web-trader-bot-sinais\Videos_TraderBot\Raw\
+
+🎬 FERRAMENTAS RECOMENDADAS:
+============================
+
+1. OBS Studio (GRATUITO) - RECOMENDADO
+   - Download: https://obsproject.com/
+   - Configurar para salvar em: Videos_TraderBot\Raw\
+
+2. Bandicam (PAGO)
+   - Download: https://www.bandicam.com/
+   - Local padrão: Documents\Bandicam\
+
+3. Camtasia (PAGO)
+   - Download: https://www.techsmith.com/camtasia.html
+   - Local padrão: Documents\Camtasia Studio\
+
+🚀 COMO GRAVAR:
+===============
+
+1. Instale OBS Studio
+2. Configure para salvar em: Videos_TraderBot\Raw\
+3. Execute: python demo_impacto.py
+4. Grave a tela durante a execução
+5. Narre os pontos principais
+
+📊 CONFIGURAÇÕES:
+=================
+
+- Resolução: 1920x1080 (Full HD)
+- Taxa de quadros: 30 FPS
+- Qualidade: Alta
+- Formato: MP4
+
+🎯 ROTEIRO:
+===========
+
+- 0-15s: Introdução
+- 15-120s: Demonstração
+- 120-150s: Resultados
+- 150-180s: Call to action
+
+📁 ESTRUTURA DE PASTAS:
+=======================
+
+Videos_TraderBot/
+├── Raw/           # Vídeos originais
+├── Edited/        # Vídeos editados
+├── Social/        # Para redes sociais
+└── WhatsApp/      # Para WhatsApp
+
+📖 DOCUMENTAÇÃO:
+================
+
+- COMO_GRAVAR_VIDEO.md - Tutorial completo
+- INICIAR_GRAVACAO.bat - Script de preparação
+- RESUMO_GRAVACAO.txt - Este arquivo
+
+🎉 PRONTO PARA GRAVAR!
+======================
+
+Execute: INICIAR_GRAVACAO.bat
+Ou use: python demo_impacto.py
+
+===============================================

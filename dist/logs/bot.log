@@ -1,0 +1,559 @@
+2025-10-23 06:26:18,456 [INFO] Iniciando modo DEMO com arquivo de sinais: data/sinais.txt
+2025-10-23 06:26:18,456 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-23 06:26:18,456 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-23 06:26:21,469 [INFO] Tentando conectar...
+2025-10-23 06:26:23,956 [INFO] Conexao estabelecida com sucesso!
+2025-10-23 06:26:23,956 [INFO] Conectado na conta demo
+2025-10-23 06:26:23,956 [INFO] 
+2025-10-23 06:26:23,956 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-23 06:26:23,956 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-23 06:26:23,961 [INFO] 
+2025-10-23 06:26:24,728 [INFO] Saldo conta PRÁTICA: $12215.98
+2025-10-23 06:26:31,088 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-23 06:26:31,088 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-23 06:26:31,088 [INFO] ===========================
+2025-10-23 06:26:31,088 [INFO] 
+2025-10-23 06:26:31,088 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-23 06:26:31,088 [INFO] Tipo: 5.0% da banca
+2025-10-23 06:26:31,088 [INFO] Valor atual: $610.80 (banca: $12215.98)
+2025-10-23 06:26:31,088 [INFO] IMPORTANTE: Valor sera recalculado conforme banca muda
+2025-10-23 06:26:31,088 [INFO] ====================================
+2025-10-23 06:26:31,088 [INFO] 
+2025-10-23 06:26:31,088 [INFO] Estrategia selecionada: Martingale
+2025-10-23 06:26:31,088 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-23 06:26:31,088 [INFO] === PROTECOES ATIVADAS ===
+2025-10-23 06:26:31,088 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-23 06:26:31,103 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-23 06:26:31,103 [INFO] Stop Loss: 50.0% da banca (DINAMICO)
+2025-10-23 06:26:31,103 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-23 06:26:31,103 [INFO] Banca inicial: $12215.98 | Limite inicial: $6107.99
+2025-10-23 06:26:31,103 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-23 06:26:31,103 [INFO] ==========================
+2025-10-23 06:26:31,103 [INFO] 
+2025-10-23 06:26:31,103 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-23 06:26:31,103 [INFO]  1. 06:27 | AUDCAD-OTC      | CALL | M 1 | Entrada: $ 610.80 | P1: $1313.22 | P2: $2823.42
+2025-10-23 06:26:31,103 [INFO] ====================================================================================================
+2025-10-23 06:26:31,103 [INFO] 
+2025-10-23 06:26:31,103 [INFO] ============================================================
+2025-10-23 06:26:31,103 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-23 06:26:31,103 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-23 06:26:31,103 [INFO] ============================================================
+2025-10-23 06:27:31,717 [INFO] SINAL DEMO encontrado: CALL em AUDCAD-OTC (AUDCAD-OTC) por 1 min
+2025-10-23 06:27:31,717 [INFO] Entrada: $610.80 | Protecao 1: $1313.22 | Protecao 2: $2823.42
+2025-10-23 06:27:32,001 [INFO] >>> ENTRADA PRINCIPAL: $610.80 [Saldo: $12215.98 | Max: $6107.99 | Margem: $5497.19]
+2025-10-23 06:27:35,303 [INFO] Saldo antes: $12215.98
+2025-10-23 06:27:36,080 [INFO] Ordem CALL executada em AUDCAD-OTC: (True, 13220273449)
+2025-10-23 06:27:36,080 [INFO] Aguardando resultado da ordem ID: 13220273449
+2025-10-23 06:27:36,080 [INFO] Aguardando 70s para expiracao...
+2025-10-23 06:28:51,392 [INFO] Saldo depois: $11605.18 | Diferenca: $-610.80
+2025-10-23 06:28:51,392 [INFO] >>> LOSS! Prejuizo: $610.80
+2025-10-23 06:28:51,693 [INFO] >>> PROTECAO 1: $1313.22 [Saldo: $11605.18 | Max: $5802.59]
+2025-10-23 06:28:54,213 [INFO] Saldo antes: $11605.18
+2025-10-23 06:28:54,925 [INFO] Ordem CALL executada em AUDCAD-OTC: (True, 13220275864)
+2025-10-23 06:28:54,927 [INFO] Aguardando resultado da ordem ID: 13220275864
+2025-10-23 06:28:54,927 [INFO] Aguardando 70s para expiracao...
+2025-10-23 06:30:10,219 [INFO] Saldo depois: $11440.26 | Diferenca: $-164.92
+2025-10-23 06:30:10,219 [INFO] >>> LOSS! Prejuizo: $1313.22
+2025-10-23 06:30:10,519 [INFO] >>> PROTECAO 2: $2823.42 [Saldo: $11440.26 | Max: $5720.13]
+2025-10-23 06:30:13,186 [INFO] Saldo antes: $11440.26
+2025-10-23 06:30:13,933 [INFO] Ordem CALL executada em AUDCAD-OTC: (True, 13220278170)
+2025-10-23 06:30:13,935 [INFO] Aguardando resultado da ordem ID: 13220278170
+2025-10-23 06:30:13,935 [INFO] Aguardando 70s para expiracao...
+2025-10-23 06:31:29,258 [INFO] Saldo depois: $13924.87 | Diferenca: $2484.61
+2025-10-23 06:31:29,258 [INFO] >>> WIN! Lucro: $2484.61
+2025-10-23 06:31:29,258 [INFO] === PROTECAO 2 WIN! Lucro total: $560.59
+2025-10-23 06:31:29,258 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-23 06:32:29,547 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-23 06:32:29,547 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-23 07:59:55,402 [INFO] Iniciando modo DEMO com arquivo de sinais: data/sinais.txt
+2025-10-23 07:59:55,402 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-23 07:59:55,402 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-23 07:59:58,415 [INFO] Tentando conectar...
+2025-10-23 08:00:01,802 [INFO] Conexao estabelecida com sucesso!
+2025-10-23 08:00:01,802 [INFO] Conectado na conta demo
+2025-10-23 08:00:01,802 [INFO] 
+2025-10-23 08:00:01,802 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-23 08:00:01,802 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-23 08:00:01,802 [INFO] 
+2025-10-23 08:00:02,406 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-23 08:00:11,404 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-23 08:00:11,405 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-23 08:00:11,405 [INFO] ===========================
+2025-10-23 08:00:11,405 [INFO] 
+2025-10-23 08:00:11,405 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-23 08:00:11,405 [INFO] Tipo: Valor fixo
+2025-10-23 08:00:11,405 [INFO] Valor: $10.00
+2025-10-23 08:00:11,405 [INFO] ====================================
+2025-10-23 08:00:11,405 [INFO] 
+2025-10-23 08:00:11,406 [INFO] Estrategia selecionada: Martingale
+2025-10-23 08:00:11,406 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-23 08:00:11,406 [INFO] === PROTECOES ATIVADAS ===
+2025-10-23 08:00:11,406 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-23 08:00:11,406 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-23 08:00:11,406 [INFO] Stop Loss: 5.0% da banca (DINAMICO)
+2025-10-23 08:00:11,406 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-23 08:00:11,406 [INFO] Banca inicial: $13924.87 | Limite inicial: $696.24
+2025-10-23 08:00:11,406 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-23 08:00:11,406 [INFO] ==========================
+2025-10-23 08:00:11,406 [INFO] 
+2025-10-23 08:00:11,406 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-23 08:00:11,406 [INFO]  1. 07:36 | EURUSD          | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 08:00:11,406 [INFO] ====================================================================================================
+2025-10-23 08:00:11,406 [INFO] 
+2025-10-23 08:00:11,406 [INFO] ============================================================
+2025-10-23 08:00:11,406 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-23 08:00:11,406 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-23 08:00:11,406 [INFO] ============================================================
+2025-10-23 08:00:11,736 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-23 08:00:11,736 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-23 08:00:11,736 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-23 08:00:59,507 [INFO] Iniciando modo DEMO com arquivo de sinais: data/sinais.txt
+2025-10-23 08:00:59,507 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-23 08:00:59,507 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-23 08:01:02,510 [INFO] Tentando conectar...
+2025-10-23 08:01:05,553 [INFO] Conexao estabelecida com sucesso!
+2025-10-23 08:01:05,553 [INFO] Conectado na conta demo
+2025-10-23 08:01:05,553 [INFO] 
+2025-10-23 08:01:05,553 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-23 08:01:05,553 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-23 08:01:05,557 [INFO] 
+2025-10-23 08:01:05,981 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-23 08:01:11,632 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-23 08:01:11,632 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-23 08:01:11,632 [INFO] ===========================
+2025-10-23 08:01:11,632 [INFO] 
+2025-10-23 08:01:11,632 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-23 08:01:11,632 [INFO] Tipo: Valor fixo
+2025-10-23 08:01:11,632 [INFO] Valor: $10.00
+2025-10-23 08:01:11,632 [INFO] ====================================
+2025-10-23 08:01:11,632 [INFO] 
+2025-10-23 08:01:11,632 [INFO] Estrategia selecionada: Martingale
+2025-10-23 08:01:11,632 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-23 08:01:11,632 [INFO] === PROTECOES ATIVADAS ===
+2025-10-23 08:01:11,632 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-23 08:01:11,632 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-23 08:01:11,632 [INFO] Stop Loss: 5.0% da banca (DINAMICO)
+2025-10-23 08:01:11,632 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-23 08:01:11,632 [INFO] Banca inicial: $13924.87 | Limite inicial: $696.24
+2025-10-23 08:01:11,632 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-23 08:01:11,632 [INFO] ==========================
+2025-10-23 08:01:11,632 [INFO] 
+2025-10-23 08:01:11,632 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-23 08:01:11,632 [INFO]  1. 08:02 | EURUSD          | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 08:01:11,632 [INFO] ====================================================================================================
+2025-10-23 08:01:11,632 [INFO] 
+2025-10-23 08:01:11,632 [INFO] ============================================================
+2025-10-23 08:01:11,632 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-23 08:01:11,632 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-23 08:01:11,632 [INFO] ============================================================
+2025-10-23 08:02:12,223 [INFO] SINAL DEMO encontrado: PUT em EURUSD (EURUSD) por 1 min
+2025-10-23 08:02:12,223 [INFO] Entrada: $10.00 | Protecao 1: $21.50 | Protecao 2: $46.23
+2025-10-23 08:02:12,542 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $13924.87 | Max: $6962.44 | Margem: $6952.44]
+2025-10-23 08:02:15,814 [INFO] Saldo antes: $13924.87
+2025-10-23 08:02:16,144 [INFO] Ordem PUT executada em EURUSD: (False, 'Cannot purchase an option (active is suspended)')
+2025-10-23 08:02:16,144 [WARNING] Compra rejeitada pela corretora: Cannot purchase an option (active is suspended)
+2025-10-23 08:02:16,144 [WARNING] ATIVO REJEITADO: 'EURUSD' - Cannot purchase an option (active is suspended)
+2025-10-23 08:02:16,144 [WARNING] [!] ERRO TECNICO - Nao conta como LOSS
+2025-10-23 08:02:16,144 [WARNING] [!] ERRO TECNICO - Operacao nao executada, nao conta como LOSS
+2025-10-23 08:02:16,144 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-23 08:02:16,420 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-23 08:02:16,420 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-23 08:10:48,683 [INFO] Iniciando modo DEMO com arquivo de sinais: data/sinais.txt
+2025-10-23 08:10:48,683 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-23 08:10:48,683 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-23 08:10:51,697 [INFO] Tentando conectar...
+2025-10-23 08:10:54,986 [INFO] Conexao estabelecida com sucesso!
+2025-10-23 08:10:54,986 [INFO] Conectado na conta demo
+2025-10-23 08:10:54,986 [INFO] 
+2025-10-23 08:10:54,986 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-23 08:10:54,986 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-23 08:10:54,986 [INFO] 
+2025-10-23 08:10:55,616 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-23 08:11:02,708 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-23 08:11:02,708 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-23 08:11:02,708 [INFO] ===========================
+2025-10-23 08:11:02,708 [INFO] 
+2025-10-23 08:11:02,708 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-23 08:11:02,708 [INFO] Tipo: 5.0% da banca
+2025-10-23 08:11:02,708 [INFO] Valor atual: $696.24 (banca: $13924.87)
+2025-10-23 08:11:02,708 [INFO] IMPORTANTE: Valor sera recalculado conforme banca muda
+2025-10-23 08:11:02,708 [INFO] ====================================
+2025-10-23 08:11:02,708 [INFO] 
+2025-10-23 08:11:02,708 [INFO] Estrategia selecionada: Martingale
+2025-10-23 08:11:02,708 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-23 08:11:02,711 [INFO] === PROTECOES ATIVADAS ===
+2025-10-23 08:11:02,711 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-23 08:11:02,711 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-23 08:11:02,711 [INFO] Stop Loss: 5.0% da banca (DINAMICO)
+2025-10-23 08:11:02,711 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-23 08:11:02,711 [INFO] Banca inicial: $13924.87 | Limite inicial: $696.24
+2025-10-23 08:11:02,711 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-23 08:11:02,711 [INFO] ==========================
+2025-10-23 08:11:02,711 [INFO] 
+2025-10-23 08:11:02,711 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-23 08:11:02,711 [INFO]  1. 08:12 | EURUSD          | PUT  | M 1 | Entrada: $ 696.24 | P1: $1496.92 | P2: $3218.38
+2025-10-23 08:11:02,711 [INFO] ====================================================================================================
+2025-10-23 08:11:02,711 [INFO] 
+2025-10-23 08:11:02,711 [INFO] ============================================================
+2025-10-23 08:11:02,714 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-23 08:11:02,714 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-23 08:11:02,714 [INFO] ============================================================
+2025-10-23 08:12:03,335 [INFO] SINAL DEMO encontrado: PUT em EURUSD (EURUSD) por 1 min
+2025-10-23 08:12:03,335 [INFO] Entrada: $696.24 | Protecao 1: $1496.92 | Protecao 2: $3218.38
+2025-10-23 08:12:03,590 [INFO] >>> ENTRADA PRINCIPAL: $696.24 [Saldo: $13924.87 | Max: $6962.44 | Margem: $6266.20]
+2025-10-23 08:12:06,845 [INFO] Saldo antes: $13924.87
+2025-10-23 08:12:07,158 [INFO] Ordem PUT executada em EURUSD: (False, 'Cannot purchase an option (active is suspended)')
+2025-10-23 08:12:07,158 [WARNING] Compra rejeitada pela corretora: Cannot purchase an option (active is suspended)
+2025-10-23 08:12:07,158 [WARNING] ATIVO REJEITADO: 'EURUSD' - Cannot purchase an option (active is suspended)
+2025-10-23 08:12:07,158 [WARNING] [!] ERRO TECNICO - Nao conta como LOSS
+2025-10-23 08:12:07,160 [WARNING] [!] ERRO TECNICO - Operacao nao executada, nao conta como LOSS
+2025-10-23 08:12:07,160 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-23 08:12:07,431 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-23 08:12:07,431 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-23 08:22:15,371 [INFO] Iniciando modo DEMO com arquivo de sinais: data/sinais.txt
+2025-10-23 08:22:15,371 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-23 08:22:15,371 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-23 08:22:18,383 [INFO] Tentando conectar...
+2025-10-23 08:22:22,035 [INFO] Conexao estabelecida com sucesso!
+2025-10-23 08:22:22,038 [INFO] Conectado na conta demo
+2025-10-23 08:22:22,038 [INFO] 
+2025-10-23 08:22:22,038 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-23 08:22:22,038 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-23 08:22:22,038 [INFO] 
+2025-10-23 08:22:22,366 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-23 08:22:28,241 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-23 08:22:28,241 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-23 08:22:28,241 [INFO] ===========================
+2025-10-23 08:22:28,241 [INFO] 
+2025-10-23 08:22:28,241 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-23 08:22:28,241 [INFO] Tipo: Valor fixo
+2025-10-23 08:22:28,241 [INFO] Valor: $10.00
+2025-10-23 08:22:28,241 [INFO] ====================================
+2025-10-23 08:22:28,241 [INFO] 
+2025-10-23 08:22:28,241 [INFO] Estrategia selecionada: Martingale
+2025-10-23 08:22:28,241 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-23 08:22:28,241 [INFO] === PROTECOES ATIVADAS ===
+2025-10-23 08:22:28,241 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-23 08:22:28,241 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-23 08:22:28,241 [INFO] Stop Loss: 5.0% da banca (DINAMICO)
+2025-10-23 08:22:28,241 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-23 08:22:28,241 [INFO] Banca inicial: $13924.87 | Limite inicial: $696.24
+2025-10-23 08:22:28,241 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-23 08:22:28,241 [INFO] ==========================
+2025-10-23 08:22:28,241 [INFO] 
+2025-10-23 08:22:28,241 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-23 08:22:28,241 [INFO]  1. 08:23 | EURUSD          | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 08:22:28,241 [INFO] ====================================================================================================
+2025-10-23 08:22:28,241 [INFO] 
+2025-10-23 08:22:28,241 [INFO] ============================================================
+2025-10-23 08:22:28,241 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-23 08:22:28,241 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-23 08:22:28,241 [INFO] ============================================================
+2025-10-23 08:23:28,830 [INFO] SINAL DEMO encontrado: PUT em EURUSD (EURUSD) por 1 min
+2025-10-23 08:23:28,830 [INFO] Entrada: $10.00 | Protecao 1: $21.50 | Protecao 2: $46.23
+2025-10-23 08:23:29,116 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $13924.87 | Max: $6962.44 | Margem: $6952.44]
+2025-10-23 08:23:32,456 [INFO] Saldo antes: $13924.87
+2025-10-23 08:23:32,774 [INFO] Ordem PUT executada em EURUSD: (False, 'Cannot purchase an option (active is suspended)')
+2025-10-23 08:23:32,774 [WARNING] Compra rejeitada pela corretora: Cannot purchase an option (active is suspended)
+2025-10-23 08:23:32,774 [WARNING] ATIVO REJEITADO: 'EURUSD' - Cannot purchase an option (active is suspended)
+2025-10-23 08:23:32,774 [WARNING] [!] ERRO TECNICO - Nao conta como LOSS
+2025-10-23 08:23:32,775 [WARNING] [!] ERRO TECNICO - Operacao nao executada, nao conta como LOSS
+2025-10-23 08:23:32,775 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-23 08:23:33,060 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-23 08:23:33,060 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-23 08:24:23,224 [INFO] Iniciando modo DEMO com arquivo de sinais: data/sinais.txt
+2025-10-23 08:24:23,224 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-23 08:24:23,224 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-23 08:24:26,233 [INFO] Tentando conectar...
+2025-10-23 08:24:29,264 [INFO] Conexao estabelecida com sucesso!
+2025-10-23 08:24:29,264 [INFO] Conectado na conta demo
+2025-10-23 08:24:29,264 [INFO] 
+2025-10-23 08:24:29,264 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-23 08:24:29,264 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-23 08:24:29,264 [INFO] 
+2025-10-23 08:24:29,566 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-23 08:24:35,126 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-23 08:24:35,127 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-23 08:24:35,127 [INFO] ===========================
+2025-10-23 08:24:35,127 [INFO] 
+2025-10-23 08:24:35,127 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-23 08:24:35,127 [INFO] Tipo: Valor fixo
+2025-10-23 08:24:35,127 [INFO] Valor: $10.00
+2025-10-23 08:24:35,127 [INFO] ====================================
+2025-10-23 08:24:35,127 [INFO] 
+2025-10-23 08:24:35,127 [INFO] Estrategia selecionada: Martingale
+2025-10-23 08:24:35,127 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-23 08:24:35,127 [INFO] === PROTECOES ATIVADAS ===
+2025-10-23 08:24:35,127 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-23 08:24:35,127 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-23 08:24:35,127 [INFO] Stop Loss: 5.0% da banca (DINAMICO)
+2025-10-23 08:24:35,127 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-23 08:24:35,127 [INFO] Banca inicial: $13924.87 | Limite inicial: $696.24
+2025-10-23 08:24:35,127 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-23 08:24:35,127 [INFO] ==========================
+2025-10-23 08:24:35,127 [INFO] 
+2025-10-23 08:24:35,127 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-23 08:24:35,127 [INFO]  1. 08:25 | EURUSD          | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 08:24:35,127 [INFO] ====================================================================================================
+2025-10-23 08:24:35,127 [INFO] 
+2025-10-23 08:24:35,127 [INFO] ============================================================
+2025-10-23 08:24:35,127 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-23 08:24:35,127 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-23 08:24:35,127 [INFO] ============================================================
+2025-10-23 08:25:35,764 [INFO] SINAL DEMO encontrado: PUT em EURUSD (EURUSD) por 1 min
+2025-10-23 08:25:35,764 [INFO] Entrada: $10.00 | Protecao 1: $21.50 | Protecao 2: $46.23
+2025-10-23 08:25:36,051 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $13924.87 | Max: $6962.44 | Margem: $6952.44]
+2025-10-23 08:25:39,418 [INFO] Saldo antes: $13924.87
+2025-10-23 08:25:39,735 [INFO] Ordem PUT executada em EURUSD: (False, 'Cannot purchase an option (active is suspended)')
+2025-10-23 08:25:39,735 [WARNING] Compra rejeitada pela corretora: Cannot purchase an option (active is suspended)
+2025-10-23 08:25:39,735 [WARNING] ATIVO REJEITADO: 'EURUSD' - Cannot purchase an option (active is suspended)
+2025-10-23 08:25:39,735 [WARNING] [!] ERRO TECNICO - Nao conta como LOSS
+2025-10-23 08:25:39,737 [WARNING] [!] ERRO TECNICO - Operacao nao executada, nao conta como LOSS
+2025-10-23 08:25:39,737 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-23 08:25:40,022 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-23 08:25:40,022 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-23 09:15:44,502 [INFO] Iniciando modo DEMO com arquivo de sinais: data/sinais.txt
+2025-10-23 09:15:44,502 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-23 09:15:44,502 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-23 09:15:47,507 [INFO] Tentando conectar...
+2025-10-23 09:15:52,312 [INFO] Conexao estabelecida com sucesso!
+2025-10-23 09:15:52,315 [INFO] Conectado na conta demo
+2025-10-23 09:15:52,315 [INFO] 
+2025-10-23 09:15:52,315 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-23 09:15:52,315 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-23 09:15:52,315 [INFO] 
+2025-10-23 09:15:52,635 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-23 09:16:03,933 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-23 09:16:03,933 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-23 09:16:03,933 [INFO] ===========================
+2025-10-23 09:16:03,934 [INFO] 
+2025-10-23 09:16:03,934 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-23 09:16:03,934 [INFO] Tipo: Valor fixo
+2025-10-23 09:16:03,934 [INFO] Valor: $10.00
+2025-10-23 09:16:03,934 [INFO] ====================================
+2025-10-23 09:16:03,934 [INFO] 
+2025-10-23 09:16:03,936 [INFO] Estrategia selecionada: Martingale
+2025-10-23 09:16:03,936 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-23 09:16:03,936 [INFO] === PROTECOES ATIVADAS ===
+2025-10-23 09:16:03,936 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-23 09:16:03,936 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-23 09:16:03,936 [INFO] Stop Loss: 5.0% da banca (DINAMICO)
+2025-10-23 09:16:03,936 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-23 09:16:03,936 [INFO] Banca inicial: $13924.87 | Limite inicial: $696.24
+2025-10-23 09:16:03,936 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-23 09:16:03,936 [INFO] ==========================
+2025-10-23 09:16:03,936 [INFO] 
+2025-10-23 09:16:03,936 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-23 09:16:03,936 [INFO]  1. 08:25 | EURUSD          | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 09:16:03,936 [INFO] ====================================================================================================
+2025-10-23 09:16:03,936 [INFO] 
+2025-10-23 09:16:03,936 [INFO] ============================================================
+2025-10-23 09:16:03,936 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-23 09:16:03,936 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-23 09:16:03,936 [INFO] ============================================================
+2025-10-23 09:16:04,221 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-23 09:16:04,221 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-23 13:34:37,134 [INFO] Iniciando modo REAL com arquivo de sinais: data/sinais.txt
+2025-10-23 13:34:37,134 [INFO] Criando sessão IQ_Option (REAL) e conectando...
+2025-10-23 13:34:37,134 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-23 13:34:40,149 [INFO] Tentando conectar...
+2025-10-23 13:34:43,115 [INFO] Conexao estabelecida com sucesso!
+2025-10-23 13:34:43,117 [INFO] Conectado na conta REAL
+2025-10-23 13:34:43,117 [INFO] 
+2025-10-23 13:34:43,117 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-23 13:34:43,117 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-23 13:34:43,118 [INFO] 
+2025-10-23 13:34:43,468 [INFO] Saldo conta REAL: $1295.97
+2025-10-23 13:35:04,992 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-23 13:35:04,993 [INFO] Carregados 5 sinais validos do arquivo
+2025-10-23 13:35:04,993 [INFO] ===========================
+2025-10-23 13:35:04,993 [INFO] 
+2025-10-23 13:35:04,994 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-23 13:35:04,994 [INFO] Tipo: Valor fixo
+2025-10-23 13:35:04,994 [INFO] Valor: $10.00
+2025-10-23 13:35:04,994 [INFO] ====================================
+2025-10-23 13:35:04,994 [INFO] 
+2025-10-23 13:35:04,996 [INFO] Estrategia selecionada: Martingale
+2025-10-23 13:35:04,996 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-23 13:35:04,997 [INFO] === PROTECOES ATIVADAS ===
+2025-10-23 13:35:04,997 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-23 13:35:04,997 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-23 13:35:04,997 [INFO] Stop Loss: 6.0% da banca (DINAMICO)
+2025-10-23 13:35:04,997 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-23 13:35:04,998 [INFO] Banca inicial: $1295.97 | Limite inicial: $77.76
+2025-10-23 13:35:04,998 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-23 13:35:04,998 [INFO] ==========================
+2025-10-23 13:35:04,998 [INFO] 
+2025-10-23 13:35:04,998 [INFO] === SINAIS PROGRAMADOS (5) ===
+2025-10-23 13:35:04,999 [INFO]  1. 13:45 | EURUSD          | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 13:35:04,999 [INFO]  2. 13:46 | EURUSD          | CALL | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 13:35:04,999 [INFO]  3. 13:47 | EURJPY          | CALL | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 13:35:04,999 [INFO]  4. 13:48 | AUDCAD          | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 13:35:04,999 [INFO]  5. 13:50 | EURUSD          | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 13:35:04,999 [INFO] ====================================================================================================
+2025-10-23 13:35:04,999 [INFO] 
+2025-10-23 13:35:05,000 [INFO] ============================================================
+2025-10-23 13:35:05,000 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-23 13:35:05,000 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-23 13:35:05,000 [INFO] ============================================================
+2025-10-23 13:35:05,279 [INFO] Aguardando sinais... Hora atual: 13:35
+2025-10-23 13:40:06,851 [INFO] [Status] Saldo: $1335.21 | Variacao: -3.03% | Perda contabilizada: $0.00
+2025-10-23 13:40:06,851 [INFO] Aguardando sinais... Hora atual: 13:40
+2025-10-23 13:45:08,460 [INFO] SINAL REAL encontrado: PUT em EURUSD (EURUSD) por 1 min
+2025-10-23 13:45:08,460 [INFO] Entrada: $10.00 | Protecao 1: $21.50 | Protecao 2: $46.23
+2025-10-23 13:45:08,776 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $1372.52 | Max: $686.26 | Margem: $676.26]
+2025-10-23 13:45:12,208 [INFO] Saldo antes: $1372.52
+2025-10-23 13:45:12,527 [INFO] Ordem PUT executada em EURUSD: (False, 'Cannot purchase an option (active is suspended)')
+2025-10-23 13:45:12,527 [WARNING] Compra rejeitada pela corretora: Cannot purchase an option (active is suspended)
+2025-10-23 13:45:12,528 [WARNING] ATIVO REJEITADO: 'EURUSD' - Cannot purchase an option (active is suspended)
+2025-10-23 13:45:12,528 [WARNING] [!] ATIVO FECHADO
+2025-10-23 13:45:12,529 [WARNING] [!] ATIVO FECHADO
+2025-10-23 13:45:12,530 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-23 13:45:12,842 [INFO] Aguardando sinais... Hora atual: 13:45
+2025-10-23 13:46:13,149 [INFO] SINAL REAL encontrado: CALL em EURUSD (EURUSD) por 1 min
+2025-10-23 13:46:13,150 [INFO] Entrada: $10.00 | Protecao 1: $21.50 | Protecao 2: $46.23
+2025-10-23 13:46:13,448 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $1372.52 | Max: $686.26 | Margem: $676.26]
+2025-10-23 13:46:16,095 [INFO] Saldo antes: $1372.52
+2025-10-23 13:46:16,381 [INFO] Ordem CALL executada em EURUSD: (False, 'Cannot purchase an option (active is suspended)')
+2025-10-23 13:46:16,381 [WARNING] Compra rejeitada pela corretora: Cannot purchase an option (active is suspended)
+2025-10-23 13:46:16,382 [WARNING] ATIVO REJEITADO: 'EURUSD' - Cannot purchase an option (active is suspended)
+2025-10-23 13:46:16,382 [WARNING] [!] ATIVO FECHADO
+2025-10-23 13:46:16,384 [WARNING] [!] ATIVO FECHADO
+2025-10-23 13:46:16,384 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-23 13:47:17,042 [INFO] SINAL REAL encontrado: CALL em EURJPY (EURJPY) por 1 min
+2025-10-23 13:47:17,043 [INFO] Entrada: $10.00 | Protecao 1: $21.50 | Protecao 2: $46.23
+2025-10-23 13:47:17,387 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $1372.52 | Max: $686.26 | Margem: $676.26]
+2025-10-23 13:47:20,237 [INFO] Saldo antes: $1372.52
+2025-10-23 13:47:20,536 [INFO] Ordem CALL executada em EURJPY: (False, 'Cannot purchase an option (active is suspended)')
+2025-10-23 13:47:20,537 [WARNING] Compra rejeitada pela corretora: Cannot purchase an option (active is suspended)
+2025-10-23 13:47:20,537 [WARNING] ATIVO REJEITADO: 'EURJPY' - Cannot purchase an option (active is suspended)
+2025-10-23 13:47:20,537 [WARNING] [!] ATIVO FECHADO
+2025-10-23 13:47:20,539 [WARNING] [!] ATIVO FECHADO
+2025-10-23 13:47:20,539 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-23 13:48:21,147 [INFO] SINAL REAL encontrado: PUT em AUDCAD (AUDCAD) por 1 min
+2025-10-23 13:48:21,147 [INFO] Entrada: $10.00 | Protecao 1: $21.50 | Protecao 2: $46.23
+2025-10-23 13:48:21,461 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $1372.52 | Max: $686.26 | Margem: $676.26]
+2025-10-23 13:48:24,249 [INFO] Saldo antes: $1372.52
+2025-10-23 13:48:24,535 [INFO] Ordem PUT executada em AUDCAD: (False, 'Cannot purchase an option (active is suspended)')
+2025-10-23 13:48:24,535 [WARNING] Compra rejeitada pela corretora: Cannot purchase an option (active is suspended)
+2025-10-23 13:48:24,536 [WARNING] ATIVO REJEITADO: 'AUDCAD' - Cannot purchase an option (active is suspended)
+2025-10-23 13:48:24,536 [WARNING] [!] ATIVO FECHADO
+2025-10-23 13:48:24,538 [WARNING] [!] ATIVO FECHADO
+2025-10-23 13:48:24,538 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-23 13:50:25,451 [INFO] [Status] Saldo: $1372.52 | Variacao: -5.91% | Perda contabilizada: $0.00
+2025-10-23 13:50:25,452 [INFO] SINAL REAL encontrado: PUT em EURUSD (EURUSD) por 1 min
+2025-10-23 13:50:25,452 [INFO] Entrada: $10.00 | Protecao 1: $21.50 | Protecao 2: $46.23
+2025-10-23 13:50:25,767 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $1372.52 | Max: $686.26 | Margem: $676.26]
+2025-10-23 13:50:28,550 [INFO] Saldo antes: $1372.52
+2025-10-23 13:50:28,867 [INFO] Ordem PUT executada em EURUSD: (False, 'Cannot purchase an option (active is suspended)')
+2025-10-23 13:50:28,868 [WARNING] Compra rejeitada pela corretora: Cannot purchase an option (active is suspended)
+2025-10-23 13:50:28,868 [WARNING] ATIVO REJEITADO: 'EURUSD' - Cannot purchase an option (active is suspended)
+2025-10-23 13:50:28,868 [WARNING] [!] ATIVO FECHADO
+2025-10-23 13:50:28,869 [WARNING] [!] ATIVO FECHADO
+2025-10-23 13:50:28,869 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-23 13:50:29,151 [INFO] [Status] Saldo: $1372.52 | Variacao: -5.91% | Perda contabilizada: $0.00
+2025-10-23 13:50:29,151 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-23 13:50:29,151 [INFO] Bot REAL finalizado. Resultado final: $-0.00
+2025-10-23 14:00:51,274 [INFO] Iniciando modo REAL com arquivo de sinais: data/sinais.txt
+2025-10-23 14:00:51,274 [INFO] Criando sessão IQ_Option (REAL) e conectando...
+2025-10-23 14:00:51,274 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-23 14:00:54,289 [INFO] Tentando conectar...
+2025-10-23 14:00:58,559 [INFO] Conexao estabelecida com sucesso!
+2025-10-23 14:00:58,559 [INFO] Conectado na conta REAL
+2025-10-23 14:00:58,559 [INFO] 
+2025-10-23 14:00:58,559 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-23 14:00:58,559 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-23 14:00:58,559 [INFO] 
+2025-10-23 14:00:59,399 [INFO] Saldo conta REAL: $1379.49
+2025-10-23 14:01:17,720 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-23 14:01:17,720 [INFO] Carregados 5 sinais validos do arquivo
+2025-10-23 14:01:17,720 [INFO] ===========================
+2025-10-23 14:01:17,721 [INFO] 
+2025-10-23 14:01:17,721 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-23 14:01:17,721 [INFO] Tipo: Valor fixo
+2025-10-23 14:01:17,721 [INFO] Valor: $10.00
+2025-10-23 14:01:17,721 [INFO] ====================================
+2025-10-23 14:01:17,721 [INFO] 
+2025-10-23 14:01:17,721 [INFO] Estrategia selecionada: Martingale
+2025-10-23 14:01:17,724 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-23 14:01:17,724 [INFO] === PROTECOES ATIVADAS ===
+2025-10-23 14:01:17,724 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-23 14:01:17,724 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-23 14:01:17,724 [INFO] Stop Loss: 5.0% da banca (DINAMICO)
+2025-10-23 14:01:17,724 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-23 14:01:17,724 [INFO] Banca inicial: $1379.49 | Limite inicial: $68.97
+2025-10-23 14:01:17,724 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-23 14:01:17,724 [INFO] ==========================
+2025-10-23 14:01:17,724 [INFO] 
+2025-10-23 14:01:17,724 [INFO] === SINAIS PROGRAMADOS (5) ===
+2025-10-23 14:01:17,724 [INFO]  1. 13:45 | EURUSD          | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 14:01:17,724 [INFO]  2. 13:46 | EURUSD          | CALL | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 14:01:17,724 [INFO]  3. 13:47 | EURJPY          | CALL | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 14:01:17,724 [INFO]  4. 13:48 | AUDCAD          | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 14:01:17,724 [INFO]  5. 13:50 | EURUSD          | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 14:01:17,724 [INFO] ====================================================================================================
+2025-10-23 14:01:17,724 [INFO] 
+2025-10-23 14:01:17,724 [INFO] ============================================================
+2025-10-23 14:01:17,724 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-23 14:01:17,724 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-23 14:01:17,728 [INFO] ============================================================
+2025-10-23 14:01:18,006 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-23 14:01:18,006 [INFO] Bot REAL finalizado. Resultado final: $-0.00
+2025-10-23 14:02:16,740 [INFO] Iniciando modo REAL com arquivo de sinais: data/sinais.txt
+2025-10-23 14:02:16,740 [INFO] Criando sessão IQ_Option (REAL) e conectando...
+2025-10-23 14:02:16,740 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-23 14:02:19,755 [INFO] Tentando conectar...
+2025-10-23 14:02:23,903 [INFO] Conexao estabelecida com sucesso!
+2025-10-23 14:02:23,903 [INFO] Conectado na conta REAL
+2025-10-23 14:02:23,903 [INFO] 
+2025-10-23 14:02:23,903 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-23 14:02:23,903 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-23 14:02:23,903 [INFO] 
+2025-10-23 14:02:24,563 [INFO] Saldo conta REAL: $1379.49
+2025-10-23 14:02:33,363 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-23 14:02:33,363 [INFO] Carregados 6 sinais validos do arquivo
+2025-10-23 14:02:33,363 [INFO] ===========================
+2025-10-23 14:02:33,363 [INFO] 
+2025-10-23 14:02:33,363 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-23 14:02:33,363 [INFO] Tipo: Valor fixo
+2025-10-23 14:02:33,363 [INFO] Valor: $10.00
+2025-10-23 14:02:33,363 [INFO] ====================================
+2025-10-23 14:02:33,365 [INFO] 
+2025-10-23 14:02:33,365 [INFO] Estrategia selecionada: Martingale
+2025-10-23 14:02:33,365 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-23 14:02:33,365 [INFO] === PROTECOES ATIVADAS ===
+2025-10-23 14:02:33,365 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-23 14:02:33,365 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-23 14:02:33,365 [INFO] Stop Loss: 5.0% da banca (DINAMICO)
+2025-10-23 14:02:33,367 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-23 14:02:33,367 [INFO] Banca inicial: $1379.49 | Limite inicial: $68.97
+2025-10-23 14:02:33,367 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-23 14:02:33,367 [INFO] ==========================
+2025-10-23 14:02:33,367 [INFO] 
+2025-10-23 14:02:33,367 [INFO] === SINAIS PROGRAMADOS (6) ===
+2025-10-23 14:02:33,367 [INFO]  1. 14:04 | GBPAUD-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 14:02:33,367 [INFO]  2. 14:06 | GBPAUD-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 14:02:33,367 [INFO]  3. 14:10 | XAUUSD-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 14:02:33,367 [INFO]  4. 14:13 | EURJPY-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 14:02:33,367 [INFO]  5. 14:19 | USDJPY-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 14:02:33,367 [INFO]  6. 14:20 | AUDCAD-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-23 14:02:33,367 [INFO] ====================================================================================================
+2025-10-23 14:02:33,367 [INFO] 
+2025-10-23 14:02:33,367 [INFO] ============================================================
+2025-10-23 14:02:33,367 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-23 14:02:33,367 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-23 14:02:33,367 [INFO] ============================================================
+2025-10-23 14:04:34,324 [INFO] SINAL REAL encontrado: PUT em GBPAUD-OTC (GBPAUD-OTC) por 1 min
+2025-10-23 14:04:34,325 [INFO] Entrada: $10.00 | Protecao 1: $21.50 | Protecao 2: $46.23
+2025-10-23 14:04:34,671 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $1332.14 | Max: $666.07 | Margem: $656.07]
+2025-10-23 14:04:38,106 [INFO] Saldo antes: $1332.14
+2025-10-23 14:04:38,106 [ERROR] 
+2025-10-23 14:04:38,106 [ERROR] 
+2025-10-23 14:04:38,106 [ERROR] 
+2025-10-23 14:04:38,110 [ERROR] 
+2025-10-23 14:04:38,110 [ERROR] 
+2025-10-23 14:04:38,110 [ERROR] 
+2025-10-23 14:04:38,110 [WARNING] [!] ATIVO FECHADO
+2025-10-23 14:04:38,110 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-23 14:05:38,762 [ERROR] !!! STOP LOSS DINAMICO ATINGIDO: Perda de 9.37% da banca !!!
+2025-10-23 14:05:38,764 [ERROR] Banca inicial: $1379.49 | Saldo atual: $1250.21 | Perda: $129.28

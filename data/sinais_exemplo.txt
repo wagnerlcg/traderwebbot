@@ -1,0 +1,37 @@
+# Arquivo de sinais de exemplo
+# Formato: M1;ATIVO;HH:MM;PUT/CALL
+
+# M1/M5/M15/M30 = tempo de execução em minutos (1, 5, 15 ou 30 minutos)
+# ATIVO = nome do ativo (ex: AUDCAD-OTC, EURUSD)
+# HH:MM = hora de entrada (formato 24h)
+# PUT = venda, CALL = compra
+
+# IMPORTANTE: Os valores de entrada agora são definidos GLOBALMENTE ao iniciar o bot
+# Você escolherá:
+#   - Valor fixo em R$ (ex: $10.00) OU
+#   - Percentual da banca (ex: 2%)
+
+# Exemplos de sinais:
+#M1;ETHUSD-OTC;12:15;PUT
+#M1;AUDCAD-OTC;12:16;CALL
+#M5;EURUSD-OTC;12:20;PUT
+#M15;GBPUSD-OTC;12:30;CALL
+#M30;NZDUSD-OTC;13:00;PUT
+
+M1;EURGBP-OTC;22:35;PUT 
+M1;GBPAUD-OTC;22:40;CALL
+M1;EURUSD-OTC;22:45;CALL
+M1;AUDCAD-OTC;22:50;PUT 
+M1;NZDUSD-OTC;22:55;PUT 
+M1;EURGBP-OTC;23:00;CALL
+M1;EURUSD-OTC;23:05;CALL
+M1;AUDCAD-OTC;23:15;PUT 
+M1;EURUSD-OTC;23:20;CALL
+M1;GBPAUD-OTC;23:35;CALL
+M1;AUDCAD-OTC;23:40;PUT 
+M1;AUDCAD-OTC;23:45;CALL
+M1;EURUSD-OTC;23:50;PUT 
+M1;AUDCAD-OTC;23:55;CALL
+
+
+# Linhas em branco e comentários (iniciados com #) são ignorados

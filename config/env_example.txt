@@ -1,0 +1,10 @@
+# Configurações do Banco de Dados MySQL
+MYSQL_HOST=localhost
+MYSQL_PORT=3306
+MYSQL_USER=root
+MYSQL_PASSWORD=sua_senha_aqui
+MYSQL_DATABASE=trader_bot
+
+# Configurações da Aplicação
+SECRET_KEY=sua_chave_secreta_aqui
+FLASK_ENV=development

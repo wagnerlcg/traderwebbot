@@ -1,0 +1,37 @@
+{
+    "configuracoes_padrao": {
+        "stop_loss": 10,
+        "stop_win": 20,
+        "estrategia": "Martingale",
+        "valor_entrada_tipo": "fixo",
+        "valor_entrada": 10.0
+    },
+    "instrucoes": {
+        "titulo": "Trader Bot - Interface Web",
+        "descricao": "Interface web para controle do bot de trading",
+        "passos": [
+            "1. Execute: python web_interface.py ou INICIAR-INTERFACE-WEB.bat",
+            "2. Acesse: http://localhost:3000",
+            "3. Carregue um arquivo de sinais na aba 'Sinais'",
+            "4. Configure os parâmetros na aba 'Configurações'",
+            "5. Digite suas credenciais IQ Option",
+            "6. Clique em 'Iniciar Bot'"
+        ]
+    },
+    "formatos_sinais": {
+        "formato_atual": "M1;ATIVO;HH:MM;PUT/CALL",
+        "exemplos": [
+            "M1;EURUSD-OTC;19:00;CALL",
+            "M5;GBPUSD-OTC;19:05;PUT",
+            "M15;AUDCAD-OTC;19:10;CALL"
+        ],
+        "tempos_validos": ["M1", "M5", "M15", "M30"],
+        "tipos_validos": ["PUT", "CALL"]
+    },
+    "troubleshooting": {
+        "erro_conexao": "Aguarde 2-3 minutos antes de tentar novamente",
+        "erro_autenticacao": "Verifique email e senha",
+        "erro_timeout": "Verifique sua conexão com a internet",
+        "erro_saldo": "Verifique o saldo da sua conta"
+    }
+}

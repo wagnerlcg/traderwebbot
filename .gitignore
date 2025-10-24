@@ -169,3 +169,9 @@ build/
 dist/
 *.exe
 *.app
+
+# Large files that exceed GitHub limits
+TraderBot-Autenticado-Completo.zip
+dist/TraderBot-Direto.exe
+dist/dist.rar
+trader-nomad-system-bot.rar

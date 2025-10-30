@@ -22,41 +22,6 @@ const basePath = window.APP_BASE_PATH || (() => {
     return path;
 })();
 
-// Variáveis globais para funções fora da IIFE - serão atualizadas quando a IIFE rodar
-// Este é um fallback caso a IIFE ainda não tenha executado
-var API_BASE = (typeof window !== 'undefined' && window.API_BASE) ? window.API_BASE : '';
-var appState = (typeof window !== 'undefined' && window.appState) ? window.appState : {running: false, mode: null, saldo_inicial: 0, saldo_atual: 0, sinais_executados: 0, sinais_totais: 0, wins: 0, losses: 0, lucro_total: 0, logs: [], sinais: [], configuracoes: {}};
-
-// Re-expor para garantir acesso global (será atualizado pela IIFE)
-if (typeof window !== 'undefined') {
-  window.API_BASE = window.API_BASE || API_BASE;
-  window.appState = window.appState || appState;
-}
-
-(function() {
-// Evitar múltiplas cargas do mesmo script
-if (window.__TRADERBOT_APP_LOADED__) {
-  console.warn('App JS já inicializado. Ignorando recarga.');
-  return;
-}
-window.__TRADERBOT_APP_LOADED__ = true;
-
-// Conexão WebSocket
-// Determinar o path base da aplicação
-// Usar APP_BASE_PATH se definido pelo servidor, senão usar pathname
-const basePath = window.APP_BASE_PATH || (() => {
-    let path = window.location.pathname;
-    // Remover barra final se existir
-    if (path.endsWith('/') && path.length > 1) {
-        path = path.slice(0, -1);
-    }
-    // Se estiver na raiz ou vazio, usar string vazia
-    if (path === '/' || path === '') {
-        path = '';
-    }
-    return path;
-})();
-
 const socketPath = basePath ? `${basePath}/socket.io` : '/socket.io';
 let socket = null;
 
@@ -163,6 +128,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 })();
+
+// Variáveis globais para funções fora da IIFE
+var API_BASE = (typeof window !== 'undefined' && window.API_BASE) ? window.API_BASE : '';
+var appState = (typeof window !== 'undefined' && window.appState) ? window.appState : {
+    running: false, mode: null, saldo_inicial: 0, saldo_atual: 0,
+    sinais_executados: 0, sinais_totais: 0, wins: 0, losses: 0,
+    lucro_total: 0, logs: [], sinais: [], configuracoes: {}
+};
 
 // Tabs
 function initTabs() {

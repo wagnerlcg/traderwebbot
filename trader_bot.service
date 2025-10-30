@@ -1,0 +1,29 @@
+[Unit]
+Description=Trader Web Bot - Sistema de Trading Automatizado
+After=network.target mysql.service
+
+[Service]
+Type=notify
+User=trader
+Group=trader
+WorkingDirectory=/var/www/trader_bot
+
+# Caminho do Python virtual environment
+Environment="PATH=/var/www/trader_bot/.venv/bin:/usr/local/bin:/usr/bin:/bin"
+
+# Executar com Gunicorn
+ExecStart=/var/www/trader_bot/.venv/bin/gunicorn -c gunicorn_config.py web_interface:app
+
+# Recarregar configuração
+ExecReload=/bin/kill -s HUP $MAINPID
+
+# Restart policy
+Restart=always
+RestartSec=10
+
+# Limites de recursos
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
+

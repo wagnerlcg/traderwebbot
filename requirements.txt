@@ -6,6 +6,8 @@ Flask-SocketIO==5.3.6
 python-socketio==5.9.0
 # eventlet==0.33.3  # Removido devido a problemas de compatibilidade com Python 3.12 no Windows
 pyinstaller
+gunicorn==21.2.0
+gevent==23.9.1  # Necessário para o servidor de produção
 PyMySQL==1.1.0
 Flask-Session==0.5.0
 cryptography==41.0.7

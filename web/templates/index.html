@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trader Bot - Sinais</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') | prefix_url }}?v=20251024-2">
     <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
@@ -19,18 +20,21 @@
                         <span class="user-name">{{ session.user_name or session.user_email }}</span>
                         <a href="{{ url_for('logout') }}" class="btn-logout">Sair</a>
                     </div>
-                    <div class="header-status">
-                        <span class="status-badge" id="status-badge">OFFLINE</span>
-                        <span class="mode-badge" id="mode-badge">-</span>
-                    </div>
+                    <button id="theme-toggle-btn" type="button" class="btn btn-secondary" onclick="toggleTheme()" title="Alternar tema">
+                        🌓 Tema
+                    </button>
                 </div>
+            </div>
+            <div class="header-status-info" style="margin-top: 12px;">
+                <span class="status-badge" id="status-badge">OFFLINE -</span>
+                <span id="ws-status" class="ws-indicator" title="Status WebSocket" style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #ef4444; margin-left: 4px;"></span>
+                <span style="margin-left: 16px;">💰</span>
             </div>
         </header>
 
         <!-- Dashboard Cards -->
         <div class="dashboard-cards">
             <div class="card stat-card">
-                <div class="card-icon">💰</div>
                 <div class="card-content">
                     <h3>Saldo Atual</h3>
                     <p class="stat-value" id="saldo-atual">$0.00</p>
@@ -39,29 +43,26 @@
             </div>
 
             <div class="card stat-card">
-                <div class="card-icon">📊</div>
                 <div class="card-content">
                     <h3>Sinais Executados</h3>
                     <p class="stat-value" id="sinais-executados">0 / 0</p>
-                    <span class="stat-label">Total de sinais</span>
+                    <span class="stat-label">✅ Total de sinais</span>
                 </div>
             </div>
 
             <div class="card stat-card">
-                <div class="card-icon">✅</div>
                 <div class="card-content">
                     <h3>Wins</h3>
                     <p class="stat-value stat-win" id="wins">0</p>
-                    <span class="stat-label" id="win-rate">0% taxa</span>
+                    <span class="stat-label" id="win-rate">❌ 0% taxa</span>
                 </div>
             </div>
 
             <div class="card stat-card">
-                <div class="card-icon">❌</div>
                 <div class="card-content">
                     <h3>Losses</h3>
                     <p class="stat-value stat-loss" id="losses">0</p>
-                    <span class="stat-label" id="loss-rate">0% taxa</span>
+                    <span class="stat-label" id="loss-rate">❌ 0% taxa</span>
                 </div>
             </div>
         </div>
@@ -70,10 +71,12 @@
         <div class="main-content">
             <!-- Tabs -->
             <div class="tabs">
-                <button class="tab-button active" data-tab="controle">🎮 Controle</button>
-                <button class="tab-button" data-tab="sinais">📋 Sinais</button>
-                <button class="tab-button" data-tab="config">⚙️ Configurações</button>
-                <button class="tab-button" data-tab="logs">📄 Logs</button>
+                <button type="button" class="tab-button active" data-tab="controle" onclick="switchTab('controle')">🎮 Controle</button>
+                <button type="button" class="tab-button" data-tab="sinais" onclick="switchTab('sinais')">📋 Sinais</button>
+                <button type="button" class="tab-button" data-tab="config" onclick="switchTab('config')">⚙️ Configurações</button>
+                <button type="button" class="tab-button" data-tab="logs" onclick="switchTab('logs')">📄 Logs</button>
+                <button type="button" class="tab-button" data-tab="tools" onclick="switchTab('tools')">🔧 Ferramentas</button>
+                <button type="button" class="tab-button" data-tab="reports" onclick="switchTab('reports')">📊 Relatórios</button>
             </div>
 
             <!-- Tab Content: Controle -->
@@ -190,6 +193,7 @@ M5;GBPUSD;19:30;CALL"></textarea>
                         <div class="form-group">
                             <label for="estrategia">Estratégia</label>
                             <select id="estrategia" onchange="updateEstrategia()">
+                                <option value="Valor Fixo" selected>Valor Fixo</option>
                                 <option value="Martingale">Martingale</option>
                                 <option value="Soros">Soros</option>
                                 <option value="Masaniello">Masaniello</option>
@@ -258,10 +262,126 @@ M5;GBPUSD;19:30;CALL"></textarea>
                     </div>
                 </div>
             </div>
+
+            <!-- Tab Content: Ferramentas -->
+            <div class="tab-content" id="tab-tools">
+                <div class="card">
+                    <h2>🔧 Ferramentas do Sistema</h2>
+                    
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <div class="tool-icon">📦</div>
+                            <div class="tool-content">
+                                <h3>Atualizar API IQ Option</h3>
+                                <p>Atualiza a biblioteca da IQ Option para a versão mais recente do GitHub</p>
+                                <button class="btn btn-primary" onclick="updateIQOptionAPI()">
+                                    🔄 Atualizar API
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">🎥</div>
+                            <div class="tool-content">
+                                <h3>Gravação de Vídeo</h3>
+                                <p>Prepara ambiente para gravação de demonstrações</p>
+                                <button class="btn btn-secondary" onclick="setupVideoRecording()">
+                                    🎬 Configurar Gravação
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">🔍</div>
+                            <div class="tool-content">
+                                <h3>Diagnóstico do Sistema</h3>
+                                <p>Verifica dependências e status do sistema</p>
+                                <button class="btn btn-info" onclick="runSystemDiagnostic()">
+                                    🔍 Executar Diagnóstico
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📁</div>
+                            <div class="tool-content">
+                                <h3>Gerenciar Arquivos</h3>
+                                <p>Visualizar e gerenciar arquivos do sistema</p>
+                                <button class="btn btn-secondary" onclick="openFileManager()">
+                                    📂 Abrir Gerenciador
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tools-output" class="tools-output"></div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Relatórios -->
+            <div class="tab-content" id="tab-reports">
+                <div class="card">
+                    <h2>📊 Relatórios e Análises</h2>
+                    
+                    <div class="reports-section">
+                        <h3>📈 Relatórios de Performance</h3>
+                        <div class="report-buttons">
+                            <button class="btn btn-primary" onclick="generatePerformanceReport()">
+                                📊 Relatório de Performance
+                            </button>
+                            <button class="btn btn-secondary" onclick="generateDailyReport()">
+                                📅 Relatório Diário
+                            </button>
+                            <button class="btn btn-info" onclick="generateWeeklyReport()">
+                                📆 Relatório Semanal
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="reports-section">
+                        <h3>📤 Exportar Dados</h3>
+                        <div class="report-buttons">
+                            <button class="btn btn-success" onclick="exportToCSV()">
+                                📄 Exportar CSV
+                            </button>
+                            <button class="btn btn-warning" onclick="exportToExcel()">
+                                📊 Exportar Excel
+                            </button>
+                            <button class="btn btn-info" onclick="exportLogs()">
+                                📋 Exportar Logs
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="reports-section">
+                        <h3>📊 Gráficos Avançados</h3>
+                        <div class="chart-container">
+                            <canvas id="performanceChart" width="400" height="200"></canvas>
+                        </div>
+                        <div class="chart-controls">
+                            <button class="btn btn-secondary" onclick="updateChart('daily')">
+                                📅 Diário
+                            </button>
+                            <button class="btn btn-secondary" onclick="updateChart('weekly')">
+                                📆 Semanal
+                            </button>
+                            <button class="btn btn-secondary" onclick="updateChart('monthly')">
+                                📅 Mensal
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="reports-output" class="reports-output"></div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <script>
+            // Configurar path base da aplicação para JavaScript sem poluir o escopo global
+            window.APP_BASE_PATH = ('{{ APPLICATION_ROOT }}' || '').replace(/\/$/, '') || '';
+        </script>
+    <script src="{{ url_for('static', filename='js/app.js') | prefix_url }}?v=20251024-4" defer></script>
 </body>
 </html>
 

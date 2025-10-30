@@ -1,5 +1,33 @@
+(function() {
+// Evitar múltiplas cargas do mesmo script
+if (window.__TRADERBOT_APP_LOADED__) {
+  console.warn('App JS já inicializado. Ignorando recarga.');
+  return;
+}
+window.__TRADERBOT_APP_LOADED__ = true;
+
 // Conexão WebSocket
-const socket = io();
+// Determinar o path base da aplicação
+// Usar APP_BASE_PATH se definido pelo servidor, senão usar pathname
+const basePath = window.APP_BASE_PATH || (() => {
+    let path = window.location.pathname;
+    // Remover barra final se existir
+    if (path.endsWith('/') && path.length > 1) {
+        path = path.slice(0, -1);
+    }
+    // Se estiver na raiz ou vazio, usar string vazia
+    if (path === '/' || path === '') {
+        path = '';
+    }
+    return path;
+})();
+const socketPath = basePath ? `${basePath}/socket.io` : '/socket.io';
+let socket = null;
+
+// Configurar base path para todas as chamadas API
+const API_BASE = basePath || '';
+// Expor para uso fora desta IIFE (handlers inline)
+window.API_BASE = API_BASE;
 
 // Estado da aplicação
 let appState = {
@@ -16,36 +44,88 @@ let appState = {
     sinais: [],
     configuracoes: {}
 };
+// Expor estado para fora da IIFE (consumido por funções globais)
+window.__APP_STATE = appState;
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
     initTabs();
     loadConfig();
     loadStatus();
-    
-    // Conectar ao WebSocket
-    socket.on('connect', () => {
-        console.log('Conectado ao servidor');
-        socket.emit('request_status');
-    });
-    
-    socket.on('disconnect', () => {
-        console.log('Desconectado do servidor');
-    });
-    
-    socket.on('status_update', (data) => {
-        updateStatus(data);
-    });
-    
-    socket.on('log_update', (log) => {
-        addLog(log);
-    });
-    
-    socket.on('bot_stopped', () => {
-        updateBotButtons(false);
-        showNotification('Bot encerrado', 'info');
-    });
+    updateEstrategia(); // Atualizar campos da estratégia baseado na seleção padrão
+
+    // Restaurar tema salvo
+    try {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark');
+        }
+    } catch {}
+
+    // Garantir botão de tema no header (fallback caso o template esteja em cache)
+    try {
+        if (!document.getElementById('theme-toggle-btn')) {
+            const headerRight = document.querySelector('.header-right');
+            if (headerRight) {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.id = 'theme-toggle-btn';
+                btn.className = 'btn btn-secondary';
+                btn.title = 'Alternar tema';
+                btn.textContent = '🌓 Tema';
+                btn.addEventListener('click', toggleTheme);
+                headerRight.appendChild(btn);
+            }
+        }
+    } catch {}
+
+    // Conectar ao WebSocket (se Socket.IO estiver disponível)
+    try {
+        if (window.io) {
+            socket = io({ path: socketPath });
+
+            socket.on('connect', () => {
+                console.log('Conectado ao servidor');
+                updateWebSocketStatus(true);
+                socket.emit('request_status');
+            });
+
+            socket.on('disconnect', () => {
+                console.log('Desconectado do servidor');
+                updateWebSocketStatus(false);
+            });
+
+            socket.on('status_update', (data) => {
+                console.log('[WebSocket] Recebido status_update:', data);
+                updateStatus(data);
+            });
+
+            socket.on('log_update', (log) => {
+                addLog(log);
+            });
+
+            socket.on('bot_stopped', () => {
+                updateBotButtons(false);
+                showNotification('Bot encerrado', 'info');
+            });
+
+            // Solicitar status periodicamente para garantir atualizações
+            setInterval(() => {
+                if (socket && socket.connected) {
+                    socket.emit('request_status');
+                }
+            }, 2000); // A cada 2 segundos
+        } else {
+            console.warn('Socket.IO não carregado. Continuando sem WebSocket.');
+            updateWebSocketStatus(false);
+        }
+    } catch (e) {
+        console.warn('Falha ao iniciar Socket.IO:', e);
+        updateWebSocketStatus(false);
+    }
 });
+
+})();
 
 // Tabs
 function initTabs() {
@@ -57,6 +137,12 @@ function initTabs() {
             switchTab(tabName);
         });
     });
+
+    // Restaurar aba ativa do localStorage
+    const savedTab = (localStorage.getItem('activeTab') || 'controle');
+    if (savedTab && savedTab !== 'controle') {
+        switchTab(savedTab);
+    }
 }
 
 function switchTab(tabName) {
@@ -71,6 +157,17 @@ function switchTab(tabName) {
         content.classList.remove('active');
     });
     document.getElementById(`tab-${tabName}`).classList.add('active');
+
+    // Persistir aba ativa
+    try { localStorage.setItem('activeTab', tabName); } catch {}
+}
+
+// Tema claro/escuro
+function toggleTheme() {
+    document.body.classList.toggle('dark');
+    try {
+        localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    } catch {}
 }
 
 // Controle do Bot
@@ -88,7 +185,7 @@ async function startBot() {
         // Atualizar botões imediatamente para feedback visual
         updateBotButtons(true);
         
-        const response = await fetch('/api/start', {
+        const response = await fetch(`${API_BASE}/api/start`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -117,7 +214,7 @@ async function stopBot() {
         // Atualizar botões imediatamente para feedback visual
         updateBotButtons(false);
         
-        const response = await fetch('/api/stop', {
+        const response = await fetch(`${API_BASE}/api/stop`, {
             method: 'POST'
         });
         
@@ -151,6 +248,21 @@ function updateBotButtons(running) {
     }
 }
 
+function updateWebSocketStatus(connected) {
+    const wsIndicator = document.getElementById('ws-status');
+    if (wsIndicator) {
+        if (connected) {
+            wsIndicator.textContent = '🟢';
+            wsIndicator.className = 'ws-indicator connected';
+            wsIndicator.title = 'WebSocket Conectado';
+        } else {
+            wsIndicator.textContent = '🔴';
+            wsIndicator.className = 'ws-indicator disconnected';
+            wsIndicator.title = 'WebSocket Desconectado';
+        }
+    }
+}
+
 // Sinais
 async function uploadSinais() {
     const fileInput = document.getElementById('file-sinais');
@@ -162,7 +274,7 @@ async function uploadSinais() {
     formData.append('file', file);
     
     try {
-        const response = await fetch('/api/sinais', {
+        const response = await fetch(`${API_BASE}/api/sinais`, {
             method: 'POST',
             body: formData
         });
@@ -189,7 +301,7 @@ async function submitSinaisText() {
     }
     
     try {
-        const response = await fetch('/api/sinais', {
+        const response = await fetch(`${API_BASE}/api/sinais`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -270,7 +382,7 @@ function displaySinais(sinais) {
 // Configurações
 async function loadConfig() {
     try {
-        const response = await fetch('/api/config');
+        const response = await fetch(`${API_BASE}/api/config`);
         const config = await response.json();
         
         document.getElementById('stop-loss').value = config.stop_loss || 10;
@@ -289,17 +401,35 @@ async function loadConfig() {
 }
 
 async function saveConfig() {
+    const estrategia = document.getElementById('estrategia').value;
+    
     const config = {
         stop_loss: parseFloat(document.getElementById('stop-loss').value),
         stop_win: parseFloat(document.getElementById('stop-win').value),
-        estrategia: document.getElementById('estrategia').value,
+        estrategia: estrategia,
         valor_entrada_tipo: document.querySelector('input[name="valor-tipo"]:checked').value,
         valor_entrada: parseFloat(document.getElementById('valor-entrada').value),
         sons_habilitados: document.getElementById('sons-habilitados').checked
     };
     
+    // Adicionar parâmetros específicos da estratégia
+    if (estrategia === 'Martingale') {
+        const nivelEl = document.getElementById('martingale-nivel');
+        if (nivelEl) {
+            config.martingale_nivel = nivelEl.value;
+        }
+    } else if (estrategia === 'Masaniello') {
+        const entradasEl = document.getElementById('masaniello-entradas');
+        const acertosEl = document.getElementById('masaniello-acertos');
+        if (entradasEl) config.masaniello_entradas = parseInt(entradasEl.value);
+        if (acertosEl) config.masaniello_acertos = parseInt(acertosEl.value);
+    } else if (estrategia === 'Soros') {
+        const payoutEl = document.getElementById('soros-payout');
+        if (payoutEl) config.soros_payout = parseFloat(payoutEl.value);
+    }
+    
     try {
-        const response = await fetch('/api/config', {
+        const response = await fetch(`${API_BASE}/api/config`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -320,12 +450,48 @@ async function saveConfig() {
 }
 
 function updateEstrategia() {
-    // Aqui você pode adicionar parâmetros específicos de cada estratégia
     const estrategia = document.getElementById('estrategia').value;
     const paramsDiv = document.getElementById('estrategia-params');
     
-    // Por enquanto, vazio - pode ser expandido no futuro
-    paramsDiv.innerHTML = '';
+    let html = '';
+    
+    if (estrategia === 'Valor Fixo') {
+        html = '<small>Esta estratégia usa o mesmo valor para todas as operações</small>';
+    } else if (estrategia === 'Martingale') {
+        html = `
+            <div class="form-group">
+                <label for="martingale-nivel">Nível do Martingale</label>
+                <select id="martingale-nivel">
+                    <option value="G1">Nível 1 (G1) - Multiplicador 2x</option>
+                    <option value="G2" selected>Nível 2 (G2) - Multiplicador 4x</option>
+                </select>
+                <small>Quanto maior o nível, maior a progressão de valor</small>
+            </div>
+        `;
+    } else if (estrategia === 'Masaniello') {
+        html = `
+            <div class="form-group">
+                <label for="masaniello-entradas">Quantidade de Entradas</label>
+                <input type="number" id="masaniello-entradas" min="3" max="10" value="5">
+                <small>Número de entradas no ciclo Masaniello (3-10)</small>
+            </div>
+            <div class="form-group">
+                <label for="masaniello-acertos">Número de Acertos Necessários</label>
+                <input type="number" id="masaniello-acertos" min="1" max="5" value="3">
+                <small>Quantos acertos precisam para recuperar o investimento</small>
+            </div>
+        `;
+    } else if (estrategia === 'Soros') {
+        html = `
+            <div class="form-group">
+                <label for="soros-payout">Payout (%)</label>
+                <input type="number" id="soros-payout" min="70" max="95" value="87" step="1">
+                <small>Percentual de retorno esperado (70-95%)</small>
+            </div>
+        `;
+    }
+    
+    paramsDiv.innerHTML = html;
 }
 
 function updateValorTipo() {
@@ -343,7 +509,7 @@ function updateValorTipo() {
 // Status
 async function loadStatus() {
     try {
-        const response = await fetch('/api/status');
+        const response = await fetch(`${API_BASE}/api/status`);
         const data = await response.json();
         updateStatus(data);
     } catch (error) {
@@ -361,26 +527,76 @@ function updateStatus(data) {
         document.getElementById('mode-badge').textContent = data.mode.toUpperCase();
     }
     
-    // Atualizar cards de estatísticas
-    document.getElementById('saldo-atual').textContent = `$${(data.saldo_atual || 0).toFixed(2)}`;
+    // Atualizar cards de estatísticas com animação
+    const saldoAtual = data.saldo_atual || 0;
+    const saldoInicial = data.saldo_inicial || 0;
     
-    const variacao = (data.saldo_atual || 0) - (data.saldo_inicial || 0);
+    // Saldo atual com animação
+    const saldoElement = document.getElementById('saldo-atual');
+    if (saldoElement) {
+        saldoElement.textContent = `$${saldoAtual.toFixed(2)}`;
+        saldoElement.style.animation = 'pulse 0.5s ease-in-out';
+        setTimeout(() => saldoElement.style.animation = '', 500);
+    }
+    
+    // Variação do saldo
+    const variacao = saldoAtual - saldoInicial;
     const variacaoEl = document.getElementById('saldo-variacao');
-    variacaoEl.textContent = `${variacao >= 0 ? '+' : ''}$${variacao.toFixed(2)}`;
-    variacaoEl.style.color = variacao >= 0 ? 'var(--success)' : 'var(--danger)';
+    if (variacaoEl) {
+        variacaoEl.textContent = `${variacao >= 0 ? '+' : ''}$${variacao.toFixed(2)}`;
+        variacaoEl.style.color = variacao >= 0 ? 'var(--success)' : 'var(--danger)';
+        variacaoEl.style.animation = 'pulse 0.5s ease-in-out';
+        setTimeout(() => variacaoEl.style.animation = '', 500);
+    }
     
-    document.getElementById('sinais-executados').textContent = 
-        `${data.sinais_executados || 0} / ${data.sinais_totais || 0}`;
+    // Sinais executados com animação
+    const sinaisElement = document.getElementById('sinais-executados');
+    if (sinaisElement) {
+        sinaisElement.textContent = `${data.sinais_executados || 0} / ${data.sinais_totais || 0}`;
+        sinaisElement.style.animation = 'pulse 0.5s ease-in-out';
+        setTimeout(() => sinaisElement.style.animation = '', 500);
+    }
     
-    document.getElementById('wins').textContent = data.wins || 0;
-    document.getElementById('losses').textContent = data.losses || 0;
+    // Wins e Losses com animação
+    const winsElement = document.getElementById('wins');
+    const lossesElement = document.getElementById('losses');
     
+    if (winsElement) {
+        winsElement.textContent = data.wins || 0;
+        winsElement.style.animation = 'pulse 0.5s ease-in-out';
+        setTimeout(() => winsElement.style.animation = '', 500);
+    }
+    
+    if (lossesElement) {
+        lossesElement.textContent = data.losses || 0;
+        lossesElement.style.animation = 'pulse 0.5s ease-in-out';
+        setTimeout(() => lossesElement.style.animation = '', 500);
+    }
+    
+    // Taxas de acerto
     const total = (data.wins || 0) + (data.losses || 0);
     const winRate = total > 0 ? ((data.wins / total) * 100).toFixed(1) : 0;
     const lossRate = total > 0 ? ((data.losses / total) * 100).toFixed(1) : 0;
     
-    document.getElementById('win-rate').textContent = `${winRate}% taxa`;
-    document.getElementById('loss-rate').textContent = `${lossRate}% taxa`;
+    const winRateElement = document.getElementById('win-rate');
+    const lossRateElement = document.getElementById('loss-rate');
+    
+    if (winRateElement) {
+        winRateElement.textContent = `${winRate}% taxa`;
+    }
+    if (lossRateElement) {
+        lossRateElement.textContent = `${lossRate}% taxa`;
+    }
+    
+    // Log de debug para verificar atualizações
+    console.log('[UI] Status atualizado:', {
+        saldo_atual: saldoAtual,
+        saldo_inicial: saldoInicial,
+        sinais_executados: data.sinais_executados,
+        sinais_totais: data.sinais_totais,
+        wins: data.wins,
+        losses: data.losses
+    });
     
     // Atualizar sinais se disponível
     if (data.sinais && data.sinais.length > 0) {
@@ -560,6 +776,406 @@ style.textContent = `
             opacity: 0;
         }
     }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes glow {
+        0% {
+            box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
+        }
+        50% {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.8);
+        }
+        100% {
+            box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
+        }
+    }
 `;
 document.head.appendChild(style);
+
+// ========================================
+// FERRAMENTAS DO SISTEMA
+// ========================================
+
+// Atualizar API IQ Option
+async function updateIQOptionAPI() {
+    const output = document.getElementById('tools-output');
+    output.innerHTML = '🔄 Atualizando API IQ Option...\n';
+    
+    try {
+        const response = await fetch(`${API_BASE}/api/tools/update-api`, {
+            method: 'POST'
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            output.innerHTML += `✅ ${data.message}\n`;
+            output.innerHTML += `📦 Versão instalada: ${data.version}\n`;
+            showNotification('API IQ Option atualizada com sucesso!', 'success');
+        } else {
+            output.innerHTML += `❌ Erro: ${data.error}\n`;
+            showNotification('Erro ao atualizar API', 'danger');
+        }
+    } catch (error) {
+        output.innerHTML += `❌ Erro de conexão: ${error.message}\n`;
+        showNotification('Erro de conexão', 'danger');
+    }
+}
+
+// Configurar Gravação de Vídeo
+async function setupVideoRecording() {
+    const output = document.getElementById('tools-output');
+    output.innerHTML = '🎥 Configurando ambiente de gravação...\n';
+    
+    try {
+        const response = await fetch(`${API_BASE}/api/tools/setup-video`, {
+            method: 'POST'
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            output.innerHTML += `✅ ${data.message}\n`;
+            output.innerHTML += `📁 Pastas criadas:\n`;
+            data.folders.forEach(folder => {
+                output.innerHTML += `   - ${folder}\n`;
+            });
+            output.innerHTML += `\n🎬 Instruções:\n`;
+            output.innerHTML += `1. Instale OBS Studio (gratuito)\n`;
+            output.innerHTML += `2. Configure para salvar em: Videos_TraderBot/Raw/\n`;
+            output.innerHTML += `3. Execute uma demonstração\n`;
+            output.innerHTML += `4. Grave a tela durante a execução\n`;
+            showNotification('Ambiente de gravação configurado!', 'success');
+        } else {
+            output.innerHTML += `❌ Erro: ${data.error}\n`;
+            showNotification('Erro ao configurar gravação', 'danger');
+        }
+    } catch (error) {
+        output.innerHTML += `❌ Erro de conexão: ${error.message}\n`;
+        showNotification('Erro de conexão', 'danger');
+    }
+}
+
+// Diagnóstico do Sistema
+async function runSystemDiagnostic() {
+    const output = document.getElementById('tools-output');
+    output.innerHTML = '🔍 Executando diagnóstico do sistema...\n';
+    
+    try {
+        const response = await fetch(`${API_BASE}/api/tools/diagnostic`, {
+            method: 'POST'
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            output.innerHTML += `✅ Sistema OK\n\n`;
+            output.innerHTML += `📊 Informações do Sistema:\n`;
+            output.innerHTML += `   - Python: ${data.python_version}\n`;
+            output.innerHTML += `   - IQ Option API: ${data.iqoption_version}\n`;
+            output.innerHTML += `   - Flask: ${data.flask_version}\n`;
+            output.innerHTML += `   - Sistema: ${data.os_info}\n\n`;
+            
+            if (data.warnings && data.warnings.length > 0) {
+                output.innerHTML += `⚠️ Avisos:\n`;
+                data.warnings.forEach(warning => {
+                    output.innerHTML += `   - ${warning}\n`;
+                });
+            }
+            
+            showNotification('Diagnóstico concluído!', 'success');
+        } else {
+            output.innerHTML += `❌ Erro: ${data.error}\n`;
+            showNotification('Erro no diagnóstico', 'danger');
+        }
+    } catch (error) {
+        output.innerHTML += `❌ Erro de conexão: ${error.message}\n`;
+        showNotification('Erro de conexão', 'danger');
+    }
+}
+
+// Gerenciador de Arquivos
+async function openFileManager() {
+    const output = document.getElementById('tools-output');
+    output.innerHTML = '📂 Carregando arquivos do sistema...\n';
+    
+    try {
+        const response = await fetch(`${API_BASE}/api/tools/files`, {
+            method: 'GET'
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            output.innerHTML += `📁 Arquivos encontrados:\n\n`;
+            
+            data.files.forEach(file => {
+                const icon = file.type === 'folder' ? '📁' : '📄';
+                const size = file.size ? ` (${file.size})` : '';
+                output.innerHTML += `${icon} ${file.name}${size}\n`;
+            });
+            
+            output.innerHTML += `\n💡 Dica: Use o upload na aba Sinais para carregar novos arquivos\n`;
+            showNotification('Arquivos carregados!', 'success');
+        } else {
+            output.innerHTML += `❌ Erro: ${data.error}\n`;
+            showNotification('Erro ao carregar arquivos', 'danger');
+        }
+    } catch (error) {
+        output.innerHTML += `❌ Erro de conexão: ${error.message}\n`;
+        showNotification('Erro de conexão', 'danger');
+    }
+}
+
+// ========================================
+// RELATÓRIOS E ANÁLISES
+// ========================================
+
+// Relatório de Performance
+async function generatePerformanceReport() {
+    const output = document.getElementById('reports-output');
+    output.innerHTML = '📊 Gerando relatório de performance...\n';
+    
+    try {
+        const response = await fetch(`${API_BASE}/api/reports/performance`, {
+            method: 'POST'
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            output.innerHTML += `✅ Relatório gerado!\n\n`;
+            output.innerHTML += `📈 Estatísticas:\n`;
+            output.innerHTML += `   - Total de operações: ${data.total_operations}\n`;
+            output.innerHTML += `   - Taxa de acerto: ${data.win_rate}%\n`;
+            output.innerHTML += `   - Lucro total: $${data.total_profit}\n`;
+            output.innerHTML += `   - Melhor sequência: ${data.best_streak} wins\n`;
+            output.innerHTML += `   - Pior sequência: ${data.worst_streak} losses\n\n`;
+            
+            if (data.recommendations) {
+                output.innerHTML += `💡 Recomendações:\n`;
+                data.recommendations.forEach(rec => {
+                    output.innerHTML += `   - ${rec}\n`;
+                });
+            }
+            
+            showNotification('Relatório de performance gerado!', 'success');
+        } else {
+            output.innerHTML += `❌ Erro: ${data.error}\n`;
+            showNotification('Erro ao gerar relatório', 'danger');
+        }
+    } catch (error) {
+        output.innerHTML += `❌ Erro de conexão: ${error.message}\n`;
+        showNotification('Erro de conexão', 'danger');
+    }
+}
+
+// Relatório Diário
+async function generateDailyReport() {
+    const output = document.getElementById('reports-output');
+    output.innerHTML = '📅 Gerando relatório diário...\n';
+    
+    try {
+        const response = await fetch(`${API_BASE}/api/reports/daily`, {
+            method: 'POST'
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            output.innerHTML += `✅ Relatório diário gerado!\n\n`;
+            output.innerHTML += `📊 Resumo do dia:\n`;
+            output.innerHTML += `   - Data: ${data.date}\n`;
+            output.innerHTML += `   - Operações: ${data.operations}\n`;
+            output.innerHTML += `   - Lucro: $${data.profit}\n`;
+            output.innerHTML += `   - Tempo ativo: ${data.active_time}\n`;
+            
+            showNotification('Relatório diário gerado!', 'success');
+        } else {
+            output.innerHTML += `❌ Erro: ${data.error}\n`;
+            showNotification('Erro ao gerar relatório', 'danger');
+        }
+    } catch (error) {
+        output.innerHTML += `❌ Erro de conexão: ${error.message}\n`;
+        showNotification('Erro de conexão', 'danger');
+    }
+}
+
+// Relatório Semanal
+async function generateWeeklyReport() {
+    const output = document.getElementById('reports-output');
+    output.innerHTML = '📆 Gerando relatório semanal...\n';
+    
+    try {
+        const response = await fetch(`${API_BASE}/api/reports/weekly`, {
+            method: 'POST'
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            output.innerHTML += `✅ Relatório semanal gerado!\n\n`;
+            output.innerHTML += `📊 Resumo da semana:\n`;
+            output.innerHTML += `   - Período: ${data.period}\n`;
+            output.innerHTML += `   - Dias ativos: ${data.active_days}\n`;
+            output.innerHTML += `   - Total operações: ${data.total_operations}\n`;
+            output.innerHTML += `   - Lucro semanal: $${data.weekly_profit}\n`;
+            output.innerHTML += `   - Melhor dia: ${data.best_day}\n`;
+            
+            showNotification('Relatório semanal gerado!', 'success');
+        } else {
+            output.innerHTML += `❌ Erro: ${data.error}\n`;
+            showNotification('Erro ao gerar relatório', 'danger');
+        }
+    } catch (error) {
+        output.innerHTML += `❌ Erro de conexão: ${error.message}\n`;
+        showNotification('Erro de conexão', 'danger');
+    }
+}
+
+// Exportar CSV
+async function exportToCSV() {
+    try {
+        const response = await fetch(`${API_BASE}/api/reports/export-csv`, {
+            method: 'POST'
+        });
+        
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'trader_bot_report.csv';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        
+        showNotification('Arquivo CSV exportado!', 'success');
+    } catch (error) {
+        showNotification('Erro ao exportar CSV: ' + error.message, 'danger');
+    }
+}
+
+// Exportar Excel
+async function exportToExcel() {
+    try {
+        const response = await fetch(`${API_BASE}/api/reports/export-excel`, {
+            method: 'POST'
+        });
+        
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'trader_bot_report.xlsx';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        
+        showNotification('Arquivo Excel exportado!', 'success');
+    } catch (error) {
+        showNotification('Erro ao exportar Excel: ' + error.message, 'danger');
+    }
+}
+
+// Exportar Logs
+async function exportLogs() {
+    try {
+        const response = await fetch(`${API_BASE}/api/reports/export-logs`, {
+            method: 'POST'
+        });
+        
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'trader_bot_logs.txt';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        
+        showNotification('Logs exportados!', 'success');
+    } catch (error) {
+        showNotification('Erro ao exportar logs: ' + error.message, 'danger');
+    }
+}
+
+// Atualizar Gráfico
+function updateChart(period) {
+    const canvas = document.getElementById('performanceChart');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    
+    // Dados de exemplo - em produção, buscar do servidor
+    const data = {
+        daily: {
+            labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+            profits: [0, 5, -2, 8, 12, 15]
+        },
+        weekly: {
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+            profits: [20, -5, 15, 30, 10, 0, 0]
+        },
+        monthly: {
+            labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4'],
+            profits: [50, 75, 30, 60]
+        }
+    };
+    
+    const selectedData = data[period];
+    
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: selectedData.labels,
+            datasets: [{
+                label: 'Lucro ($)',
+                data: selectedData.profits,
+                borderColor: '#10b981',
+                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                tension: 0.4,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: `Performance - ${period.charAt(0).toUpperCase() + period.slice(1)}`
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#e5e7eb'
+                    }
+                },
+                x: {
+                    grid: {
+                        color: '#e5e7eb'
+                    }
+                }
+            }
+        }
+    });
+}
 

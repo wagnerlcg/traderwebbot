@@ -1,6 +1,0 @@
-# Arquivo de exemplo simples para teste
-# Formato: M1;ATIVO;HH:MM;PUT/CALL
-
-M1;EURUSD-OTC;19:00;CALL
-M1;GBPUSD-OTC;19:05;PUT
-M5;AUDCAD-OTC;19:10;CALL

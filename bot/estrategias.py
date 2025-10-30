@@ -4,6 +4,16 @@ Módulo de estratégias de gerenciamento de banca
 import math
 from typing import List, Tuple
 
+def verificar_modo_web():
+    """Verifica se estamos em modo web através da variável global MODO_WEB"""
+    try:
+        from bot.iqoption_bot import MODO_WEB
+        return MODO_WEB
+    except ImportError:
+        # Se não conseguir importar, verificar verificar_modo_web()
+        import sys
+        return not verificar_modo_web()
+
 def calcular_masaniello_inteligente(banca_inicial: float, quantidade_entradas: int, numero_acertos: int,
                                    payout: float = 0.87) -> Tuple[List[float], dict]:
     """
@@ -335,7 +345,15 @@ def solicitar_valor_entrada(estrategia_escolhida=None):
         print()
         
         try:
-            valor = float(input("Valor base do ciclo Masaniello ($): ").strip())
+            # Verificar se estamos em modo web
+            if verificar_modo_web():
+                # Modo web - usar valor padrão
+                valor = 10.0
+                print(f"Valor base do ciclo Masaniello ($): {valor} (padrão para modo web)")
+            else:
+                # Modo terminal - solicitar input
+                valor = float(input("Valor base do ciclo Masaniello ($): ").strip())
+            
             if valor <= 0:
                 print("[AVISO] Valor invalido. Usando padrao: $10.00")
                 valor = 10.0
@@ -362,11 +380,25 @@ def solicitar_valor_entrada(estrategia_escolhida=None):
     print()
     
     try:
-        opcao = input("Escolha o TIPO (1 ou 2): ").strip()
+        # Verificar se estamos em modo web
+        if verificar_modo_web():
+            # Modo web - usar opção padrão
+            opcao = "1"
+            print(f"Escolha o TIPO (1 ou 2): {opcao} (padrão para modo web)")
+        else:
+            # Modo terminal - solicitar input
+            opcao = input("Escolha o TIPO (1 ou 2): ").strip()
         
         if opcao == "1":
             print()
-            valor = float(input("Informe o VALOR fixo por entrada ($): ").strip())
+            # Verificar se estamos em modo web
+            if verificar_modo_web():
+                # Modo web - usar valor padrão
+                valor = 10.0
+                print(f"Informe o VALOR fixo por entrada ($): {valor} (padrão para modo web)")
+            else:
+                # Modo terminal - solicitar input
+                valor = float(input("Informe o VALOR fixo por entrada ($): ").strip())
             if valor <= 0:
                 print("[AVISO] Valor invalido. Usando padrao: $10.00")
                 valor = 10.0
@@ -380,7 +412,14 @@ def solicitar_valor_entrada(estrategia_escolhida=None):
         elif opcao == "2":
             print()
             print("Agora informe QUAL percentual da banca deseja usar:")
-            percentual = float(input("Percentual (ex: 2 para 2% da banca): ").strip())
+            # Verificar se estamos em modo interativo
+            import sys
+            if verificar_modo_web():
+                # Modo web - usar percentual padrão
+                percentual = 2.0
+                print(f"Percentual (ex: 2 para 2% da banca): {percentual} (padrão para modo web)")
+            else:
+                percentual = float(input("Percentual (ex: 2 para 2% da banca): ").strip())
             if percentual <= 0 or percentual > 50:
                 print("[AVISO] Percentual invalido (use 0.1 a 50%). Usando padrao: 2%")
                 percentual = 2.0
@@ -423,7 +462,32 @@ def solicitar_estrategia():
     print()
     
     try:
-        escolha = input("Estrategia (1, 2, 3 ou 4): ").strip()
+        # Verificar se estamos em modo web com configurações
+        if verificar_modo_web():
+            try:
+                from bot.iqoption_bot import WEB_CONFIG
+                if WEB_CONFIG and 'estrategia' in WEB_CONFIG:
+                    estrategia_web = WEB_CONFIG['estrategia']
+                    # Mapear nome da estratégia para número
+                    if estrategia_web == "Masaniello":
+                        escolha = "1"
+                    elif estrategia_web == "Martingale":
+                        escolha = "2"
+                    elif estrategia_web == "Soros":
+                        escolha = "3"
+                    elif estrategia_web == "Valor Fixo":
+                        escolha = "4"
+                    else:
+                        escolha = "4"  # Padrão
+                    print(f"Estrategia configurada via web: {estrategia_web}")
+                else:
+                    escolha = "4"  # Valor Fixo padrão
+                    print(f"Estrategia (1, 2, 3 ou 4): {escolha} (padrão para modo web)")
+            except ImportError:
+                escolha = "4"  # Valor Fixo padrão
+                print(f"Estrategia (1, 2, 3 ou 4): {escolha} (padrão para modo web)")
+        else:
+            escolha = input("Estrategia (1, 2, 3 ou 4): ").strip()
         
         if escolha == "1":
             return solicitar_parametros_masaniello()
@@ -459,15 +523,24 @@ def solicitar_parametros_masaniello():
     print()
     
     try:
-        qtd_entradas = int(input("Quantidade de entradas no ciclo (2-20): ").strip())
-        if qtd_entradas < 2 or qtd_entradas > 20:
+        # Verificar se estamos em modo interativo
+        import sys
+        if verificar_modo_web():
+            qtd_entradas = int(input("Quantidade de entradas no ciclo (2-20): ").strip())
+            if qtd_entradas < 2 or qtd_entradas > 20:
+                qtd_entradas = 10
+                print(f"[AVISO] Usando padrao: 10 entradas")
+            
+            num_acertos = int(input(f"Numero de acertos esperados (1-{qtd_entradas-1}): ").strip())
+            if num_acertos < 1 or num_acertos >= qtd_entradas:
+                num_acertos = int(qtd_entradas * 0.7)
+                print(f"[AVISO] Usando padrao: {num_acertos} acertos (70%)")
+        else:
+            # Modo web - usar valores padrão
             qtd_entradas = 10
-            print(f"[AVISO] Usando padrao: 10 entradas")
-        
-        num_acertos = int(input(f"Numero de acertos esperados (1-{qtd_entradas-1}): ").strip())
-        if num_acertos < 1 or num_acertos >= qtd_entradas:
-            num_acertos = int(qtd_entradas * 0.7)
-            print(f"[AVISO] Usando padrao: {num_acertos} acertos (70%)")
+            num_acertos = 7
+            print(f"Quantidade de entradas no ciclo (2-20): {qtd_entradas} (padrão para modo web)")
+            print(f"Numero de acertos esperados (1-{qtd_entradas-1}): {num_acertos} (padrão para modo web)")
         
         # Objetivo fixo em 100%
         objetivo = 100.0
@@ -480,7 +553,13 @@ def solicitar_parametros_masaniello():
         print("  2 - Reiniciar novo ciclo com valor base atualizado")
         print()
         
-        acao = input("Opcao (1 ou 2, padrao 1): ").strip() or "1"
+        # Verificar se estamos em modo interativo
+        if verificar_modo_web():
+            acao = input("Opcao (1 ou 2, padrao 1): ").strip() or "1"
+        else:
+            # Modo web - usar opção padrão
+            acao = "1"
+            print(f"Opcao (1 ou 2, padrao 1): {acao} (padrão para modo web)")
         reiniciar = (acao == "2")
         
         print()
@@ -494,7 +573,13 @@ def solicitar_parametros_masaniello():
         # Solicitar banca para calcular prévia
         print("Para calcular a previa dos valores, informe sua banca:")
         try:
-            banca_previa = float(input("Banca inicial ($): ").strip().replace(',', '.'))
+            # Verificar se estamos em modo interativo
+            if verificar_modo_web():
+                banca_previa = float(input("Banca inicial ($): ").strip().replace(',', '.'))
+            else:
+                # Modo web - usar valor padrão
+                banca_previa = 1000.0
+                print(f"Banca inicial ($): {banca_previa} (padrão para modo web)")
             
             # Calcular valores do Masaniello
             print()
@@ -676,7 +761,14 @@ def solicitar_parametros_martingale():
     print()
     
     try:
-        escolha_nivel = input("Nivel (1 ou 2): ").strip()
+        # Verificar se estamos em modo interativo
+        import sys
+        if verificar_modo_web():
+            escolha_nivel = input("Nivel (1 ou 2): ").strip()
+        else:
+            # Modo web - usar nível padrão
+            escolha_nivel = "2"
+            print(f"Nivel (1 ou 2): {escolha_nivel} (padrão para modo web)")
         
         if escolha_nivel == "1":
             nivel = 1

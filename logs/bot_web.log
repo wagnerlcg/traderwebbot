@@ -43,3 +43,1629 @@
 2025-10-23 07:31:34,889 [INFO] Aguardando 3 segundos para estabilizar conexao...
 2025-10-23 07:31:37,900 [INFO] Tentando conectar...
 2025-10-23 07:31:39,714 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 13:53:58,792 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 13:53:58,796 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 13:53:58,796 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 13:54:01,810 [INFO] Tentando conectar...
+2025-10-24 13:54:05,649 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 13:54:05,654 [INFO] Conectado na conta demo
+2025-10-24 13:54:05,654 [INFO] 
+2025-10-24 13:54:05,654 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 13:54:05,654 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 13:54:05,654 [INFO] 
+2025-10-24 13:54:06,119 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 14:16:02,915 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 14:16:02,920 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 14:16:02,920 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 14:16:05,929 [INFO] Tentando conectar...
+2025-10-24 14:16:10,972 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 14:16:10,974 [INFO] Conectado na conta demo
+2025-10-24 14:16:10,974 [INFO] 
+2025-10-24 14:16:10,974 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 14:16:10,974 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 14:16:10,974 [INFO] 
+2025-10-24 14:16:11,386 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 14:16:27,388 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-24 14:16:27,388 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-24 14:16:27,402 [INFO] ===========================
+2025-10-24 14:16:27,402 [INFO] 
+2025-10-24 14:16:27,402 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-24 14:16:27,404 [INFO] Tipo: Valor fixo
+2025-10-24 14:16:27,404 [INFO] Valor: $10.00
+2025-10-24 14:16:27,404 [INFO] ====================================
+2025-10-24 14:16:27,404 [INFO] 
+2025-10-24 14:16:27,404 [INFO] Estrategia selecionada: Martingale
+2025-10-24 14:16:27,404 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-24 14:16:27,404 [INFO] === PROTECOES ATIVADAS ===
+2025-10-24 14:16:27,404 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-24 14:16:27,404 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-24 14:16:27,404 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-24 14:16:27,404 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-24 14:16:27,404 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-24 14:16:27,404 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-24 14:16:27,404 [INFO] ==========================
+2025-10-24 14:16:27,404 [INFO] 
+2025-10-24 14:16:27,404 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-24 14:16:27,404 [INFO]  1. 14:16 | USDNOK-OTC      | PUT  | M 5 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-24 14:16:27,404 [INFO] ====================================================================================================
+2025-10-24 14:16:27,404 [INFO] 
+2025-10-24 14:16:27,404 [INFO] ============================================================
+2025-10-24 14:16:27,404 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-24 14:16:27,404 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-24 14:16:27,404 [INFO] ============================================================
+2025-10-24 14:16:27,752 [INFO] SINAL DEMO encontrado: PUT em USDNOK-OTC (USDNOK-OTC) por 5 min
+2025-10-24 14:16:27,752 [INFO] Entrada: $10.00 | Protecao 1: $21.50 | Protecao 2: $46.23
+2025-10-24 14:16:28,054 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $13924.87 | Max: $6962.44 | Margem: $6952.44]
+2025-10-24 14:16:31,271 [INFO] Saldo antes: $13924.87
+2025-10-24 14:16:31,275 [ERROR] 
+2025-10-24 14:16:31,275 [ERROR] 
+2025-10-24 14:16:31,275 [ERROR] 
+2025-10-24 14:16:31,275 [ERROR] 
+2025-10-24 14:16:31,275 [ERROR] 
+2025-10-24 14:16:31,275 [ERROR] 
+2025-10-24 14:16:31,275 [ERROR] 
+2025-10-24 14:16:31,275 [ERROR] 
+2025-10-24 14:16:31,278 [WARNING] [!] ATIVO FECHADO
+2025-10-24 14:16:31,278 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-24 14:16:31,595 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-24 14:16:31,596 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-24 14:36:05,086 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 14:36:05,088 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 14:36:05,088 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 14:36:08,095 [INFO] Tentando conectar...
+2025-10-24 14:36:12,204 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 14:36:12,206 [INFO] Conectado na conta demo
+2025-10-24 14:36:12,207 [INFO] 
+2025-10-24 14:36:12,207 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 14:36:12,207 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 14:36:12,207 [INFO] 
+2025-10-24 14:36:12,621 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 14:43:59,601 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 14:43:59,603 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 14:43:59,603 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 14:44:02,605 [INFO] Tentando conectar...
+2025-10-24 14:44:07,367 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 14:44:07,370 [INFO] Conectado na conta demo
+2025-10-24 14:44:07,370 [INFO] 
+2025-10-24 14:44:07,370 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 14:44:07,370 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 14:44:07,370 [INFO] 
+2025-10-24 14:44:07,738 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 14:54:27,069 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 14:54:27,069 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 14:54:27,069 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 14:54:30,074 [INFO] Tentando conectar...
+2025-10-24 14:54:31,459 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 14:54:31,462 [INFO] Conectado na conta demo
+2025-10-24 14:54:31,462 [INFO] 
+2025-10-24 14:54:31,462 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 14:54:31,462 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 14:54:31,462 [INFO] 
+2025-10-24 14:54:31,873 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 15:02:02,636 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 15:02:02,636 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 15:02:02,640 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 15:02:05,642 [INFO] Tentando conectar...
+2025-10-24 15:02:07,876 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 15:02:07,876 [INFO] Conectado na conta demo
+2025-10-24 15:02:07,876 [INFO] 
+2025-10-24 15:02:07,881 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 15:02:07,881 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 15:02:07,881 [INFO] 
+2025-10-24 15:02:08,303 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 15:30:44,722 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 15:30:44,722 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 15:30:44,722 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 15:30:47,731 [INFO] Tentando conectar...
+2025-10-24 15:30:49,414 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 15:30:49,416 [INFO] Conectado na conta demo
+2025-10-24 15:30:49,416 [INFO] 
+2025-10-24 15:30:49,416 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 15:30:49,416 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 15:30:49,416 [INFO] 
+2025-10-24 15:30:50,333 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 15:34:04,825 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 15:34:04,829 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 15:34:04,829 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 15:34:07,831 [INFO] Tentando conectar...
+2025-10-24 15:34:09,500 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 15:34:09,504 [INFO] Conectado na conta demo
+2025-10-24 15:34:09,504 [INFO] 
+2025-10-24 15:34:09,504 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 15:34:09,504 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 15:34:09,504 [INFO] 
+2025-10-24 15:34:09,898 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 15:58:02,383 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 15:58:02,383 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 15:58:02,383 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 15:58:05,389 [INFO] Tentando conectar...
+2025-10-24 15:58:06,887 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 15:58:06,890 [INFO] Conectado na conta demo
+2025-10-24 15:58:06,890 [INFO] 
+2025-10-24 15:58:06,890 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 15:58:06,890 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 15:58:06,890 [INFO] 
+2025-10-24 15:58:07,379 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 16:28:24,078 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 16:28:24,078 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 16:28:24,078 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 16:28:27,081 [INFO] Tentando conectar...
+2025-10-24 16:28:28,951 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 16:28:28,953 [INFO] Conectado na conta demo
+2025-10-24 16:28:28,953 [INFO] 
+2025-10-24 16:28:28,953 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 16:28:28,953 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 16:28:28,953 [INFO] 
+2025-10-24 16:28:29,614 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 16:35:09,314 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 16:35:09,316 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 16:35:09,316 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 16:35:12,327 [INFO] Tentando conectar...
+2025-10-24 16:35:17,348 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 16:35:17,351 [INFO] Conectado na conta demo
+2025-10-24 16:35:17,351 [INFO] 
+2025-10-24 16:35:17,351 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 16:35:17,351 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 16:35:17,351 [INFO] 
+2025-10-24 16:35:17,807 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 16:35:17,825 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-24 16:35:17,825 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-24 16:35:17,825 [INFO] ===========================
+2025-10-24 16:35:17,825 [INFO] 
+2025-10-24 16:35:17,826 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-24 16:35:17,826 [INFO] Tipo: Valor fixo
+2025-10-24 16:35:17,826 [INFO] Valor: $10.00
+2025-10-24 16:35:17,826 [INFO] ====================================
+2025-10-24 16:35:17,826 [INFO] 
+2025-10-24 16:35:17,826 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-24 16:35:17,826 [INFO] === PROTECOES ATIVADAS ===
+2025-10-24 16:35:17,826 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-24 16:35:17,826 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-24 16:35:17,826 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-24 16:35:17,826 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-24 16:35:17,826 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-24 16:35:17,827 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-24 16:35:17,827 [INFO] ==========================
+2025-10-24 16:35:17,827 [INFO] 
+2025-10-24 16:35:17,827 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-24 16:42:56,538 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 16:42:56,539 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 16:42:56,539 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 16:42:59,546 [INFO] Tentando conectar...
+2025-10-24 16:43:10,647 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 17:09:46,801 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 17:09:46,801 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 17:09:46,802 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 17:09:49,817 [INFO] Tentando conectar...
+2025-10-24 17:09:54,517 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 17:09:54,520 [INFO] Conectado na conta demo
+2025-10-24 17:09:54,520 [INFO] 
+2025-10-24 17:09:54,520 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 17:09:54,520 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 17:09:54,521 [INFO] 
+2025-10-24 17:09:55,259 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 17:09:55,262 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-24 17:09:55,263 [INFO] Carregados 17 sinais validos do arquivo
+2025-10-24 17:09:55,263 [INFO] ===========================
+2025-10-24 17:09:55,264 [INFO] 
+2025-10-24 17:09:55,264 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-24 17:09:55,265 [INFO] Tipo: Valor fixo
+2025-10-24 17:09:55,265 [INFO] Valor: $10.00
+2025-10-24 17:09:55,266 [INFO] ====================================
+2025-10-24 17:09:55,266 [INFO] 
+2025-10-24 17:09:55,266 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-24 17:09:55,266 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-24 17:09:55,266 [INFO] === PROTECOES ATIVADAS ===
+2025-10-24 17:09:55,266 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-24 17:09:55,267 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-24 17:09:55,267 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-24 17:09:55,267 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-24 17:09:55,267 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-24 17:09:55,267 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-24 17:09:55,267 [INFO] ==========================
+2025-10-24 17:09:55,267 [INFO] 
+2025-10-24 17:09:55,267 [INFO] === SINAIS PROGRAMADOS (17) ===
+2025-10-24 17:09:55,268 [INFO]  1. 17:15 | EURJPY-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO]  2. 17:25 | EURJPY-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO]  3. 17:30 | USDCHF-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO]  4. 17:45 | AUDUSD-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO]  5. 17:55 | EURAUD-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO]  6. 18:10 | EURJPY-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO]  7. 19:00 | EURJPY-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO]  8. 19:10 | EURJPY-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO]  9. 19:35 | EURUSD-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO] 10. 19:55 | EURUSD-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO] 11. 20:25 | EURUSD-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO] 12. 20:30 | EURAUD-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO] 13. 20:35 | EURJPY-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO] 14. 20:55 | EURUSD-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,268 [INFO] 15. 21:20 | EURJPY-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,269 [INFO] 16. 21:50 | USDCHF-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,269 [INFO] 17. 22:00 | GBPAUD-OTC      | PUT  | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 17:09:55,269 [INFO] ====================================================================================================
+2025-10-24 17:09:55,269 [INFO] 
+2025-10-24 17:09:55,271 [INFO] ============================================================
+2025-10-24 17:09:55,271 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-24 17:09:55,271 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-24 17:09:55,271 [INFO] ============================================================
+2025-10-24 17:10:55,899 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:10:55,900 [INFO] Aguardando sinais... Hora atual: 17:10
+2025-10-24 17:10:55,900 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:10:55,900 [WARNING] Tentando reconectar...
+2025-10-24 17:15:09,203 [INFO] SINAL DEMO encontrado: PUT em EURJPY-OTC (EURJPY-OTC) por 1 min
+2025-10-24 17:15:09,203 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode characters in position 0-1: character maps to <undefined>
+2025-10-24 17:15:09,204 [WARNING] Tentando reconectar...
+2025-10-24 17:15:21,712 [INFO] Aguardando sinais... Hora atual: 17:15
+2025-10-24 17:15:21,714 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:15:21,714 [WARNING] Tentando reconectar...
+2025-10-24 17:15:33,938 [INFO] Aguardando sinais... Hora atual: 17:15
+2025-10-24 17:15:33,939 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:15:33,939 [WARNING] Tentando reconectar...
+2025-10-24 17:15:46,144 [INFO] Aguardando sinais... Hora atual: 17:15
+2025-10-24 17:15:46,144 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:15:46,145 [WARNING] Tentando reconectar...
+2025-10-24 17:15:58,230 [INFO] Aguardando sinais... Hora atual: 17:15
+2025-10-24 17:15:58,230 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:15:58,232 [WARNING] Tentando reconectar...
+2025-10-24 17:20:11,802 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:20:11,804 [INFO] Aguardando sinais... Hora atual: 17:20
+2025-10-24 17:20:11,804 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:20:11,804 [WARNING] Tentando reconectar...
+2025-10-24 17:20:23,898 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:20:23,898 [INFO] Aguardando sinais... Hora atual: 17:20
+2025-10-24 17:20:23,898 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:20:23,898 [WARNING] Tentando reconectar...
+2025-10-24 17:20:36,776 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:20:36,778 [INFO] Aguardando sinais... Hora atual: 17:20
+2025-10-24 17:20:36,778 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:20:36,778 [WARNING] Tentando reconectar...
+2025-10-24 17:20:48,949 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:20:48,950 [INFO] Aguardando sinais... Hora atual: 17:20
+2025-10-24 17:20:48,950 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:20:48,950 [WARNING] Tentando reconectar...
+2025-10-24 17:25:02,247 [INFO] SINAL DEMO encontrado: PUT em EURJPY-OTC (EURJPY-OTC) por 1 min
+2025-10-24 17:25:02,248 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode characters in position 0-1: character maps to <undefined>
+2025-10-24 17:25:02,248 [WARNING] Tentando reconectar...
+2025-10-24 17:25:14,889 [INFO] Aguardando sinais... Hora atual: 17:25
+2025-10-24 17:25:14,891 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:25:14,891 [WARNING] Tentando reconectar...
+2025-10-24 17:25:27,238 [INFO] Aguardando sinais... Hora atual: 17:25
+2025-10-24 17:25:27,239 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:25:27,240 [WARNING] Tentando reconectar...
+2025-10-24 17:25:39,548 [INFO] Aguardando sinais... Hora atual: 17:25
+2025-10-24 17:25:39,549 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:25:39,549 [WARNING] Tentando reconectar...
+2025-10-24 17:25:52,671 [INFO] Aguardando sinais... Hora atual: 17:25
+2025-10-24 17:25:52,672 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:25:52,673 [WARNING] Tentando reconectar...
+2025-10-24 17:30:06,246 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:30:06,246 [INFO] SINAL DEMO encontrado: PUT em USDCHF-OTC (USDCHF-OTC) por 1 min
+2025-10-24 17:30:06,246 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode characters in position 0-1: character maps to <undefined>
+2025-10-24 17:30:06,247 [WARNING] Tentando reconectar...
+2025-10-24 17:30:19,103 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:30:19,103 [INFO] Aguardando sinais... Hora atual: 17:30
+2025-10-24 17:30:19,103 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:30:19,103 [WARNING] Tentando reconectar...
+2025-10-24 17:30:31,272 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:30:31,272 [INFO] Aguardando sinais... Hora atual: 17:30
+2025-10-24 17:30:31,273 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:30:31,274 [WARNING] Tentando reconectar...
+2025-10-24 17:30:43,462 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:30:43,462 [INFO] Aguardando sinais... Hora atual: 17:30
+2025-10-24 17:30:43,462 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:30:43,463 [WARNING] Tentando reconectar...
+2025-10-24 17:30:56,351 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:30:56,352 [INFO] Aguardando sinais... Hora atual: 17:30
+2025-10-24 17:30:56,352 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:30:56,352 [WARNING] Tentando reconectar...
+2025-10-24 17:35:10,011 [INFO] Aguardando sinais... Hora atual: 17:35
+2025-10-24 17:35:10,012 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:35:10,012 [WARNING] Tentando reconectar...
+2025-10-24 17:35:22,545 [INFO] Aguardando sinais... Hora atual: 17:35
+2025-10-24 17:35:22,545 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:35:22,545 [WARNING] Tentando reconectar...
+2025-10-24 17:35:34,749 [INFO] Aguardando sinais... Hora atual: 17:35
+2025-10-24 17:35:34,749 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:35:34,749 [WARNING] Tentando reconectar...
+2025-10-24 17:35:47,474 [INFO] Aguardando sinais... Hora atual: 17:35
+2025-10-24 17:35:47,475 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:35:47,475 [WARNING] Tentando reconectar...
+2025-10-24 17:36:00,088 [INFO] Aguardando sinais... Hora atual: 17:35
+2025-10-24 17:36:00,089 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:36:00,089 [WARNING] Tentando reconectar...
+2025-10-24 17:40:13,983 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:40:13,983 [INFO] Aguardando sinais... Hora atual: 17:40
+2025-10-24 17:40:13,984 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:40:13,984 [WARNING] Tentando reconectar...
+2025-10-24 17:40:26,134 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:40:26,135 [INFO] Aguardando sinais... Hora atual: 17:40
+2025-10-24 17:40:26,135 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:40:26,135 [WARNING] Tentando reconectar...
+2025-10-24 17:40:38,459 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:40:38,459 [INFO] Aguardando sinais... Hora atual: 17:40
+2025-10-24 17:40:38,460 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:40:38,460 [WARNING] Tentando reconectar...
+2025-10-24 17:40:50,471 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:40:50,471 [INFO] Aguardando sinais... Hora atual: 17:40
+2025-10-24 17:40:50,471 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:40:50,471 [WARNING] Tentando reconectar...
+2025-10-24 17:45:04,288 [INFO] SINAL DEMO encontrado: PUT em AUDUSD-OTC (AUDUSD-OTC) por 1 min
+2025-10-24 17:45:04,289 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode characters in position 0-1: character maps to <undefined>
+2025-10-24 17:45:04,289 [WARNING] Tentando reconectar...
+2025-10-24 17:45:16,925 [INFO] Aguardando sinais... Hora atual: 17:45
+2025-10-24 17:45:16,925 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:45:16,925 [WARNING] Tentando reconectar...
+2025-10-24 17:45:29,380 [INFO] Aguardando sinais... Hora atual: 17:45
+2025-10-24 17:45:29,380 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:45:29,381 [WARNING] Tentando reconectar...
+2025-10-24 17:45:41,995 [INFO] Aguardando sinais... Hora atual: 17:45
+2025-10-24 17:45:41,996 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:45:41,996 [WARNING] Tentando reconectar...
+2025-10-24 17:45:53,975 [INFO] Aguardando sinais... Hora atual: 17:45
+2025-10-24 17:45:53,976 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:45:53,976 [WARNING] Tentando reconectar...
+2025-10-24 17:50:07,511 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:50:07,512 [INFO] Aguardando sinais... Hora atual: 17:50
+2025-10-24 17:50:07,512 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:50:07,512 [WARNING] Tentando reconectar...
+2025-10-24 17:50:19,820 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:50:19,820 [INFO] Aguardando sinais... Hora atual: 17:50
+2025-10-24 17:50:19,820 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:50:19,821 [WARNING] Tentando reconectar...
+2025-10-24 17:50:32,020 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:50:32,021 [INFO] Aguardando sinais... Hora atual: 17:50
+2025-10-24 17:50:32,021 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:50:32,021 [WARNING] Tentando reconectar...
+2025-10-24 17:50:44,712 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:50:44,713 [INFO] Aguardando sinais... Hora atual: 17:50
+2025-10-24 17:50:44,713 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:50:44,713 [WARNING] Tentando reconectar...
+2025-10-24 17:50:56,808 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 17:50:56,808 [INFO] Aguardando sinais... Hora atual: 17:50
+2025-10-24 17:50:56,808 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:50:56,810 [WARNING] Tentando reconectar...
+2025-10-24 17:55:10,550 [INFO] SINAL DEMO encontrado: PUT em EURAUD-OTC (EURAUD-OTC) por 1 min
+2025-10-24 17:55:10,550 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode characters in position 0-1: character maps to <undefined>
+2025-10-24 17:55:10,550 [WARNING] Tentando reconectar...
+2025-10-24 17:55:22,701 [INFO] Aguardando sinais... Hora atual: 17:55
+2025-10-24 17:55:22,702 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:55:22,702 [WARNING] Tentando reconectar...
+2025-10-24 17:55:35,281 [INFO] Aguardando sinais... Hora atual: 17:55
+2025-10-24 17:55:35,281 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:55:35,281 [WARNING] Tentando reconectar...
+2025-10-24 17:55:47,149 [INFO] Aguardando sinais... Hora atual: 17:55
+2025-10-24 17:55:47,150 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:55:47,152 [WARNING] Tentando reconectar...
+2025-10-24 17:55:59,336 [INFO] Aguardando sinais... Hora atual: 17:55
+2025-10-24 17:55:59,338 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 17:55:59,338 [WARNING] Tentando reconectar...
+2025-10-24 18:00:12,915 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:00:12,916 [INFO] Aguardando sinais... Hora atual: 18:00
+2025-10-24 18:00:12,916 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:00:12,916 [WARNING] Tentando reconectar...
+2025-10-24 18:00:25,326 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:00:25,326 [INFO] Aguardando sinais... Hora atual: 18:00
+2025-10-24 18:00:25,326 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:00:25,327 [WARNING] Tentando reconectar...
+2025-10-24 18:00:37,913 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:00:37,914 [INFO] Aguardando sinais... Hora atual: 18:00
+2025-10-24 18:00:37,914 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:00:37,914 [WARNING] Tentando reconectar...
+2025-10-24 18:00:51,810 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:00:51,810 [INFO] Aguardando sinais... Hora atual: 18:00
+2025-10-24 18:00:51,810 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:00:51,811 [WARNING] Tentando reconectar...
+2025-10-24 18:05:05,322 [INFO] Aguardando sinais... Hora atual: 18:05
+2025-10-24 18:05:05,322 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:05:05,322 [WARNING] Tentando reconectar...
+2025-10-24 18:05:17,923 [INFO] Aguardando sinais... Hora atual: 18:05
+2025-10-24 18:05:17,923 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:05:17,924 [WARNING] Tentando reconectar...
+2025-10-24 18:05:30,088 [INFO] Aguardando sinais... Hora atual: 18:05
+2025-10-24 18:05:30,088 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:05:30,088 [WARNING] Tentando reconectar...
+2025-10-24 18:05:42,792 [INFO] Aguardando sinais... Hora atual: 18:05
+2025-10-24 18:05:42,793 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:05:42,793 [WARNING] Tentando reconectar...
+2025-10-24 18:05:55,441 [INFO] Aguardando sinais... Hora atual: 18:05
+2025-10-24 18:05:55,441 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:05:55,442 [WARNING] Tentando reconectar...
+2025-10-24 18:10:08,769 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:10:08,769 [INFO] SINAL DEMO encontrado: PUT em EURJPY-OTC (EURJPY-OTC) por 1 min
+2025-10-24 18:10:08,769 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode characters in position 0-1: character maps to <undefined>
+2025-10-24 18:10:08,770 [WARNING] Tentando reconectar...
+2025-10-24 18:10:21,382 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:10:21,383 [INFO] Aguardando sinais... Hora atual: 18:10
+2025-10-24 18:10:21,383 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:10:21,383 [WARNING] Tentando reconectar...
+2025-10-24 18:10:33,529 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:10:33,531 [INFO] Aguardando sinais... Hora atual: 18:10
+2025-10-24 18:10:33,531 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:10:33,531 [WARNING] Tentando reconectar...
+2025-10-24 18:10:45,708 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:10:45,709 [INFO] Aguardando sinais... Hora atual: 18:10
+2025-10-24 18:10:45,709 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:10:45,710 [WARNING] Tentando reconectar...
+2025-10-24 18:10:58,529 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:10:58,529 [INFO] Aguardando sinais... Hora atual: 18:10
+2025-10-24 18:10:58,529 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:10:58,529 [WARNING] Tentando reconectar...
+2025-10-24 18:15:12,167 [INFO] Aguardando sinais... Hora atual: 18:15
+2025-10-24 18:15:12,168 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:15:12,168 [WARNING] Tentando reconectar...
+2025-10-24 18:15:24,192 [INFO] Aguardando sinais... Hora atual: 18:15
+2025-10-24 18:15:24,192 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:15:24,192 [WARNING] Tentando reconectar...
+2025-10-24 18:15:36,800 [INFO] Aguardando sinais... Hora atual: 18:15
+2025-10-24 18:15:36,800 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:15:36,800 [WARNING] Tentando reconectar...
+2025-10-24 18:15:48,555 [INFO] Aguardando sinais... Hora atual: 18:15
+2025-10-24 18:15:48,556 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:15:48,556 [WARNING] Tentando reconectar...
+2025-10-24 18:20:01,867 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:20:01,867 [INFO] Aguardando sinais... Hora atual: 18:20
+2025-10-24 18:20:01,867 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:20:01,867 [WARNING] Tentando reconectar...
+2025-10-24 18:20:14,227 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:20:14,227 [INFO] Aguardando sinais... Hora atual: 18:20
+2025-10-24 18:20:14,228 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:20:14,228 [WARNING] Tentando reconectar...
+2025-10-24 18:20:26,653 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:20:26,655 [INFO] Aguardando sinais... Hora atual: 18:20
+2025-10-24 18:20:26,655 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:20:26,655 [WARNING] Tentando reconectar...
+2025-10-24 18:20:39,429 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:20:39,429 [INFO] Aguardando sinais... Hora atual: 18:20
+2025-10-24 18:20:39,429 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:20:39,429 [WARNING] Tentando reconectar...
+2025-10-24 18:20:51,597 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:20:51,597 [INFO] Aguardando sinais... Hora atual: 18:20
+2025-10-24 18:20:51,597 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:20:51,599 [WARNING] Tentando reconectar...
+2025-10-24 18:25:05,747 [INFO] Aguardando sinais... Hora atual: 18:25
+2025-10-24 18:25:05,748 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:25:05,748 [WARNING] Tentando reconectar...
+2025-10-24 18:25:20,065 [INFO] Aguardando sinais... Hora atual: 18:25
+2025-10-24 18:25:20,067 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:25:20,067 [WARNING] Tentando reconectar...
+2025-10-24 18:25:32,212 [INFO] Aguardando sinais... Hora atual: 18:25
+2025-10-24 18:25:32,213 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:25:32,213 [WARNING] Tentando reconectar...
+2025-10-24 18:25:44,923 [INFO] Aguardando sinais... Hora atual: 18:25
+2025-10-24 18:25:44,925 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:25:44,925 [WARNING] Tentando reconectar...
+2025-10-24 18:25:57,153 [INFO] Aguardando sinais... Hora atual: 18:25
+2025-10-24 18:25:57,153 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:25:57,153 [WARNING] Tentando reconectar...
+2025-10-24 18:30:10,574 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:30:10,575 [INFO] Aguardando sinais... Hora atual: 18:30
+2025-10-24 18:30:10,575 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:30:10,575 [WARNING] Tentando reconectar...
+2025-10-24 18:30:22,530 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:30:22,530 [INFO] Aguardando sinais... Hora atual: 18:30
+2025-10-24 18:30:22,531 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:30:22,531 [WARNING] Tentando reconectar...
+2025-10-24 18:30:34,656 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:30:34,656 [INFO] Aguardando sinais... Hora atual: 18:30
+2025-10-24 18:30:34,658 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:30:34,658 [WARNING] Tentando reconectar...
+2025-10-24 18:30:47,266 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:30:47,267 [INFO] Aguardando sinais... Hora atual: 18:30
+2025-10-24 18:30:47,267 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:30:47,267 [WARNING] Tentando reconectar...
+2025-10-24 18:30:59,796 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:30:59,796 [INFO] Aguardando sinais... Hora atual: 18:30
+2025-10-24 18:30:59,796 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:30:59,796 [WARNING] Tentando reconectar...
+2025-10-24 18:35:13,104 [INFO] Aguardando sinais... Hora atual: 18:35
+2025-10-24 18:35:13,105 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:35:13,105 [WARNING] Tentando reconectar...
+2025-10-24 18:35:25,403 [INFO] Aguardando sinais... Hora atual: 18:35
+2025-10-24 18:35:25,404 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:35:25,404 [WARNING] Tentando reconectar...
+2025-10-24 18:35:37,562 [INFO] Aguardando sinais... Hora atual: 18:35
+2025-10-24 18:35:37,562 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:35:37,564 [WARNING] Tentando reconectar...
+2025-10-24 18:35:49,602 [INFO] Aguardando sinais... Hora atual: 18:35
+2025-10-24 18:35:49,602 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:35:49,603 [WARNING] Tentando reconectar...
+2025-10-24 18:40:03,444 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:40:03,444 [INFO] Aguardando sinais... Hora atual: 18:40
+2025-10-24 18:40:03,445 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:40:03,445 [WARNING] Tentando reconectar...
+2025-10-24 18:40:15,366 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:40:15,366 [INFO] Aguardando sinais... Hora atual: 18:40
+2025-10-24 18:40:15,366 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:40:15,367 [WARNING] Tentando reconectar...
+2025-10-24 18:40:27,700 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:40:27,700 [INFO] Aguardando sinais... Hora atual: 18:40
+2025-10-24 18:40:27,700 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:40:27,700 [WARNING] Tentando reconectar...
+2025-10-24 18:40:40,444 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:40:40,444 [INFO] Aguardando sinais... Hora atual: 18:40
+2025-10-24 18:40:40,445 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:40:40,445 [WARNING] Tentando reconectar...
+2025-10-24 18:40:52,958 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:40:52,958 [INFO] Aguardando sinais... Hora atual: 18:40
+2025-10-24 18:40:52,959 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:40:52,959 [WARNING] Tentando reconectar...
+2025-10-24 18:45:06,508 [INFO] Aguardando sinais... Hora atual: 18:45
+2025-10-24 18:45:06,509 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:45:06,509 [WARNING] Tentando reconectar...
+2025-10-24 18:45:19,209 [INFO] Aguardando sinais... Hora atual: 18:45
+2025-10-24 18:45:19,209 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:45:19,209 [WARNING] Tentando reconectar...
+2025-10-24 18:45:31,838 [INFO] Aguardando sinais... Hora atual: 18:45
+2025-10-24 18:45:31,838 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:45:31,839 [WARNING] Tentando reconectar...
+2025-10-24 18:45:44,638 [INFO] Aguardando sinais... Hora atual: 18:45
+2025-10-24 18:45:44,638 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:45:44,639 [WARNING] Tentando reconectar...
+2025-10-24 18:45:56,623 [INFO] Aguardando sinais... Hora atual: 18:45
+2025-10-24 18:45:56,625 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:45:56,625 [WARNING] Tentando reconectar...
+2025-10-24 18:50:10,057 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:50:10,059 [INFO] Aguardando sinais... Hora atual: 18:50
+2025-10-24 18:50:10,059 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:50:10,059 [WARNING] Tentando reconectar...
+2025-10-24 18:50:22,838 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:50:22,839 [INFO] Aguardando sinais... Hora atual: 18:50
+2025-10-24 18:50:22,839 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:50:22,839 [WARNING] Tentando reconectar...
+2025-10-24 18:50:35,217 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:50:35,217 [INFO] Aguardando sinais... Hora atual: 18:50
+2025-10-24 18:50:35,217 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:50:35,217 [WARNING] Tentando reconectar...
+2025-10-24 18:50:47,376 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:50:47,376 [INFO] Aguardando sinais... Hora atual: 18:50
+2025-10-24 18:50:47,376 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:50:47,376 [WARNING] Tentando reconectar...
+2025-10-24 18:50:59,848 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 18:50:59,848 [INFO] Aguardando sinais... Hora atual: 18:50
+2025-10-24 18:50:59,848 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:50:59,848 [WARNING] Tentando reconectar...
+2025-10-24 18:55:13,013 [INFO] Aguardando sinais... Hora atual: 18:55
+2025-10-24 18:55:13,013 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:55:13,013 [WARNING] Tentando reconectar...
+2025-10-24 18:55:25,058 [INFO] Aguardando sinais... Hora atual: 18:55
+2025-10-24 18:55:25,058 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:55:25,058 [WARNING] Tentando reconectar...
+2025-10-24 18:55:37,877 [INFO] Aguardando sinais... Hora atual: 18:55
+2025-10-24 18:55:37,878 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:55:37,878 [WARNING] Tentando reconectar...
+2025-10-24 18:55:50,045 [INFO] Aguardando sinais... Hora atual: 18:55
+2025-10-24 18:55:50,046 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 18:55:50,046 [WARNING] Tentando reconectar...
+2025-10-24 19:00:03,821 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 19:00:03,822 [INFO] SINAL DEMO encontrado: PUT em EURJPY-OTC (EURJPY-OTC) por 1 min
+2025-10-24 19:00:03,822 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode characters in position 0-1: character maps to <undefined>
+2025-10-24 19:00:03,822 [WARNING] Tentando reconectar...
+2025-10-24 19:00:15,818 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 19:00:15,818 [INFO] Aguardando sinais... Hora atual: 19:00
+2025-10-24 19:00:15,818 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:00:15,818 [WARNING] Tentando reconectar...
+2025-10-24 19:00:28,256 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 19:00:28,256 [INFO] Aguardando sinais... Hora atual: 19:00
+2025-10-24 19:00:28,256 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:00:28,256 [WARNING] Tentando reconectar...
+2025-10-24 19:00:40,427 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 19:00:40,427 [INFO] Aguardando sinais... Hora atual: 19:00
+2025-10-24 19:00:40,428 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:00:40,428 [WARNING] Tentando reconectar...
+2025-10-24 19:00:52,495 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 19:00:52,495 [INFO] Aguardando sinais... Hora atual: 19:00
+2025-10-24 19:00:52,495 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:00:52,495 [WARNING] Tentando reconectar...
+2025-10-24 19:05:05,989 [INFO] Aguardando sinais... Hora atual: 19:05
+2025-10-24 19:05:05,989 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:05:05,989 [WARNING] Tentando reconectar...
+2025-10-24 19:05:17,943 [INFO] Aguardando sinais... Hora atual: 19:05
+2025-10-24 19:05:17,943 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:05:17,943 [WARNING] Tentando reconectar...
+2025-10-24 19:05:29,841 [INFO] Aguardando sinais... Hora atual: 19:05
+2025-10-24 19:05:29,844 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:05:29,844 [WARNING] Tentando reconectar...
+2025-10-24 19:05:42,073 [INFO] Aguardando sinais... Hora atual: 19:05
+2025-10-24 19:05:42,073 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:05:42,073 [WARNING] Tentando reconectar...
+2025-10-24 19:05:54,230 [INFO] Aguardando sinais... Hora atual: 19:05
+2025-10-24 19:05:54,232 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:05:54,232 [WARNING] Tentando reconectar...
+2025-10-24 19:10:07,483 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 19:10:07,483 [INFO] SINAL DEMO encontrado: PUT em EURJPY-OTC (EURJPY-OTC) por 1 min
+2025-10-24 19:10:07,483 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode characters in position 0-1: character maps to <undefined>
+2025-10-24 19:10:07,484 [WARNING] Tentando reconectar...
+2025-10-24 19:10:20,047 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 19:10:20,047 [INFO] Aguardando sinais... Hora atual: 19:10
+2025-10-24 19:10:20,049 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:10:20,049 [WARNING] Tentando reconectar...
+2025-10-24 19:10:32,166 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 19:10:32,166 [INFO] Aguardando sinais... Hora atual: 19:10
+2025-10-24 19:10:32,166 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:10:32,168 [WARNING] Tentando reconectar...
+2025-10-24 19:10:44,405 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 19:10:44,405 [INFO] Aguardando sinais... Hora atual: 19:10
+2025-10-24 19:10:44,405 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:10:44,405 [WARNING] Tentando reconectar...
+2025-10-24 19:10:56,502 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 19:10:56,502 [INFO] Aguardando sinais... Hora atual: 19:10
+2025-10-24 19:10:56,502 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:10:56,502 [WARNING] Tentando reconectar...
+2025-10-24 19:15:27,396 [INFO] Aguardando sinais... Hora atual: 19:15
+2025-10-24 19:15:27,396 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:15:27,396 [WARNING] Tentando reconectar...
+2025-10-24 19:15:39,731 [INFO] Aguardando sinais... Hora atual: 19:15
+2025-10-24 19:15:39,731 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:15:39,731 [WARNING] Tentando reconectar...
+2025-10-24 19:15:51,617 [INFO] Aguardando sinais... Hora atual: 19:15
+2025-10-24 19:15:51,617 [ERROR] Erro no loop DEMO: 'charmap' codec can't encode character '\u23f0' in position 0: character maps to <undefined>
+2025-10-24 19:15:51,618 [WARNING] Tentando reconectar...
+2025-10-24 20:00:11,689 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-24 20:00:11,689 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-24 20:00:11,690 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-24 20:00:14,700 [INFO] Tentando conectar...
+2025-10-24 20:00:19,822 [INFO] Conexao estabelecida com sucesso!
+2025-10-24 20:00:19,825 [INFO] Conectado na conta demo
+2025-10-24 20:00:19,825 [INFO] 
+2025-10-24 20:00:19,825 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-24 20:00:19,825 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-24 20:00:19,825 [INFO] 
+2025-10-24 20:00:20,283 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-24 20:00:20,286 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-24 20:00:20,286 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-24 20:00:20,286 [INFO] ===========================
+2025-10-24 20:00:20,287 [INFO] 
+2025-10-24 20:00:20,287 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-24 20:00:20,287 [INFO] Tipo: Valor fixo
+2025-10-24 20:00:20,287 [INFO] Valor: $10.00
+2025-10-24 20:00:20,287 [INFO] ====================================
+2025-10-24 20:00:20,287 [INFO] 
+2025-10-24 20:00:20,287 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-24 20:00:20,288 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-24 20:00:20,288 [INFO] === PROTECOES ATIVADAS ===
+2025-10-24 20:00:20,288 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-24 20:00:20,288 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-24 20:00:20,288 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-24 20:00:20,288 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-24 20:00:20,288 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-24 20:00:20,288 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-24 20:00:20,288 [INFO] ==========================
+2025-10-24 20:00:20,288 [INFO] 
+2025-10-24 20:00:20,290 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-24 20:00:20,290 [INFO]  1. 18:00 | EURUSD-OTC      | PUT  | M 5 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-24 20:00:20,290 [INFO] ====================================================================================================
+2025-10-24 20:00:20,290 [INFO] 
+2025-10-24 20:00:20,290 [INFO] ============================================================
+2025-10-24 20:00:20,291 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-24 20:00:20,291 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-24 20:00:20,291 [INFO] ============================================================
+2025-10-24 20:00:20,637 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-24 20:00:20,638 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-24 20:00:20,638 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-28 06:27:19,247 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 06:27:19,247 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 06:27:19,247 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 06:27:22,257 [INFO] Tentando conectar...
+2025-10-28 06:27:24,358 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 06:27:24,359 [INFO] Conectado na conta demo
+2025-10-28 06:27:24,359 [INFO] 
+2025-10-28 06:27:24,359 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 06:27:24,359 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 06:27:24,359 [INFO] 
+2025-10-28 06:27:25,017 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 06:40:35,140 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 06:40:35,140 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 06:40:35,140 [INFO] ===========================
+2025-10-28 06:40:35,140 [INFO] 
+2025-10-28 06:40:35,140 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 06:40:35,140 [INFO] Tipo: Valor fixo
+2025-10-28 06:40:35,140 [INFO] Valor: $10.00
+2025-10-28 06:40:35,143 [INFO] ====================================
+2025-10-28 06:40:35,143 [INFO] 
+2025-10-28 06:40:35,143 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 06:40:35,143 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 06:40:35,145 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 06:40:35,145 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 06:40:35,145 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 06:40:35,145 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 06:40:35,146 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 06:40:35,146 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 06:40:35,146 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 06:40:35,146 [INFO] ==========================
+2025-10-28 06:40:35,146 [INFO] 
+2025-10-28 06:40:35,147 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 06:40:35,147 [INFO]  1. 06:41 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 06:40:35,147 [INFO] ====================================================================================================
+2025-10-28 06:40:35,147 [INFO] 
+2025-10-28 06:40:35,148 [INFO] ============================================================
+2025-10-28 06:40:35,148 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 06:40:35,148 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 06:40:35,148 [INFO] ============================================================
+2025-10-28 06:40:35,461 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-28 06:40:35,461 [INFO] Aguardando sinais... Hora atual: 06:40
+2025-10-28 06:43:28,004 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 06:43:28,021 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 06:43:28,021 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 06:43:31,036 [INFO] Tentando conectar...
+2025-10-28 06:43:33,585 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 06:43:33,587 [INFO] Conectado na conta demo
+2025-10-28 06:43:33,587 [INFO] 
+2025-10-28 06:43:33,587 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 06:43:33,587 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 06:43:33,587 [INFO] 
+2025-10-28 06:43:34,139 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 06:55:09,376 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 06:55:09,376 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 06:55:09,376 [INFO] ===========================
+2025-10-28 06:55:09,376 [INFO] 
+2025-10-28 06:55:09,376 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 06:55:09,376 [INFO] Tipo: Valor fixo
+2025-10-28 06:55:09,376 [INFO] Valor: $10.00
+2025-10-28 06:55:09,376 [INFO] ====================================
+2025-10-28 06:55:09,376 [INFO] 
+2025-10-28 06:55:09,376 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 06:55:09,382 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 06:55:09,383 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 06:55:09,383 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 06:55:09,383 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 06:55:09,383 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 06:55:09,383 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 06:55:09,383 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 06:55:09,383 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 06:55:09,384 [INFO] ==========================
+2025-10-28 06:55:09,384 [INFO] 
+2025-10-28 06:55:09,384 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 06:55:09,384 [INFO]  1. 06:56 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 06:55:09,384 [INFO] ====================================================================================================
+2025-10-28 06:55:09,385 [INFO] 
+2025-10-28 06:55:09,385 [INFO] ============================================================
+2025-10-28 06:55:09,385 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 06:55:09,386 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 06:55:09,386 [INFO] ============================================================
+2025-10-28 06:55:09,685 [INFO] Aguardando sinais... Hora atual: 06:55
+2025-10-28 06:55:45,392 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 06:55:45,392 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 06:55:45,392 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 06:55:48,395 [INFO] Tentando conectar...
+2025-10-28 06:55:51,215 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 06:55:51,215 [INFO] Conectado na conta demo
+2025-10-28 06:55:51,215 [INFO] 
+2025-10-28 06:55:51,215 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 06:55:51,215 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 06:55:51,215 [INFO] 
+2025-10-28 06:55:51,608 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 07:14:26,872 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 07:14:26,872 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 07:14:26,872 [INFO] ===========================
+2025-10-28 07:14:26,873 [INFO] 
+2025-10-28 07:14:26,873 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 07:14:26,874 [INFO] Tipo: Valor fixo
+2025-10-28 07:14:26,874 [INFO] Valor: $10.00
+2025-10-28 07:14:26,875 [INFO] ====================================
+2025-10-28 07:14:26,875 [INFO] 
+2025-10-28 07:14:26,875 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 07:14:26,875 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 07:14:26,875 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 07:14:26,876 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 07:14:26,876 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 07:14:26,876 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 07:14:26,877 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 07:14:26,877 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 07:14:26,877 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 07:14:26,877 [INFO] ==========================
+2025-10-28 07:14:26,877 [INFO] 
+2025-10-28 07:14:26,878 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 07:14:26,878 [INFO]  1. 07:04 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 07:14:26,878 [INFO] ====================================================================================================
+2025-10-28 07:14:26,878 [INFO] 
+2025-10-28 07:14:26,878 [INFO] ============================================================
+2025-10-28 07:14:26,878 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 07:14:26,880 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 07:14:26,880 [INFO] ============================================================
+2025-10-28 07:14:27,228 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-28 07:14:27,228 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-28 07:16:46,046 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 07:16:46,050 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 07:16:46,050 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 07:16:49,052 [INFO] Tentando conectar...
+2025-10-28 07:16:52,051 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 07:16:52,054 [INFO] Conectado na conta demo
+2025-10-28 07:16:52,054 [INFO] 
+2025-10-28 07:16:52,054 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 07:16:52,054 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 07:16:52,054 [INFO] 
+2025-10-28 07:16:52,485 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 07:22:38,155 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 07:22:38,155 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 07:22:38,155 [INFO] ===========================
+2025-10-28 07:22:38,155 [INFO] 
+2025-10-28 07:22:38,155 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 07:22:38,155 [INFO] Tipo: Valor fixo
+2025-10-28 07:22:38,155 [INFO] Valor: $10.00
+2025-10-28 07:22:38,155 [INFO] ====================================
+2025-10-28 07:22:38,155 [INFO] 
+2025-10-28 07:22:38,155 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 07:22:38,155 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 07:22:38,155 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 07:22:38,155 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 07:22:38,155 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 07:22:38,155 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 07:22:38,161 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 07:22:38,161 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 07:22:38,161 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 07:22:38,161 [INFO] ==========================
+2025-10-28 07:22:38,161 [INFO] 
+2025-10-28 07:22:38,161 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 07:22:38,162 [INFO]  1. 07:24 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 07:22:38,162 [INFO] ====================================================================================================
+2025-10-28 07:22:38,162 [INFO] 
+2025-10-28 07:22:38,163 [INFO] ============================================================
+2025-10-28 07:22:38,163 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 07:22:38,163 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 07:22:38,163 [INFO] ============================================================
+2025-10-28 07:23:36,844 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 07:23:36,850 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 07:23:36,851 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 07:23:39,852 [INFO] Tentando conectar...
+2025-10-28 07:23:41,952 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 07:23:41,952 [INFO] Conectado na conta demo
+2025-10-28 07:23:41,952 [INFO] 
+2025-10-28 07:23:41,952 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 07:23:41,952 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 07:23:41,952 [INFO] 
+2025-10-28 07:23:42,474 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 07:29:07,198 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 07:29:07,200 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 07:29:07,200 [INFO] ===========================
+2025-10-28 07:29:07,202 [INFO] 
+2025-10-28 07:29:07,202 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 07:29:07,202 [INFO] Tipo: Valor fixo
+2025-10-28 07:29:07,202 [INFO] Valor: $10.00
+2025-10-28 07:29:07,203 [INFO] ====================================
+2025-10-28 07:29:07,203 [INFO] 
+2025-10-28 07:29:07,204 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 07:29:07,204 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 07:29:07,205 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 07:29:07,205 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 07:29:07,205 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 07:29:07,205 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 07:29:07,205 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 07:29:07,206 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 07:29:07,206 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 07:29:07,206 [INFO] ==========================
+2025-10-28 07:29:07,206 [INFO] 
+2025-10-28 07:29:07,206 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 07:29:07,206 [INFO]  1. 07:31 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 07:29:07,206 [INFO] ====================================================================================================
+2025-10-28 07:29:07,206 [INFO] 
+2025-10-28 07:29:07,207 [INFO] ============================================================
+2025-10-28 07:29:07,207 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 07:29:07,207 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 07:29:07,207 [INFO] ============================================================
+2025-10-28 07:30:18,943 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 07:30:18,952 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 07:30:18,953 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 07:30:21,967 [INFO] Tentando conectar...
+2025-10-28 07:30:24,254 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 07:30:24,257 [INFO] Conectado na conta demo
+2025-10-28 07:30:24,257 [INFO] 
+2025-10-28 07:30:24,257 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 07:30:24,257 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 07:30:24,257 [INFO] 
+2025-10-28 07:30:24,583 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 07:37:10,955 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 07:37:10,955 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 07:37:10,955 [INFO] ===========================
+2025-10-28 07:37:10,955 [INFO] 
+2025-10-28 07:37:10,955 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 07:37:10,955 [INFO] Tipo: Valor fixo
+2025-10-28 07:37:10,955 [INFO] Valor: $10.00
+2025-10-28 07:37:10,959 [INFO] ====================================
+2025-10-28 07:37:10,959 [INFO] 
+2025-10-28 07:37:10,959 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 07:37:10,959 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 07:37:10,959 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 07:37:10,959 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 07:37:10,959 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 07:37:10,959 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 07:37:10,959 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 07:37:10,959 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 07:37:10,959 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 07:37:10,959 [INFO] ==========================
+2025-10-28 07:37:10,963 [INFO] 
+2025-10-28 07:37:10,963 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 07:37:10,963 [INFO]  1. 07:37 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 07:37:10,963 [INFO] ====================================================================================================
+2025-10-28 07:37:10,963 [INFO] 
+2025-10-28 07:37:10,964 [INFO] ============================================================
+2025-10-28 07:37:10,964 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 07:37:10,964 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 07:37:10,964 [INFO] ============================================================
+2025-10-28 07:37:11,225 [INFO] SINAL DEMO encontrado: CALL em GBPAUD-OTC (GBPAUD-OTC) por 1 min
+2025-10-28 07:37:11,227 [INFO] Entrada: $10.00 | Protecao 1: N/A | Protecao 2: N/A
+2025-10-28 07:37:11,584 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $13924.87 | Max: $6962.44 | Margem: $6952.44]
+2025-10-28 07:38:26,996 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 07:38:26,999 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 07:38:26,999 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 07:38:30,016 [INFO] Tentando conectar...
+2025-10-28 07:38:32,642 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 07:38:32,645 [INFO] Conectado na conta demo
+2025-10-28 07:38:32,645 [INFO] 
+2025-10-28 07:38:32,645 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 07:38:32,645 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 07:38:32,645 [INFO] 
+2025-10-28 07:38:33,171 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 07:39:17,437 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 07:39:17,437 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 07:39:17,437 [INFO] ===========================
+2025-10-28 07:39:17,437 [INFO] 
+2025-10-28 07:39:17,437 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 07:39:17,437 [INFO] Tipo: Valor fixo
+2025-10-28 07:39:17,437 [INFO] Valor: $10.00
+2025-10-28 07:39:17,442 [INFO] ====================================
+2025-10-28 07:39:17,442 [INFO] 
+2025-10-28 07:39:17,442 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 07:39:17,443 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 07:39:17,443 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 07:39:17,443 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 07:39:17,443 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 07:39:17,443 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 07:39:17,443 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 07:39:17,444 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 07:39:17,444 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 07:39:17,444 [INFO] ==========================
+2025-10-28 07:39:17,444 [INFO] 
+2025-10-28 07:39:17,445 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 07:39:17,445 [INFO]  1. 07:39 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 07:39:17,445 [INFO] ====================================================================================================
+2025-10-28 07:39:17,445 [INFO] 
+2025-10-28 07:39:17,447 [INFO] ============================================================
+2025-10-28 07:39:17,447 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 07:39:17,447 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 07:39:17,448 [INFO] ============================================================
+2025-10-28 07:39:17,790 [INFO] SINAL DEMO encontrado: CALL em GBPAUD-OTC (GBPAUD-OTC) por 1 min
+2025-10-28 07:39:17,790 [INFO] Entrada: $10.00 | Protecao 1: N/A | Protecao 2: N/A
+2025-10-28 07:39:18,116 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $13924.87 | Max: $6962.44 | Margem: $6952.44]
+2025-10-28 07:40:41,321 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 07:40:41,321 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 07:40:41,321 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 07:40:44,336 [INFO] Tentando conectar...
+2025-10-28 07:40:46,520 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 07:40:46,520 [INFO] Conectado na conta demo
+2025-10-28 07:40:46,524 [INFO] 
+2025-10-28 07:40:46,524 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 07:40:46,524 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 07:40:46,524 [INFO] 
+2025-10-28 07:40:46,990 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 07:41:32,159 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 07:41:32,159 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 07:41:32,159 [INFO] ===========================
+2025-10-28 07:41:32,159 [INFO] 
+2025-10-28 07:41:32,159 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 07:41:32,159 [INFO] Tipo: Valor fixo
+2025-10-28 07:41:32,159 [INFO] Valor: $10.00
+2025-10-28 07:41:32,159 [INFO] ====================================
+2025-10-28 07:41:32,159 [INFO] 
+2025-10-28 07:41:32,159 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 07:41:32,159 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 07:41:32,159 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 07:41:32,159 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 07:41:32,159 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 07:41:32,159 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 07:41:32,159 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 07:41:32,159 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 07:41:32,159 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 07:41:32,167 [INFO] ==========================
+2025-10-28 07:41:32,167 [INFO] 
+2025-10-28 07:41:32,167 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 07:41:32,167 [INFO]  1. 07:41 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 07:41:32,167 [INFO] ====================================================================================================
+2025-10-28 07:41:32,167 [INFO] 
+2025-10-28 07:41:32,168 [INFO] ============================================================
+2025-10-28 07:41:32,168 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 07:41:32,168 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 07:41:32,168 [INFO] ============================================================
+2025-10-28 07:41:32,437 [INFO] SINAL DEMO encontrado: CALL em GBPAUD-OTC (GBPAUD-OTC) por 1 min
+2025-10-28 07:41:32,437 [INFO] Entrada: $10.00 | Protecao 1: N/A | Protecao 2: N/A
+2025-10-28 07:41:32,731 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $13924.87 | Max: $6962.44 | Margem: $6952.44]
+2025-10-28 07:42:31,403 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 07:42:31,405 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 07:42:31,405 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 07:42:34,412 [INFO] Tentando conectar...
+2025-10-28 07:42:37,431 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 07:42:37,433 [INFO] Conectado na conta demo
+2025-10-28 07:42:37,433 [INFO] 
+2025-10-28 07:42:37,433 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 07:42:37,433 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 07:42:37,435 [INFO] 
+2025-10-28 07:42:37,969 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 07:46:34,347 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 07:46:34,347 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 07:46:34,347 [INFO] ===========================
+2025-10-28 07:46:34,347 [INFO] 
+2025-10-28 07:46:34,347 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 07:46:34,347 [INFO] Tipo: Valor fixo
+2025-10-28 07:46:34,347 [INFO] Valor: $10.00
+2025-10-28 07:46:34,347 [INFO] ====================================
+2025-10-28 07:46:34,347 [INFO] 
+2025-10-28 07:46:34,350 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 07:46:34,350 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 07:46:34,350 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 07:46:34,350 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 07:46:34,351 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 07:46:34,351 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 07:46:34,351 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 07:46:34,351 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 07:46:34,351 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 07:46:34,351 [INFO] ==========================
+2025-10-28 07:46:34,352 [INFO] 
+2025-10-28 07:46:34,352 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 07:46:34,352 [INFO]  1. 07:43 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 07:46:34,352 [INFO] ====================================================================================================
+2025-10-28 07:46:34,352 [INFO] 
+2025-10-28 07:46:34,353 [INFO] ============================================================
+2025-10-28 07:46:34,353 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 07:46:34,353 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 07:46:34,354 [INFO] ============================================================
+2025-10-28 07:46:34,664 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-28 07:46:34,664 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-28 07:49:04,278 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 07:49:04,280 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 07:49:04,280 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 07:49:07,290 [INFO] Tentando conectar...
+2025-10-28 07:49:09,379 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 07:49:09,381 [INFO] Conectado na conta demo
+2025-10-28 07:49:09,381 [INFO] 
+2025-10-28 07:49:09,381 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 07:49:09,382 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 07:49:09,382 [INFO] 
+2025-10-28 07:49:09,753 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 07:49:53,631 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 07:49:53,631 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 07:49:53,631 [INFO] ===========================
+2025-10-28 07:49:53,631 [INFO] 
+2025-10-28 07:49:53,631 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 07:49:53,631 [INFO] Tipo: Valor fixo
+2025-10-28 07:49:53,631 [INFO] Valor: $10.00
+2025-10-28 07:49:53,633 [INFO] ====================================
+2025-10-28 07:49:53,633 [INFO] 
+2025-10-28 07:49:53,634 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 07:49:53,634 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 07:49:53,634 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 07:49:53,635 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 07:49:53,635 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 07:49:53,635 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 07:49:53,635 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 07:49:53,635 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 07:49:53,636 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 07:49:53,636 [INFO] ==========================
+2025-10-28 07:49:53,636 [INFO] 
+2025-10-28 07:49:53,637 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 07:49:53,637 [INFO]  1. 07:52 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 07:49:53,637 [INFO] ====================================================================================================
+2025-10-28 07:49:53,637 [INFO] 
+2025-10-28 07:49:53,638 [INFO] ============================================================
+2025-10-28 07:49:53,638 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 07:49:53,638 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 07:49:53,638 [INFO] ============================================================
+2025-10-28 07:50:32,659 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 07:50:32,659 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 07:50:32,659 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 07:50:35,668 [INFO] Tentando conectar...
+2025-10-28 07:50:38,621 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 07:50:38,621 [INFO] Conectado na conta demo
+2025-10-28 07:50:38,621 [INFO] 
+2025-10-28 07:50:38,621 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 07:50:38,621 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 07:50:38,621 [INFO] 
+2025-10-28 07:50:39,320 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 07:59:25,950 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 07:59:25,950 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 07:59:25,950 [INFO] ===========================
+2025-10-28 07:59:25,950 [INFO] 
+2025-10-28 07:59:25,950 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 07:59:25,950 [INFO] Tipo: Valor fixo
+2025-10-28 07:59:25,950 [INFO] Valor: $10.00
+2025-10-28 07:59:25,950 [INFO] ====================================
+2025-10-28 07:59:25,957 [INFO] 
+2025-10-28 07:59:25,957 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 07:59:25,957 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 07:59:25,957 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 07:59:25,958 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 07:59:25,958 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 07:59:25,958 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 07:59:25,958 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 07:59:25,958 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 07:59:25,958 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 07:59:25,959 [INFO] ==========================
+2025-10-28 07:59:25,959 [INFO] 
+2025-10-28 07:59:25,959 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 07:59:25,959 [INFO]  1. 08:01 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 07:59:25,959 [INFO] ====================================================================================================
+2025-10-28 07:59:25,960 [INFO] 
+2025-10-28 07:59:25,960 [INFO] ============================================================
+2025-10-28 07:59:25,961 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 07:59:25,961 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 07:59:25,961 [INFO] ============================================================
+2025-10-28 08:00:32,087 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 08:00:32,087 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 08:00:32,087 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 08:00:35,100 [INFO] Tentando conectar...
+2025-10-28 08:00:37,984 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 08:00:37,989 [INFO] Conectado na conta demo
+2025-10-28 08:00:37,989 [INFO] 
+2025-10-28 08:00:37,989 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 08:00:37,989 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 08:00:37,989 [INFO] 
+2025-10-28 08:00:38,451 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 08:57:26,533 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 08:57:26,533 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 08:57:26,533 [INFO] ===========================
+2025-10-28 08:57:26,533 [INFO] 
+2025-10-28 08:57:26,533 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 08:57:26,539 [INFO] Tipo: Valor fixo
+2025-10-28 08:57:26,539 [INFO] Valor: $10.00
+2025-10-28 08:57:26,539 [INFO] ====================================
+2025-10-28 08:57:26,539 [INFO] 
+2025-10-28 08:57:26,540 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 08:57:26,541 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 08:57:26,541 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 08:57:26,541 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 08:57:26,541 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 08:57:26,541 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 08:57:26,541 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 08:57:26,542 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 08:57:26,542 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 08:57:26,543 [INFO] ==========================
+2025-10-28 08:57:26,543 [INFO] 
+2025-10-28 08:57:26,543 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 08:57:26,543 [INFO]  1. 08:09 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 08:57:26,543 [INFO] ====================================================================================================
+2025-10-28 08:57:26,543 [INFO] 
+2025-10-28 08:57:26,544 [INFO] ============================================================
+2025-10-28 08:57:26,544 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 08:57:26,544 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 08:57:26,544 [INFO] ============================================================
+2025-10-28 08:57:26,873 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-28 08:57:26,873 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-28 08:58:56,478 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 08:58:56,490 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 08:58:56,491 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 08:58:59,499 [INFO] Tentando conectar...
+2025-10-28 08:59:01,921 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 08:59:01,921 [INFO] Conectado na conta demo
+2025-10-28 08:59:01,921 [INFO] 
+2025-10-28 08:59:01,921 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 08:59:01,921 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 08:59:01,921 [INFO] 
+2025-10-28 08:59:02,390 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 09:03:15,862 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 09:03:15,862 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 09:03:15,862 [INFO] ===========================
+2025-10-28 09:03:15,862 [INFO] 
+2025-10-28 09:03:15,862 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 09:03:15,862 [INFO] Tipo: Valor fixo
+2025-10-28 09:03:15,862 [INFO] Valor: $10.00
+2025-10-28 09:03:15,862 [INFO] ====================================
+2025-10-28 09:03:15,862 [INFO] 
+2025-10-28 09:03:15,868 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 09:03:15,868 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 09:03:15,869 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 09:03:15,869 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 09:03:15,869 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 09:03:15,869 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 09:03:15,869 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 09:03:15,870 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 09:03:15,870 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 09:03:15,870 [INFO] ==========================
+2025-10-28 09:03:15,870 [INFO] 
+2025-10-28 09:03:15,870 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 09:03:15,871 [INFO]  1. 09:05 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 09:03:15,871 [INFO] ====================================================================================================
+2025-10-28 09:03:15,871 [INFO] 
+2025-10-28 09:03:15,871 [INFO] ============================================================
+2025-10-28 09:03:15,872 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 09:03:15,872 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 09:03:15,872 [INFO] ============================================================
+2025-10-28 09:50:44,249 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 09:50:44,250 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 09:50:44,250 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 09:50:47,250 [INFO] Tentando conectar...
+2025-10-28 09:50:49,394 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 09:50:49,398 [INFO] Conectado na conta demo
+2025-10-28 09:50:49,398 [INFO] 
+2025-10-28 09:50:49,399 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 09:50:49,399 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 09:50:49,399 [INFO] 
+2025-10-28 09:50:50,301 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 09:53:24,369 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 09:53:24,369 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 09:53:24,369 [INFO] ===========================
+2025-10-28 09:53:24,369 [INFO] 
+2025-10-28 09:53:24,369 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 09:53:24,369 [INFO] Tipo: Valor fixo
+2025-10-28 09:53:24,369 [INFO] Valor: $10.00
+2025-10-28 09:53:24,369 [INFO] ====================================
+2025-10-28 09:53:24,369 [INFO] 
+2025-10-28 09:53:24,376 [INFO] Estrategia selecionada: Martingale
+2025-10-28 09:53:24,376 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-28 09:53:24,376 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 09:53:24,376 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 09:53:24,376 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 09:53:24,377 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 09:53:24,377 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 09:53:24,377 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 09:53:24,378 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 09:53:24,378 [INFO] ==========================
+2025-10-28 09:53:24,378 [INFO] 
+2025-10-28 09:53:24,378 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 09:53:24,379 [INFO]  1. 09:05 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-28 09:53:24,379 [INFO] ====================================================================================================
+2025-10-28 09:53:24,379 [INFO] 
+2025-10-28 09:53:24,380 [INFO] ============================================================
+2025-10-28 09:53:24,380 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 09:53:24,380 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 09:53:24,380 [INFO] ============================================================
+2025-10-28 09:53:24,380 [INFO] [DEBUG] Entrando no loop principal...
+2025-10-28 09:53:24,382 [INFO] [DEBUG] Executando iteracao do loop...
+2025-10-28 09:53:24,697 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-28 09:53:24,697 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-28 10:05:38,216 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 10:05:38,219 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 10:05:38,220 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 10:05:41,227 [INFO] Tentando conectar...
+2025-10-28 10:05:43,891 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 10:05:43,891 [INFO] Conectado na conta demo
+2025-10-28 10:05:43,891 [INFO] 
+2025-10-28 10:05:43,891 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 10:05:43,891 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 10:05:43,891 [INFO] 
+2025-10-28 10:05:44,521 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 10:06:00,281 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 10:06:00,281 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 10:06:00,281 [INFO] ===========================
+2025-10-28 10:06:00,281 [INFO] 
+2025-10-28 10:06:00,281 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 10:06:00,281 [INFO] Tipo: Valor fixo
+2025-10-28 10:06:00,283 [INFO] Valor: $10.00
+2025-10-28 10:06:00,283 [INFO] ====================================
+2025-10-28 10:06:00,283 [INFO] 
+2025-10-28 10:06:00,283 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 10:06:00,283 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 10:06:00,283 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 10:06:00,285 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 10:06:00,285 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 10:06:00,285 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 10:06:00,285 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 10:06:00,286 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 10:06:00,286 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 10:06:00,286 [INFO] ==========================
+2025-10-28 10:06:00,286 [INFO] 
+2025-10-28 10:06:00,286 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 10:06:00,286 [INFO]  1. 10:04 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 10:06:00,287 [INFO] ====================================================================================================
+2025-10-28 10:06:00,287 [INFO] 
+2025-10-28 10:06:00,288 [INFO] ============================================================
+2025-10-28 10:06:00,288 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 10:06:00,288 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 10:06:00,289 [INFO] ============================================================
+2025-10-28 10:06:00,289 [INFO] [DEBUG TEST 1] Apos Bot iniciado...
+2025-10-28 10:06:00,289 [INFO] [DEBUG TEST 2] Entrando no loop principal...
+2025-10-28 10:06:00,578 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-28 10:06:00,578 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-28 10:08:12,311 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 10:08:12,311 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 10:08:12,311 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 10:08:15,325 [INFO] Tentando conectar...
+2025-10-28 10:08:17,732 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 10:08:17,733 [INFO] Conectado na conta demo
+2025-10-28 10:08:17,734 [INFO] 
+2025-10-28 10:08:17,734 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 10:08:17,734 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 10:08:17,735 [INFO] 
+2025-10-28 10:08:18,121 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 10:09:05,708 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 10:09:05,708 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 10:09:05,708 [INFO] ===========================
+2025-10-28 10:09:05,708 [INFO] 
+2025-10-28 10:09:05,708 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 10:09:05,708 [INFO] Tipo: Valor fixo
+2025-10-28 10:09:05,708 [INFO] Valor: $10.00
+2025-10-28 10:09:05,708 [INFO] ====================================
+2025-10-28 10:09:05,708 [INFO] 
+2025-10-28 10:09:05,714 [INFO] Estrategia selecionada: Martingale
+2025-10-28 10:09:05,714 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-28 10:09:05,714 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 10:09:05,716 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 10:09:05,716 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 10:09:05,716 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 10:09:05,716 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 10:09:05,716 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 10:09:05,716 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 10:09:05,716 [INFO] ==========================
+2025-10-28 10:09:05,716 [INFO] 
+2025-10-28 10:09:05,716 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 10:09:05,717 [INFO]  1. 10:10 | GBPAUD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-28 10:09:05,717 [INFO] ====================================================================================================
+2025-10-28 10:09:05,717 [INFO] 
+2025-10-28 10:09:05,718 [INFO] ============================================================
+2025-10-28 10:09:05,718 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 10:09:05,719 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 10:09:05,719 [INFO] ============================================================
+2025-10-28 10:09:05,720 [INFO] [DEBUG TEST 1] Apos Bot iniciado...
+2025-10-28 10:09:05,720 [INFO] [DEBUG TEST 2] Entrando no loop principal...
+2025-10-28 10:10:06,380 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-28 10:10:06,381 [INFO] SINAL DEMO encontrado: CALL em GBPAUD-OTC (GBPAUD-OTC) por 1 min
+2025-10-28 10:10:06,381 [INFO] Entrada: $10.00 | Protecao 1: $21.50 | Protecao 2: $46.23
+2025-10-28 10:10:06,711 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $13924.87 | Max: $6962.44 | Margem: $6952.44]
+2025-10-28 10:10:10,160 [INFO] Saldo antes: $13924.87
+2025-10-28 10:10:10,164 [ERROR] 
+2025-10-28 10:10:10,164 [ERROR] 
+2025-10-28 10:10:10,164 [ERROR] 
+2025-10-28 10:10:10,164 [ERROR] 
+2025-10-28 10:10:10,164 [ERROR] 
+2025-10-28 10:10:10,164 [ERROR] 
+2025-10-28 10:10:10,164 [ERROR] 
+2025-10-28 10:10:10,164 [ERROR] 
+2025-10-28 10:10:10,169 [WARNING] [!] ATIVO FECHADO
+2025-10-28 10:10:10,169 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-28 10:10:10,494 [INFO] [Status] Saldo: $13924.87 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-28 10:10:10,495 [INFO] Aguardando sinais... Hora atual: 10:10
+2025-10-28 10:10:10,495 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-28 10:10:10,495 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-28 10:14:08,809 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 10:14:08,809 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 10:14:08,811 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 10:14:11,815 [INFO] Tentando conectar...
+2025-10-28 10:14:14,187 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 10:14:14,188 [INFO] Conectado na conta demo
+2025-10-28 10:14:14,188 [INFO] 
+2025-10-28 10:14:14,188 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 10:14:14,188 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 10:14:14,188 [INFO] 
+2025-10-28 10:14:14,669 [INFO] Saldo conta PRÁTICA: $13924.87
+2025-10-28 10:14:19,281 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 10:14:19,281 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 10:14:19,281 [INFO] ===========================
+2025-10-28 10:14:19,281 [INFO] 
+2025-10-28 10:14:19,286 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 10:14:19,286 [INFO] Tipo: Valor fixo
+2025-10-28 10:14:19,286 [INFO] Valor: $10.00
+2025-10-28 10:14:19,286 [INFO] ====================================
+2025-10-28 10:14:19,286 [INFO] 
+2025-10-28 10:14:19,286 [INFO] Estrategia selecionada: Martingale
+2025-10-28 10:14:19,289 [INFO] Aplicando estrategia Martingale aos sinais...
+2025-10-28 10:14:19,289 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 10:14:19,289 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 10:14:19,289 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 10:14:19,289 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 10:14:19,289 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 10:14:19,289 [INFO] Banca inicial: $13924.87 | Limite inicial: $1392.49
+2025-10-28 10:14:19,290 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 10:14:19,290 [INFO] ==========================
+2025-10-28 10:14:19,290 [INFO] 
+2025-10-28 10:14:19,290 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 10:14:19,290 [INFO]  1. 10:15 | EURUSD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: $21.50   | P2: $46.23  
+2025-10-28 10:14:19,291 [INFO] ====================================================================================================
+2025-10-28 10:14:19,291 [INFO] 
+2025-10-28 10:14:19,292 [INFO] ============================================================
+2025-10-28 10:14:19,292 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 10:14:19,292 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 10:14:19,293 [INFO] ============================================================
+2025-10-28 10:14:19,293 [INFO] [DEBUG TEST 1] Apos Bot iniciado...
+2025-10-28 10:14:19,293 [INFO] [DEBUG TEST 2] Entrando no loop principal...
+2025-10-28 10:15:19,920 [INFO] SINAL DEMO encontrado: CALL em EURUSD-OTC (EURUSD-OTC) por 1 min
+2025-10-28 10:15:19,920 [INFO] Entrada: $10.00 | Protecao 1: $21.50 | Protecao 2: $46.23
+2025-10-28 10:15:20,272 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $13924.87 | Max: $6962.44 | Margem: $6952.44]
+2025-10-28 10:15:23,623 [INFO] Saldo antes: $13924.87
+2025-10-28 10:15:24,373 [INFO] Ordem CALL executada em EURUSD-OTC: (True, 13238685411)
+2025-10-28 10:15:24,374 [INFO] Aguardando resultado da ordem ID: 13238685411
+2025-10-28 10:15:24,374 [INFO] Aguardando 70s para expiracao...
+2025-10-28 10:16:39,685 [INFO] Saldo depois: $13914.87 | Diferenca: $-10.00
+2025-10-28 10:16:39,686 [INFO] >>> LOSS! Prejuizo: $10.00
+2025-10-28 10:16:40,018 [INFO] >>> PROTECAO 1: $21.50 [Saldo: $13914.87 | Max: $6957.44]
+2025-10-28 10:16:42,284 [INFO] Saldo antes: $13914.87
+2025-10-28 10:16:43,147 [INFO] Ordem CALL executada em EURUSD-OTC: (True, 13238689745)
+2025-10-28 10:16:43,147 [INFO] Aguardando resultado da ordem ID: 13238689745
+2025-10-28 10:16:43,147 [INFO] Aguardando 70s para expiracao...
+2025-10-28 10:17:58,451 [INFO] Saldo depois: $13893.37 | Diferenca: $-21.50
+2025-10-28 10:17:58,451 [INFO] >>> LOSS! Prejuizo: $21.50
+2025-10-28 10:17:58,751 [INFO] >>> PROTECAO 2: $46.23 [Saldo: $13893.37 | Max: $6946.69]
+2025-10-28 10:18:01,252 [INFO] Saldo antes: $13893.37
+2025-10-28 10:18:02,037 [INFO] Ordem CALL executada em EURUSD-OTC: (True, 13238693969)
+2025-10-28 10:18:02,039 [INFO] Aguardando resultado da ordem ID: 13238693969
+2025-10-28 10:18:02,039 [INFO] Aguardando 70s para expiracao...
+2025-10-28 10:19:17,361 [INFO] Saldo depois: $13973.80 | Diferenca: $80.43
+2025-10-28 10:19:17,362 [INFO] >>> WIN! Lucro: $80.43
+2025-10-28 10:19:17,366 [INFO] === PROTECAO 2 WIN! Lucro total: $48.93
+2025-10-28 10:19:17,366 [INFO] [Protecao] LOSS consecutivos: 0 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $0.00
+2025-10-28 10:19:17,366 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-28 10:19:17,367 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-28 10:22:34,831 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 10:22:34,831 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 10:22:34,831 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 10:22:37,840 [INFO] Tentando conectar...
+2025-10-28 10:22:40,092 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 10:22:40,092 [INFO] Conectado na conta demo
+2025-10-28 10:22:40,092 [INFO] 
+2025-10-28 10:22:40,092 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 10:22:40,092 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 10:22:40,092 [INFO] 
+2025-10-28 10:22:40,455 [INFO] Saldo conta PRÁTICA: $13973.80
+2025-10-28 10:26:29,037 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 10:26:29,039 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 10:26:29,039 [INFO] ===========================
+2025-10-28 10:26:29,040 [INFO] 
+2025-10-28 10:26:29,040 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 10:26:29,040 [INFO] Tipo: Valor fixo
+2025-10-28 10:26:29,041 [INFO] Valor: $10.00
+2025-10-28 10:26:29,041 [INFO] ====================================
+2025-10-28 10:26:29,041 [INFO] 
+2025-10-28 10:26:29,042 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 10:26:29,042 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 10:26:29,042 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 10:26:29,042 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 10:26:29,042 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 10:26:29,043 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 10:26:29,043 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 10:26:29,043 [INFO] Banca inicial: $13973.80 | Limite inicial: $1397.38
+2025-10-28 10:26:29,043 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 10:26:29,044 [INFO] ==========================
+2025-10-28 10:26:29,044 [INFO] 
+2025-10-28 10:26:29,044 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 10:26:29,045 [INFO]  1. 10:25 | EURUSD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 10:26:29,045 [INFO] ====================================================================================================
+2025-10-28 10:26:29,045 [INFO] 
+2025-10-28 10:26:29,045 [INFO] ============================================================
+2025-10-28 10:26:29,045 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 10:26:29,045 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 10:26:29,045 [INFO] ============================================================
+2025-10-28 10:26:29,339 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-28 10:26:29,340 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-28 10:59:08,305 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 10:59:08,306 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 10:59:08,306 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 10:59:11,311 [INFO] Tentando conectar...
+2025-10-28 10:59:13,673 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 10:59:13,675 [INFO] Conectado na conta demo
+2025-10-28 10:59:13,675 [INFO] 
+2025-10-28 10:59:13,675 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 10:59:13,675 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 10:59:13,675 [INFO] 
+2025-10-28 10:59:14,170 [INFO] Saldo conta PRÁTICA: $13973.80
+2025-10-28 13:57:35,089 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 13:57:35,089 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 13:57:35,089 [INFO] ===========================
+2025-10-28 13:57:35,089 [INFO] 
+2025-10-28 13:57:35,089 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 13:57:35,089 [INFO] Tipo: Valor fixo
+2025-10-28 13:57:35,093 [INFO] Valor: $10.00
+2025-10-28 13:57:35,093 [INFO] ====================================
+2025-10-28 13:57:35,093 [INFO] 
+2025-10-28 13:57:35,094 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 13:57:35,095 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 13:57:35,095 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 13:57:35,095 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 13:57:35,095 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 13:57:35,096 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 13:57:35,096 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 13:57:35,096 [INFO] Banca inicial: $13973.80 | Limite inicial: $1397.38
+2025-10-28 13:57:35,096 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 13:57:35,096 [INFO] ==========================
+2025-10-28 13:57:35,096 [INFO] 
+2025-10-28 13:57:35,097 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 13:57:35,097 [INFO]  1. 11:00 | EURUSD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 13:57:35,097 [INFO] ====================================================================================================
+2025-10-28 13:57:35,097 [INFO] 
+2025-10-28 13:57:35,098 [INFO] ============================================================
+2025-10-28 13:57:35,098 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 13:57:35,098 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 13:57:35,098 [INFO] ============================================================
+2025-10-28 13:57:35,340 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-28 13:57:35,340 [INFO] Bot DEMO finalizado. Resultado final: $-0.00
+2025-10-28 13:59:29,825 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 13:59:29,826 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 13:59:29,827 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 13:59:32,835 [INFO] Tentando conectar...
+2025-10-28 13:59:34,891 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 13:59:34,893 [INFO] Conectado na conta demo
+2025-10-28 13:59:34,893 [INFO] 
+2025-10-28 13:59:34,893 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 13:59:34,894 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 13:59:34,895 [INFO] 
+2025-10-28 13:59:35,373 [INFO] Saldo conta PRÁTICA: $13973.80
+2025-10-28 13:59:35,396 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 13:59:35,396 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 13:59:35,396 [INFO] ===========================
+2025-10-28 13:59:35,397 [INFO] 
+2025-10-28 13:59:35,397 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 13:59:35,397 [INFO] Tipo: Valor fixo
+2025-10-28 13:59:35,398 [INFO] Valor: $10.00
+2025-10-28 13:59:35,398 [INFO] ====================================
+2025-10-28 13:59:35,398 [INFO] 
+2025-10-28 13:59:35,399 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 13:59:35,400 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 13:59:35,400 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 13:59:35,400 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 13:59:35,401 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 13:59:35,401 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 13:59:35,401 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 13:59:35,401 [INFO] Banca inicial: $13973.80 | Limite inicial: $1397.38
+2025-10-28 13:59:35,403 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 13:59:35,403 [INFO] ==========================
+2025-10-28 13:59:35,403 [INFO] 
+2025-10-28 13:59:35,404 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 13:59:35,404 [INFO]  1. 14:00 | EURUSD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 13:59:35,404 [INFO] ====================================================================================================
+2025-10-28 13:59:35,404 [INFO] 
+2025-10-28 13:59:35,405 [INFO] ============================================================
+2025-10-28 13:59:35,405 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 13:59:35,405 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 13:59:35,406 [INFO] ============================================================
+2025-10-28 14:00:35,977 [INFO] [Status] Saldo: $13973.80 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-28 14:00:35,977 [INFO] SINAL DEMO encontrado: CALL em EURUSD-OTC (EURUSD-OTC) por 1 min
+2025-10-28 14:00:35,979 [INFO] Entrada: $10.00 | Protecao 1: N/A | Protecao 2: N/A
+2025-10-28 14:00:36,241 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $13973.80 | Max: $6986.90 | Margem: $6976.90]
+2025-10-28 14:00:45,309 [INFO] Saldo antes: $13973.80
+2025-10-28 14:00:45,977 [INFO] Ordem CALL executada em EURUSD-OTC: (True, 13239436092)
+2025-10-28 14:00:45,977 [INFO] Aguardando resultado da ordem ID: 13239436092
+2025-10-28 14:00:45,977 [INFO] Aguardando 70s para expiracao...
+2025-10-28 14:02:01,301 [INFO] Saldo depois: $13963.80 | Diferenca: $-10.00
+2025-10-28 14:02:01,301 [INFO] >>> LOSS! Prejuizo: $10.00
+2025-10-28 14:02:01,301 [INFO] XXX OPERACAO FINALIZADA COM LOSS! Prejuizo total: $10.00
+2025-10-28 14:02:01,301 [WARNING] [Protecao] LOSS consecutivos: 1 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $10.00
+2025-10-28 14:02:01,301 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-28 14:02:01,301 [INFO] Bot DEMO finalizado. Resultado final: $-10.00
+2025-10-28 14:18:34,305 [INFO] Iniciando modo DEMO com arquivo de sinais: data\sinais.txt
+2025-10-28 14:18:34,309 [INFO] Criando sessão IQ_Option (DEMO) e conectando...
+2025-10-28 14:18:34,309 [INFO] Aguardando 3 segundos para estabilizar conexao...
+2025-10-28 14:18:37,317 [INFO] Tentando conectar...
+2025-10-28 14:18:39,456 [INFO] Conexao estabelecida com sucesso!
+2025-10-28 14:18:39,460 [INFO] Conectado na conta demo
+2025-10-28 14:18:39,460 [INFO] 
+2025-10-28 14:18:39,461 [INFO] NOTA: Podem aparecer erros de threading da biblioteca iqoptionapi
+2025-10-28 14:18:39,461 [INFO]       Estes erros nao afetam as operacoes binarias - ignore-os
+2025-10-28 14:18:39,461 [INFO] 
+2025-10-28 14:18:39,786 [INFO] Saldo conta PRÁTICA: $13963.80
+2025-10-28 14:18:39,796 [INFO] === VALIDACAO CONCLUIDA ===
+2025-10-28 14:18:39,796 [INFO] Carregados 1 sinais validos do arquivo
+2025-10-28 14:18:39,797 [INFO] ===========================
+2025-10-28 14:18:39,797 [INFO] 
+2025-10-28 14:18:39,798 [INFO] === VALOR DE ENTRADA CONFIGURADO ===
+2025-10-28 14:18:39,798 [INFO] Tipo: Valor fixo
+2025-10-28 14:18:39,798 [INFO] Valor: $10.00
+2025-10-28 14:18:39,798 [INFO] ====================================
+2025-10-28 14:18:39,798 [INFO] 
+2025-10-28 14:18:39,799 [INFO] Estrategia selecionada: Valor Fixo
+2025-10-28 14:18:39,800 [INFO] Aplicando estrategia Valor Fixo aos sinais...
+2025-10-28 14:18:39,800 [INFO] === PROTECOES ATIVADAS ===
+2025-10-28 14:18:39,800 [INFO] Pausa apos 6 LOSS consecutivos: Pula 2 sinais
+2025-10-28 14:18:39,800 [INFO] Pausa apos 2 conjuntos de 3 LOSS: Pula 2 sinais
+2025-10-28 14:18:39,801 [INFO] Stop Loss: 10% da banca (DINAMICO)
+2025-10-28 14:18:39,801 [INFO] Limite por operacao: 50.0% do saldo atual
+2025-10-28 14:18:39,801 [INFO] Banca inicial: $13963.80 | Limite inicial: $1396.38
+2025-10-28 14:18:39,802 [INFO] IMPORTANTE: Limites sao recalculados conforme saldo atual muda
+2025-10-28 14:18:39,802 [INFO] ==========================
+2025-10-28 14:18:39,802 [INFO] 
+2025-10-28 14:18:39,802 [INFO] === SINAIS PROGRAMADOS (1) ===
+2025-10-28 14:18:39,802 [INFO]  1. 14:20 | EURUSD-OTC      | CALL | M 1 | Entrada: $  10.00 | P1: N/A      | P2: N/A     
+2025-10-28 14:18:39,804 [INFO] ====================================================================================================
+2025-10-28 14:18:39,804 [INFO] 
+2025-10-28 14:18:39,804 [INFO] ============================================================
+2025-10-28 14:18:39,805 [INFO] Bot iniciado! Aguardando sinais...
+2025-10-28 14:18:39,805 [INFO] Para parar o bot a qualquer momento, digite 'S' quando solicitado
+2025-10-28 14:18:39,805 [INFO] ============================================================
+2025-10-28 14:20:40,800 [INFO] [Status] Saldo: $13963.80 | Variacao: +0.00% | Perda contabilizada: $0.00
+2025-10-28 14:20:40,801 [INFO] SINAL DEMO encontrado: CALL em EURUSD-OTC (EURUSD-OTC) por 1 min
+2025-10-28 14:20:40,801 [INFO] Entrada: $10.00 | Protecao 1: N/A | Protecao 2: N/A
+2025-10-28 14:20:41,153 [INFO] >>> ENTRADA PRINCIPAL: $10.00 [Saldo: $13963.80 | Max: $6981.90 | Margem: $6971.90]
+2025-10-28 14:20:44,467 [INFO] Saldo antes: $13963.80
+2025-10-28 14:20:45,158 [INFO] Ordem CALL executada em EURUSD-OTC: (True, 13239503600)
+2025-10-28 14:20:45,160 [INFO] Aguardando resultado da ordem ID: 13239503600
+2025-10-28 14:20:45,160 [INFO] Aguardando 70s para expiracao...
+2025-10-28 14:22:00,481 [INFO] Saldo depois: $13953.80 | Diferenca: $-10.00
+2025-10-28 14:22:00,481 [INFO] >>> LOSS! Prejuizo: $10.00
+2025-10-28 14:22:00,485 [INFO] XXX OPERACAO FINALIZADA COM LOSS! Prejuizo total: $10.00
+2025-10-28 14:22:00,486 [WARNING] [Protecao] LOSS consecutivos: 1 | Conjuntos de 3 LOSS: 0 | Perda acumulada: $10.00
+2025-10-28 14:22:00,486 [INFO] === TODOS OS SINAIS FORAM EXECUTADOS ===
+2025-10-28 14:22:00,486 [INFO] Bot DEMO finalizado. Resultado final: $-10.00

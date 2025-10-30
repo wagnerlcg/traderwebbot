@@ -7,7 +7,17 @@ import json
 import platform
 import os
 
-def setup_logger(name, log_file, level=logging.INFO):
+def verificar_modo_web():
+    """Verifica se estamos em modo web através da variável global MODO_WEB"""
+    try:
+        from bot.iqoption_bot import MODO_WEB
+        return MODO_WEB
+    except ImportError:
+        # Se não conseguir importar, verificar sys.stdin.isatty()
+        import sys
+        return not sys.stdin.isatty()
+
+def setup_logger(name, log_file, level=logging.INFO, callback=None):
     Path("logs").mkdir(exist_ok=True)
     logger = logging.getLogger(name)
     logger.setLevel(level)
@@ -22,6 +32,26 @@ def setup_logger(name, log_file, level=logging.INFO):
     console_formatter = logging.Formatter('%(message)s')
     console_handler.setFormatter(console_formatter)
 
+    # Handler customizado para web interface (se fornecido)
+    if callback:
+        class WebSocketHandler(logging.Handler):
+            def __init__(self, callback_func):
+                super().__init__()
+                self.callback = callback_func
+            
+            def emit(self, record):
+                try:
+                    log_message = self.format(record)
+                    if self.callback and should_send_to_web(log_message):
+                        self.callback(log_message)
+                except Exception:
+                    pass
+        
+        web_handler = WebSocketHandler(callback)
+        web_handler.setFormatter(logging.Formatter('%(message)s'))
+        if not logger.handlers:
+            logger.addHandler(web_handler)
+
     if not logger.handlers:
         logger.addHandler(file_handler)
         logger.addHandler(console_handler)
@@ -29,25 +59,48 @@ def setup_logger(name, log_file, level=logging.INFO):
 
     return logger
 
+def should_send_to_web(message):
+    """Determina se uma mensagem deve ser enviada para a interface web"""
+    # Filtrar mensagens técnicas
+    ignore_keywords = [
+        'tentando conectar',
+        'aguardando 3 segundos',
+        'conexao estabelecida',
+        'nota: podem aparecer erros',
+        'debug',
+        'erro no loop',
+        'status',
+        'saldo',
+        'stats',
+        'ws:'
+    ]
+    
+    message_lower = message.lower()
+    for keyword in ignore_keywords:
+        if keyword in message_lower:
+            return False
+    
+    return True
+
 def print_user(message):
     """Imprime mensagem limpa para o usuário (sem timestamp)"""
     print(message)
 
 def print_error_user(message):
     """Imprime erro amigável para o usuário"""
-    print(f"❌ {message}")
+    print(f"[ERRO] {message}")
 
 def print_success_user(message):
     """Imprime sucesso amigável para o usuário"""
-    print(f"✅ {message}")
+    print(f"[OK] {message}")
 
 def print_warning_user(message):
     """Imprime aviso amigável para o usuário"""
-    print(f"⚠️ {message}")
+    print(f"[AVISO] {message}")
 
 def print_info_user(message):
     """Imprime informação amigável para o usuário"""
-    print(f"ℹ️ {message}")
+    print(f"[INFO] {message}")
 
 def salvar_sinal(timestamp, par, tipo, preco, resultado=None, saldo=None):
     Path("data").mkdir(exist_ok=True)
@@ -105,8 +158,15 @@ def solicitar_credenciais(conta="REAL"):
     print()
     
     try:
-        email = input("Email: ").strip()
-        senha = getpass.getpass("Senha: ").strip()
+        # Verificar se estamos em modo interativo
+        import sys
+        if verificar_modo_web():
+            email = input("Email: ").strip()
+            senha = getpass.getpass("Senha: ").strip()
+        else:
+            # Modo web - retornar valores vazios
+            print("[AVISO] Modo web detectado. Credenciais devem ser fornecidas via interface.")
+            return "", ""
         
         if not email or not senha:
             print()
@@ -453,12 +513,12 @@ async def executar_operacao_com_resultado(Iq, valor, ativo, tipo, tempo_minutos,
         # Capturar saldo antes da ordem
         saldo_antes = Iq.get_balance()
         logger.info(f"Saldo antes: ${saldo_antes:.2f}")
-        print_user(f"💰 Saldo atual: ${saldo_antes:.2f}")
+        print_user(f"[SALDO] Saldo atual: ${saldo_antes:.2f}")
         
         # Executar ordem com o ativo EXATAMENTE como informado (sem variações)
         resultado = Iq.buy(valor, ativo, tipo.lower(), tempo_minutos)
         logger.info(f"Ordem {tipo} executada em {ativo}: {resultado}")
-        print_user(f"📊 Executando {tipo} em {ativo} por {tempo_minutos} minuto(s)")
+        print_user(f"[EXECUTANDO] {tipo} em {ativo} por {tempo_minutos} minuto(s)")
         
         # Extrair order_id
         order_id = None
@@ -508,12 +568,12 @@ async def executar_operacao_com_resultado(Iq, valor, ativo, tipo, tempo_minutos,
         # Determinar resultado
         if diferenca > 0.1:  # Margem para evitar erros de precisão
             logger.info(f">>> WIN! Lucro: ${diferenca:.2f}")
-            print_success_user(f"🎉 WIN! Lucro: ${diferenca:.2f}")
+            print_success_user(f"WIN! Lucro: ${diferenca:.2f}")
             tocar_som('win', sons_habilitados)
             return "WIN", diferenca
         else:
             logger.info(f">>> LOSS! Prejuizo: ${valor:.2f}")
-            print_error_user(f"💸 LOSS! Prejuízo: ${valor:.2f}")
+            print_error_user(f"LOSS! Prejuízo: ${valor:.2f}")
             tocar_som('loss', sons_habilitados)
             return "LOSS", -valor
             
@@ -700,8 +760,27 @@ def solicitar_stop_win() -> float:
     print("Valor deve estar entre 1% e 20% da banca.")
     print()
     
+    # Verificar se estamos em modo web através da variável global
+    try:
+        from bot.iqoption_bot import MODO_WEB
+        modo_web = MODO_WEB
+    except ImportError:
+        # Se não conseguir importar, verificar verificar_modo_web()
+        import sys
+        modo_web = not verificar_modo_web()
+    
+    if modo_web:
+        # Modo web - usar valor padrão
+        stop_win_percentual = 20.0
+        print(f"Stop Win (%): {stop_win_percentual} (padrão para modo web)")
+        print()
+        print(f"[OK] Stop Win configurado: {stop_win_percentual}%")
+        return stop_win_percentual
+    
+    # Modo terminal - solicitar input
     while True:
         try:
+            import sys
             stop_win_input = input("Stop Win (%): ").strip()
             stop_win_percentual = float(stop_win_input)
             

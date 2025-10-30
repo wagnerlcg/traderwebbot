@@ -35,26 +35,64 @@ except AttributeError:
     # Python < 3.8 não tem threading.excepthook
     pass
 
-# Flag global para controlar parada do bot
+def safe_print(message):
+    """Print seguro para Windows - substitui emojis por caracteres ASCII"""
+    safe_message = message.replace('✅', '[OK]').replace('❌', '[ERRO]').replace('⚠️', '[AVISO]').replace('🚀', '[INICIO]').replace('💰', '[DINHEIRO]').replace('📊', '[DADOS]').replace('🔍', '[INFO]').replace('📦', '[PACOTE]').replace('🎥', '[VIDEO]').replace('📂', '[ARQUIVO]').replace('📄', '[DOC]').replace('📋', '[LISTA]').replace('🔄', '[ATUALIZAR]').replace('🚫', '[BLOQUEADO]').replace('🕐', '[TEMPO]').replace('🤖', '[BOT]')
+    print(safe_message)
+
+# Variável global para controlar parada
 parar_bot = False
+
+# Variável global para indicar se está em modo web
+MODO_WEB = False
+
+# Configurações da interface web (se disponível)
+WEB_CONFIG = None
+
+def verificar_parada_bot(stop_callback=None):
+    """Verifica se o bot deve parar"""
+    global parar_bot
+    return parar_bot or (stop_callback and stop_callback())
 
 def aguardar_comando_parada():
     """
     Função que roda em thread separada aguardando comando do usuário para parar o bot.
     Não bloqueia a execução principal do robô.
     """
-    global parar_bot
+    global parar_bot, MODO_WEB
+    import time
+    import sys
+    
+    # Se está em modo web, apenas aguardar sem input
+    if MODO_WEB:
+        while not parar_bot:
+            time.sleep(1)
+        return
+    
+    # Verificar uma única vez se estamos em modo interativo
+    modo_interativo = sys.stdin.isatty()
+    
     while not parar_bot:
         try:
-            resposta = input("\nPara parar o bot? (S/N): ").strip().upper()
-            if resposta == 'S':
-                print("\n✓ Comando de parada recebido. Encerrando bot após operação atual...")
-                parar_bot = True
-                break
-            elif resposta == 'N':
-                print("✓ Bot continuará executando. Digite novamente quando quiser parar.")
+            if modo_interativo:
+                # Modo terminal - permitir input
+                try:
+                    resposta = input("\nPara parar o bot? (S/N): ").strip().upper()
+                    if resposta == 'S':
+                        print("\n✓ Comando de parada recebido. Encerrando bot após operação atual...")
+                        parar_bot = True
+                        break
+                    elif resposta == 'N':
+                        print("✓ Bot continuará executando. Digite novamente quando quiser parar.")
+                    else:
+                        print("⚠ Resposta inválida. Digite 'S' para parar ou 'N' para continuar.")
+                except EOFError:
+                    # Se não há mais input disponível, mudar para modo web
+                    modo_interativo = False
+                    time.sleep(1)
             else:
-                print("⚠ Resposta inválida. Digite 'S' para parar ou 'N' para continuar.")
+                # Modo web - aguardar sem input
+                time.sleep(1)
         except (EOFError, KeyboardInterrupt):
             # Se houver Ctrl+C ou fim de arquivo, também para
             parar_bot = True
@@ -94,7 +132,14 @@ def normalizar_ativo(par):
     # A API da IQ Option geralmente aceita nomes com espaços
     return par_normalizado
 
-async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentual_arg=None, sons_habilitados=True, balance_callback=None, stop_callback=None):
+async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentual_arg=None, sons_habilitados=True, balance_callback=None, stats_callback=None, stop_callback=None, web_config=None):
+    global MODO_WEB, WEB_CONFIG
+    
+    # Se há callback de stop, balance ou stats, está em modo web
+    if stop_callback or balance_callback or stats_callback or web_config:
+        MODO_WEB = True
+        WEB_CONFIG = web_config  # Armazenar configurações da web
+    
     logger.info(f"Iniciando modo DEMO com arquivo de sinais: {arquivo_sinais}")
     
     # VERIFICAR BLOQUEIO POR STOP WIN
@@ -112,10 +157,10 @@ async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentu
         logger.error("Volte apos o periodo de bloqueio para operar novamente.")
         logger.error("="*60)
         print("\n" + "="*60)
-        print("🚫 STOP WIN ATIVO - BOT BLOQUEADO!")
+        safe_print("[BLOQUEADO] STOP WIN ATIVO - BOT BLOQUEADO!")
         print("="*60)
-        print(f"✅ Voce atingiu o Stop Win e ganhou ${lucro_anterior:.2f}")
-        print(f"🕐 Bloqueio restante: {horas_restantes:.1f} horas")
+        safe_print(f"[OK] Voce atingiu o Stop Win e ganhou ${lucro_anterior:.2f}")
+        safe_print(f"[TEMPO] Bloqueio restante: {horas_restantes:.1f} horas")
         print("")
         print("Este bloqueio protege seus lucros!")
         print("Volte apos o periodo para operar novamente.")
@@ -157,7 +202,7 @@ async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentu
         logger.error("- Reinicie seu modem/roteador se necessário")
         logger.error("="*60)
         print("\n" + "="*60)
-        print("❌ ERRO DE CONEXAO COM IQ OPTION")
+        safe_print("[ERRO] ERRO DE CONEXAO COM IQ OPTION")
         print("="*60)
         print("\nPossíveis causas:")
         print("  1. Problema de internet/firewall")
@@ -187,7 +232,7 @@ async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentu
         logger.error("- Tente novamente em alguns minutos")
         logger.error("="*60)
         print("\n" + "="*60)
-        print("❌ ERRO DE AUTENTICACAO NA IQ OPTION")
+        safe_print("[ERRO] ERRO DE AUTENTICACAO NA IQ OPTION")
         print("="*60)
         print("\nPossíveis causas:")
         print("  1. Email ou senha incorretos")
@@ -223,7 +268,7 @@ async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentu
             logger.error("4. Se persistir, reinicie seu computador")
             logger.error("="*60)
             print("\n" + "="*60)
-            print("⚠️  ERRO: CONEXAO JA FECHADA")
+            safe_print("[AVISO] ERRO: CONEXAO JA FECHADA")
             print("="*60)
             print("\nEste erro ocorre por tentativas muito rapidas.")
             print("")
@@ -286,7 +331,7 @@ async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentu
     
     print()
     print("="*60)
-    print(f"✅ CONECTADO COM SUCESSO!")
+    safe_print(f"[OK] CONECTADO COM SUCESSO!")
     print(f"   Saldo: ${saldo_inicial:.2f}")
     print("="*60)
     print()
@@ -308,8 +353,15 @@ async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentu
             print("Defina o percentual maximo de perda permitido.")
             print("Valor deve estar entre 1% e 10% da banca.")
             print()
-            stop_loss_input = input("Stop Loss (%): ").strip()
-            stop_loss_percentual = float(stop_loss_input)
+            # Verificar se estamos em modo interativo
+            import sys
+            if sys.stdin.isatty():
+                stop_loss_input = input("Stop Loss (%): ").strip()
+                stop_loss_percentual = float(stop_loss_input)
+            else:
+                # Modo web - usar valor padrão
+                stop_loss_percentual = stop_loss_percentual_arg or 10.0
+                print(f"Stop Loss (%): {stop_loss_percentual} (padrão para modo web)")
         except (ValueError, KeyboardInterrupt):
             print()
             print("[ERRO] Valor invalido. Usando padrao de 10%")
@@ -338,6 +390,16 @@ async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentu
         logger.info(f"=== VALIDACAO CONCLUIDA ===")
         logger.info(f"Carregados {len(sinais)} sinais validos do arquivo")
         logger.info(f"===========================")
+        
+        # Atualizar estatísticas iniciais
+        if stats_callback:
+            stats_callback({
+                'sinais_totais': len(sinais),
+                'sinais_executados': 0,
+                'wins': 0,
+                'losses': 0,
+                'lucro_total': 0
+            })
     except FileNotFoundError as e:
         logger.error(f"!!! ERRO CRITICO !!!")
         logger.error(f"{e}")
@@ -418,6 +480,15 @@ async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentu
             sinais[idx] = aplicar_estrategia_ao_sinal(
                 sinal, estrategia, parametros_estrategia, saldo_inicial, 0
             )
+    
+    else:  # Valor Fixo ou outras estratégias
+        # Valor Fixo: usar valor base para todos os sinais
+        logger.info(f"Aplicando estrategia Valor Fixo aos sinais...")
+        for idx, sinal in enumerate(sinais):
+            sinal["valor_entrada"] = valor_entrada_base
+            sinal["protecao1"] = None
+            sinal["protecao2"] = None
+            sinal["estrategia_info"] = f"Valor Fixo: ${valor_entrada_base:.2f}"
 
     # Configurações de proteção
     STOP_LOSS_PERCENTUAL = stop_loss_percentual  # Percentual configurável (1-50%)
@@ -463,16 +534,11 @@ async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentu
     logger.info("Bot iniciado! Aguardando sinais...")
     logger.info("Para parar o bot a qualquer momento, digite 'S' quando solicitado")
     logger.info("="*60)
-    print("\n" + "="*60)
-    print("🤖 BOT DEMO INICIADO!")
-    print("="*60)
-    print("Para parar o bot a qualquer momento, digite 'S' quando solicitado")
-    print("="*60 + "\n")
 
     while True:
         try:
             # Verificar flag de parada
-            if parar_bot or (stop_callback and stop_callback()):
+            if verificar_parada_bot(stop_callback):
                 logger.info("Comando de parada recebido. Encerrando bot DEMO...")
                 emitir_alerta_sonoro(repeticoes=2, duracao_ms=300)
                 break
@@ -557,19 +623,20 @@ async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentu
                     emitir_alerta_sonoro(repeticoes=5, duracao_ms=800)
                     break
             
-            # Verificar se ainda há sinais pendentes
-            if not verificar_sinais_pendentes(sinais, hora_atual, minuto_atual):
-                logger.info("=== TODOS OS SINAIS FORAM EXECUTADOS ===")
-                logger.info(f"Bot DEMO finalizado. Resultado final: ${-perda_acumulada:.2f}")
-                emitir_alerta_sonoro(repeticoes=3, duracao_ms=400)
-                break
-            
             # Verificar se há sinal agendado para agora
             sinal = verificar_sinal_agendado(sinais, hora_atual, minuto_atual)
             
             if sinal:
                 # Marcar sinal como sendo processado
                 sinal["executado"] = True
+                
+                # Atualizar estatísticas
+                if stats_callback:
+                    sinais_executados = sum(1 for s in sinais if s.get("executado", False))
+                    stats_callback({
+                        'sinais_executados': sinais_executados,
+                        'sinais_totais': len(sinais)
+                    })
                 
                 # Verificar se está em pausa (pulando sinais)
                 if sinais_pausados > 0:
@@ -861,14 +928,29 @@ async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentu
                         logger.warning(f"[Protecao] LOSS consecutivos: {loss_consecutivos} | Conjuntos de 3 LOSS: {conjuntos_3_loss} | Perda acumulada: ${perda_acumulada:.2f}")
 
                 except Exception as e:
+                    import traceback
                     logger.error(f"Erro ao executar operacao DEMO: {e}")
+                    logger.error(f"Traceback: {traceback.format_exc()}")
             else:
                 # Log apenas a cada 5 minutos para não poluir
                 if minuto_atual % 5 == 0:
                     logger.info(f"Aguardando sinais... Hora atual: {hora_atual:02d}:{minuto_atual:02d}")
                     from bot.utils import print_user
-                    print_user(f"⏰ Aguardando sinais... {hora_atual:02d}:{minuto_atual:02d}")
+                    print_user(f"[AGUARDANDO] Aguardando sinais... {hora_atual:02d}:{minuto_atual:02d}")
 
+            # Verificar parada antes de aguardar
+            if verificar_parada_bot(stop_callback):
+                logger.info("Comando de parada recebido durante aguardo. Encerrando bot DEMO...")
+                emitir_alerta_sonoro(repeticoes=2, duracao_ms=300)
+                break
+            
+            # Verificar se ainda há sinais pendentes APÓS processar o sinal atual
+            if not verificar_sinais_pendentes(sinais, hora_atual, minuto_atual):
+                logger.info("=== TODOS OS SINAIS FORAM EXECUTADOS ===")
+                logger.info(f"Bot DEMO finalizado. Resultado final: ${-perda_acumulada:.2f}")
+                emitir_alerta_sonoro(repeticoes=3, duracao_ms=400)
+                break
+            
             # Aguardar 1 minuto antes da próxima verificação
             await asyncio.sleep(60)
 
@@ -879,10 +961,22 @@ async def executar_demo(arquivo_sinais, logger, email, senha, stop_loss_percentu
                 Iq.connect()
             except Exception as reconnect_error:
                 logger.error(f"Erro na reconexão: {reconnect_error}")
+            # Verificar parada antes de aguardar reconexão
+            if verificar_parada_bot(stop_callback):
+                logger.info("Comando de parada recebido durante reconexão. Encerrando bot...")
+                emitir_alerta_sonoro(repeticoes=2, duracao_ms=300)
+                break
             await asyncio.sleep(10)
 
 
-async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentual_arg=None, sons_habilitados=True, balance_callback=None, stop_callback=None):
+async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentual_arg=None, sons_habilitados=True, balance_callback=None, stats_callback=None, stop_callback=None, web_config=None):
+    global MODO_WEB, WEB_CONFIG
+    
+    # Se há callback de stop, balance ou stats, está em modo web
+    if stop_callback or balance_callback or stats_callback or web_config:
+        MODO_WEB = True
+        WEB_CONFIG = web_config  # Armazenar configurações da web
+    
     logger.info(f"Iniciando modo REAL com arquivo de sinais: {arquivo_sinais}")
     
     # VERIFICAR BLOQUEIO POR STOP WIN
@@ -945,7 +1039,7 @@ async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentu
         logger.error("- Reinicie seu modem/roteador se necessário")
         logger.error("="*60)
         print("\n" + "="*60)
-        print("❌ ERRO DE CONEXAO COM IQ OPTION")
+        safe_print("[ERRO] ERRO DE CONEXAO COM IQ OPTION")
         print("="*60)
         print("\nPossíveis causas:")
         print("  1. Problema de internet/firewall")
@@ -975,7 +1069,7 @@ async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentu
         logger.error("- Tente novamente em alguns minutos")
         logger.error("="*60)
         print("\n" + "="*60)
-        print("❌ ERRO DE AUTENTICACAO NA IQ OPTION")
+        safe_print("[ERRO] ERRO DE AUTENTICACAO NA IQ OPTION")
         print("="*60)
         print("\nPossíveis causas:")
         print("  1. Email ou senha incorretos")
@@ -1011,7 +1105,7 @@ async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentu
             logger.error("4. Se persistir, reinicie seu computador")
             logger.error("="*60)
             print("\n" + "="*60)
-            print("⚠️  ERRO: CONEXAO JA FECHADA")
+            safe_print("[AVISO] ERRO: CONEXAO JA FECHADA")
             print("="*60)
             print("\nEste erro ocorre por tentativas muito rapidas.")
             print("")
@@ -1074,11 +1168,11 @@ async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentu
     
     print()
     print("="*60)
-    print(f"✅ CONECTADO COM SUCESSO!")
+    print(f"[OK] CONECTADO COM SUCESSO!")
     print(f"   Saldo REAL: ${saldo_inicial:.2f}")
     print("="*60)
     print()
-    print("⚠️  ATENCAO: Voce esta operando com DINHEIRO REAL!")
+    print("[AVISO] ATENCAO: Voce esta operando com DINHEIRO REAL!")
     print()
     print("Agora vamos configurar as estrategias e protecoes...")
     print()
@@ -1098,8 +1192,15 @@ async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentu
             print("Defina o percentual maximo de perda permitido.")
             print("Valor deve estar entre 1% e 10% da banca.")
             print()
-            stop_loss_input = input("Stop Loss (%): ").strip()
-            stop_loss_percentual = float(stop_loss_input)
+            # Verificar se estamos em modo interativo
+            import sys
+            if sys.stdin.isatty():
+                stop_loss_input = input("Stop Loss (%): ").strip()
+                stop_loss_percentual = float(stop_loss_input)
+            else:
+                # Modo web - usar valor padrão
+                stop_loss_percentual = stop_loss_percentual_arg or 10.0
+                print(f"Stop Loss (%): {stop_loss_percentual} (padrão para modo web)")
         except (ValueError, KeyboardInterrupt):
             print()
             print("[ERRO] Valor invalido. Usando padrao de 10%")
@@ -1128,6 +1229,16 @@ async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentu
         logger.info(f"=== VALIDACAO CONCLUIDA ===")
         logger.info(f"Carregados {len(sinais)} sinais validos do arquivo")
         logger.info(f"===========================")
+        
+        # Atualizar estatísticas iniciais
+        if stats_callback:
+            stats_callback({
+                'sinais_totais': len(sinais),
+                'sinais_executados': 0,
+                'wins': 0,
+                'losses': 0,
+                'lucro_total': 0
+            })
     except FileNotFoundError as e:
         logger.error(f"!!! ERRO CRITICO !!!")
         logger.error(f"{e}")
@@ -1208,6 +1319,15 @@ async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentu
             sinais[idx] = aplicar_estrategia_ao_sinal(
                 sinal, estrategia, parametros_estrategia, saldo_inicial, 0
             )
+    
+    else:  # Valor Fixo ou outras estratégias
+        # Valor Fixo: usar valor base para todos os sinais
+        logger.info(f"Aplicando estrategia Valor Fixo aos sinais...")
+        for idx, sinal in enumerate(sinais):
+            sinal["valor_entrada"] = valor_entrada_base
+            sinal["protecao1"] = None
+            sinal["protecao2"] = None
+            sinal["estrategia_info"] = f"Valor Fixo: ${valor_entrada_base:.2f}"
 
     # Configurações de proteção
     STOP_LOSS_PERCENTUAL = stop_loss_percentual  # Percentual configurável (1-50%)
@@ -1254,16 +1374,16 @@ async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentu
     logger.info("Para parar o bot a qualquer momento, digite 'S' quando solicitado")
     logger.info("="*60)
     print("\n" + "="*60)
-    print("🤖 BOT REAL INICIADO!")
+    safe_print("[BOT] BOT REAL INICIADO!")
     print("="*60)
-    print("⚠️  ATENÇÃO: Você está operando com DINHEIRO REAL!")
+    safe_print("[AVISO] ATENCAO: Voce esta operando com DINHEIRO REAL!")
     print("Para parar o bot a qualquer momento, digite 'S' quando solicitado")
     print("="*60 + "\n")
 
     while True:
         try:
             # Verificar flag de parada
-            if parar_bot:
+            if verificar_parada_bot(stop_callback):
                 logger.info("Comando de parada recebido. Encerrando bot REAL...")
                 emitir_alerta_sonoro(repeticoes=2, duracao_ms=300)
                 break
@@ -1348,19 +1468,20 @@ async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentu
                     emitir_alerta_sonoro(repeticoes=5, duracao_ms=800)
                     break
             
-            # Verificar se ainda há sinais pendentes
-            if not verificar_sinais_pendentes(sinais, hora_atual, minuto_atual):
-                logger.info("=== TODOS OS SINAIS FORAM EXECUTADOS ===")
-                logger.info(f"Bot REAL finalizado. Resultado final: ${-perda_acumulada:.2f}")
-                emitir_alerta_sonoro(repeticoes=3, duracao_ms=400)
-                break
-            
             # Verificar se há sinal agendado para agora
             sinal = verificar_sinal_agendado(sinais, hora_atual, minuto_atual)
             
             if sinal:
                 # Marcar sinal como sendo processado
                 sinal["executado"] = True
+                
+                # Atualizar estatísticas
+                if stats_callback:
+                    sinais_executados = sum(1 for s in sinais if s.get("executado", False))
+                    stats_callback({
+                        'sinais_executados': sinais_executados,
+                        'sinais_totais': len(sinais)
+                    })
                 
                 # Verificar se está em pausa (pulando sinais)
                 if sinais_pausados > 0:
@@ -1659,8 +1780,21 @@ async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentu
                 if minuto_atual % 5 == 0:
                     logger.info(f"Aguardando sinais... Hora atual: {hora_atual:02d}:{minuto_atual:02d}")
                     from bot.utils import print_user
-                    print_user(f"⏰ Aguardando sinais... {hora_atual:02d}:{minuto_atual:02d}")
+                    print_user(f"[AGUARDANDO] Aguardando sinais... {hora_atual:02d}:{minuto_atual:02d}")
 
+            # Verificar parada antes de aguardar
+            if verificar_parada_bot(stop_callback):
+                logger.info("Comando de parada recebido durante aguardo. Encerrando bot REAL...")
+                emitir_alerta_sonoro(repeticoes=2, duracao_ms=300)
+                break
+            
+            # Verificar se ainda há sinais pendentes APÓS processar o sinal atual
+            if not verificar_sinais_pendentes(sinais, hora_atual, minuto_atual):
+                logger.info("=== TODOS OS SINAIS FORAM EXECUTADOS ===")
+                logger.info(f"Bot REAL finalizado. Resultado final: ${-perda_acumulada:.2f}")
+                emitir_alerta_sonoro(repeticoes=3, duracao_ms=400)
+                break
+            
             # Aguardar 1 minuto antes da próxima verificação
             await asyncio.sleep(60)
 
@@ -1671,4 +1805,9 @@ async def executar_real(arquivo_sinais, logger, email, senha, stop_loss_percentu
                 Iq.connect()
             except Exception as reconnect_error:
                 logger.error(f"Erro na reconexão: {reconnect_error}")
+            # Verificar parada antes de aguardar reconexão
+            if verificar_parada_bot(stop_callback):
+                logger.info("Comando de parada recebido durante reconexão. Encerrando bot...")
+                emitir_alerta_sonoro(repeticoes=2, duracao_ms=300)
+                break
             await asyncio.sleep(10)

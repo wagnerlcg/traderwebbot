@@ -1234,3 +1234,16 @@ function updateChart(period) {
     });
 }
 
+// Garantir que variáveis globais estão disponíveis
+if (typeof window !== 'undefined') {
+    if (!window.appState) {
+        window.appState = {
+            running: false, mode: null, saldo_inicial: 0, saldo_atual: 0,
+            sinais_executados: 0, sinais_totais: 0, wins: 0, losses: 0,
+            lucro_total: 0, logs: [], sinais: [], configuracoes: {}
+        };
+    }
+    if (!window.API_BASE) {
+        window.API_BASE = '';
+    }
+}

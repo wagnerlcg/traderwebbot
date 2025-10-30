@@ -84,7 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Conectar ao WebSocket (se Socket.IO estiver disponível)
     try {
         if (window.io) {
-            socket = io({ path: socketPath });
+            // Forçar polling no PythonAnywhere (não suporta WebSockets nativos)
+            // O PythonAnywhere funciona apenas com long-polling via HTTP
+            socket = io({ 
+                path: socketPath,
+                transports: ['polling'],  // Usar apenas polling, sem tentar WebSocket
+                upgrade: false,           // Desabilitar upgrade para WebSocket
+                rememberUpgrade: false    // Não lembrar tentativas de upgrade
+            });
 
             socket.on('connect', () => {
                 console.log('Conectado ao servidor');

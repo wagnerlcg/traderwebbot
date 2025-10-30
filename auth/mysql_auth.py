@@ -38,9 +38,13 @@ class MySQLAuth:
         
         try:
             with connection.cursor(pymysql.cursors.DictCursor) as cursor:
-                # Consultar usuário pelo campo e-mail
-                sql = "SELECT * FROM usuarios WHERE `e-mail` = %s"
-                cursor.execute(sql, (email,))
+                # Compatibilidade de esquemas: tenta 'email' e, se falhar, '`e-mail`'
+                try:
+                    sql = "SELECT * FROM usuarios WHERE email = %s"
+                    cursor.execute(sql, (email,))
+                except Exception:
+                    sql = "SELECT * FROM usuarios WHERE `e-mail` = %s"
+                    cursor.execute(sql, (email,))
                 usuario = cursor.fetchone()
                 
                 return usuario
@@ -64,18 +68,25 @@ class MySQLAuth:
         usuario = self.verificar_usuario(email)
         
         if usuario:
-            # Verificar se o usuário pagou
-            if not usuario.get('pagou', False):
-                return None  # Usuário não pagou
+            # Regras de acesso compatíveis com diferentes esquemas
+            # 1) Se existir coluna 'status', exige status = 'ativo'
+            status = usuario.get('status')
+            if status is not None and str(status).lower() not in ('ativo', '1', 'true'):
+                return None
+            # 2) Se existir coluna 'pagou', exige True
+            if 'pagou' in usuario and not bool(usuario.get('pagou')):
+                return None
             
-            # Usuário encontrado e pagou - autenticação bem-sucedida
+            # Mapear email conforme coluna existente
+            email_val = usuario.get('email') or usuario.get('e-mail')
+            
             return {
                 'id': usuario.get('id'),
-                'email': usuario.get('e-mail'),
+                'email': email_val,
                 'nome': usuario.get('nome', ''),
                 'celular': usuario.get('celular', ''),
-                'pagou': usuario.get('pagou', False),
-                'data_cadastro': usuario.get('data_cadastro'),
+                'pagou': usuario.get('pagou', True) if 'pagou' in usuario else True,
+                'data_cadastro': usuario.get('data_cadastro') or usuario.get('criado_em'),
                 'ultimo_acesso': datetime.now()
             }
         
@@ -94,9 +105,13 @@ class MySQLAuth:
         
         try:
             with connection.cursor() as cursor:
-                # Atualizar último acesso
-                sql = "UPDATE usuarios SET ultimo_acesso = %s WHERE `e-mail` = %s"
-                cursor.execute(sql, (datetime.now(), email))
+                # Atualizar último acesso (compatível com 'email' e '`e-mail`')
+                try:
+                    sql = "UPDATE usuarios SET ultimo_acesso = %s WHERE email = %s"
+                    cursor.execute(sql, (datetime.now(), email))
+                except Exception:
+                    sql = "UPDATE usuarios SET ultimo_acesso = %s WHERE `e-mail` = %s"
+                    cursor.execute(sql, (datetime.now(), email))
                 connection.commit()
                 return True
                 
@@ -119,8 +134,13 @@ class MySQLAuth:
         
         try:
             with connection.cursor(pymysql.cursors.DictCursor) as cursor:
-                sql = "SELECT id, `e-mail`, nome, celular, pagou, data_cadastro, ultimo_acesso FROM usuarios ORDER BY data_cadastro DESC"
-                cursor.execute(sql)
+                # Tentar selecionar com coluna 'email'; se falhar, usar '`e-mail`'
+                try:
+                    sql = "SELECT id, email, nome, celular, status, is_admin, criado_em AS data_cadastro, ultimo_acesso FROM usuarios ORDER BY criado_em DESC"
+                    cursor.execute(sql)
+                except Exception:
+                    sql = "SELECT id, `e-mail` AS email, nome, celular, pagou AS status, data_cadastro, ultimo_acesso FROM usuarios ORDER BY data_cadastro DESC"
+                    cursor.execute(sql)
                 usuarios = cursor.fetchall()
                 
                 return usuarios
@@ -144,17 +164,19 @@ class MySQLAuth:
         
         try:
             with connection.cursor() as cursor:
-                # SQL para criar tabela usuarios
+                # Cria tabela básica se não existir (versão compatível)
                 sql = """
                 CREATE TABLE IF NOT EXISTS usuarios (
                     id INT AUTO_INCREMENT PRIMARY KEY,
-                    `e-mail` VARCHAR(255) UNIQUE NOT NULL,
+                    email VARCHAR(255) UNIQUE NOT NULL,
                     nome VARCHAR(255),
-                    celular VARCHAR(14),
-                    pagou BOOLEAN DEFAULT TRUE,
-                    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    ultimo_acesso TIMESTAMP NULL
-                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+                    celular VARCHAR(30),
+                    status ENUM('ativo','inativo') DEFAULT 'ativo',
+                    is_admin TINYINT(1) DEFAULT 0,
+                    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                    ultimo_acesso DATETIME NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
                 """
                 cursor.execute(sql)
                 connection.commit()
@@ -182,17 +204,27 @@ class MySQLAuth:
         try:
             with connection.cursor() as cursor:
                 # Verificar se já existe
-                cursor.execute("SELECT COUNT(*) FROM usuarios WHERE `e-mail` = %s", ('wagnerlcg@gmail.com',))
+                try:
+                    cursor.execute("SELECT COUNT(*) FROM usuarios WHERE email = %s", ('wagnerlcg@gmail.com',))
+                except Exception:
+                    cursor.execute("SELECT COUNT(*) FROM usuarios WHERE `e-mail` = %s", ('wagnerlcg@gmail.com',))
                 if cursor.fetchone()[0] > 0:
                     print("Usuário de exemplo já existe!")
                     return True
                 
                 # Inserir usuário de exemplo
-                sql = """
-                INSERT INTO usuarios (`e-mail`, nome, celular, pagou) 
-                VALUES (%s, %s, %s, %s)
-                """
-                cursor.execute(sql, ('wagnerlcg@gmail.com', 'Administrador', '24981148429', True))
+                try:
+                    sql = """
+                    INSERT INTO usuarios (email, nome, celular, status, is_admin) 
+                    VALUES (%s, %s, %s, %s, %s)
+                    """
+                    cursor.execute(sql, ('wagnerlcg@gmail.com', 'Administrador', '24981148429', 'ativo', 1))
+                except Exception:
+                    sql = """
+                    INSERT INTO usuarios (`e-mail`, nome, celular, pagou) 
+                    VALUES (%s, %s, %s, %s)
+                    """
+                    cursor.execute(sql, ('wagnerlcg@gmail.com', 'Administrador', '24981148429', True))
                 connection.commit()
                 
                 print("Usuário de exemplo criado: wagnerlcg@gmail.com")

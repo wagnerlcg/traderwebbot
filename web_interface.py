@@ -515,11 +515,23 @@ def config():
 def sinais():
     """Gerencia arquivo de sinais"""
     if request.method == 'POST':
+        # Garantir diretório de dados também sob WSGI (em produção __main__ não roda)
+        try:
+            os.makedirs('data', exist_ok=True)
+        except Exception:
+            pass
+
         if 'file' in request.files:
             file = request.files['file']
-            if file.filename.endswith('.txt'):
+            if file and file.filename:
+                if not file.filename.endswith('.txt'):
+                    return jsonify({'success': False, 'error': 'Arquivo deve ser um arquivo .txt'}), 400
+                
                 filepath = os.path.join('data', 'sinais.txt')
-                file.save(filepath)
+                try:
+                    file.save(filepath)
+                except Exception as e:
+                    return jsonify({'success': False, 'error': f'Falha ao salvar arquivo: {str(e)}'}), 400
                 
                 # Carregar e validar sinais
                 try:
@@ -533,14 +545,18 @@ def sinais():
                     })
                 except Exception as e:
                     return jsonify({'success': False, 'error': str(e)}), 400
+            else:
+                return jsonify({'success': False, 'error': 'Nenhum arquivo foi enviado'}), 400
         
         # Receber sinais como texto
-        elif 'content' in request.json:
+        elif request.is_json and 'content' in request.json:
             content = request.json['content']
             filepath = os.path.join('data', 'sinais.txt')
-            
-            with open(filepath, 'w', encoding='utf-8') as f:
-                f.write(content)
+            try:
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    f.write(content)
+            except Exception as e:
+                return jsonify({'success': False, 'error': f'Falha ao gravar conteúdo: {str(e)}'}), 400
             
             try:
                 sinais_carregados = carregar_sinais(filepath)
@@ -553,6 +569,8 @@ def sinais():
                 })
             except Exception as e:
                 return jsonify({'success': False, 'error': str(e)}), 400
+        else:
+            return jsonify({'success': False, 'error': 'Formato inválido de requisição'}), 400
     
     return jsonify({
         'sinais': bot_state['sinais'],

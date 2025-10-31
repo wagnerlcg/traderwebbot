@@ -296,13 +296,43 @@ async function uploadSinais() {
             body: formData
         });
         
+        // Verificar se a resposta foi bem-sucedida
+        if (!response.ok) {
+            // Tentar ler a mensagem de erro se for JSON
+            let errorMessage = `Erro ${response.status}: ${response.statusText}`;
+            try {
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.includes('application/json')) {
+                    const errorData = await response.json();
+                    errorMessage = errorData.error || errorMessage;
+                } else {
+                    // Se não for JSON, ler como texto (mas limitar tamanho)
+                    const text = await response.text();
+                    if (text && text.length < 200) {
+                        errorMessage = text;
+                    }
+                }
+            } catch (e) {
+                // Se falhar ao ler erro, usar mensagem padrão
+            }
+            showNotification('Erro ao enviar arquivo: ' + errorMessage, 'danger');
+            return;
+        }
+        
+        // Verificar se o conteúdo é JSON antes de fazer parse
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            showNotification('Erro: resposta do servidor não é JSON', 'danger');
+            return;
+        }
+        
         const data = await response.json();
         
         if (data.success) {
             showNotification(`${data.total} sinais carregados com sucesso!`, 'success');
             displaySinais(data.sinais);
         } else {
-            showNotification('Erro ao carregar sinais: ' + data.error, 'danger');
+            showNotification('Erro ao carregar sinais: ' + (data.error || 'Erro desconhecido'), 'danger');
         }
     } catch (error) {
         showNotification('Erro ao enviar arquivo: ' + error.message, 'danger');
@@ -326,13 +356,43 @@ async function submitSinaisText() {
             body: JSON.stringify({ content })
         });
         
+        // Verificar se a resposta foi bem-sucedida
+        if (!response.ok) {
+            // Tentar ler a mensagem de erro se for JSON
+            let errorMessage = `Erro ${response.status}: ${response.statusText}`;
+            try {
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.includes('application/json')) {
+                    const errorData = await response.json();
+                    errorMessage = errorData.error || errorMessage;
+                } else {
+                    // Se não for JSON, ler como texto (mas limitar tamanho)
+                    const text = await response.text();
+                    if (text && text.length < 200) {
+                        errorMessage = text;
+                    }
+                }
+            } catch (e) {
+                // Se falhar ao ler erro, usar mensagem padrão
+            }
+            showNotification('Erro ao processar sinais: ' + errorMessage, 'danger');
+            return;
+        }
+        
+        // Verificar se o conteúdo é JSON antes de fazer parse
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            showNotification('Erro: resposta do servidor não é JSON', 'danger');
+            return;
+        }
+        
         const data = await response.json();
         
         if (data.success) {
             showNotification(`${data.total} sinais carregados com sucesso!`, 'success');
             displaySinais(data.sinais);
         } else {
-            showNotification('Erro ao carregar sinais: ' + data.error, 'danger');
+            showNotification('Erro ao carregar sinais: ' + (data.error || 'Erro desconhecido'), 'danger');
         }
     } catch (error) {
         showNotification('Erro ao processar sinais: ' + error.message, 'danger');

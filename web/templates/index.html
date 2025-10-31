@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trader Bot - Sinais</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') | prefix_url }}?v=20251024-2">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=20251024-2">
     <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
@@ -381,7 +381,7 @@ M5;GBPUSD;19:30;CALL"></textarea>
             // Configurar path base da aplicação para JavaScript sem poluir o escopo global
             window.APP_BASE_PATH = ('{{ APPLICATION_ROOT }}' || '').replace(/\/$/, '') || '';
         </script>
-        <script src="{{ url_for('static', filename='js/app.js') | prefix_url }}?v=20251024-9" defer></script>
+        <script src="{{ url_for('static', filename='js/app.js') }}?v=20251024-9" defer></script>
 </body>
 </html>
 
